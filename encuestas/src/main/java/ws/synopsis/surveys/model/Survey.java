@@ -17,6 +17,8 @@ public class Survey implements Serializable {
 	@Id
 	private int surveyid;
 	
+	private String ass;
+	
 	public Survey() {
 		super();
 	}
