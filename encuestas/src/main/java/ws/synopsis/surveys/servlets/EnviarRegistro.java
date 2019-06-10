@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RegistoEnvio
  */
-public class RegistoEnvio extends HttpServlet {
+public class EnviarRegistro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegistoEnvio() {
+    public EnviarRegistro() {
         super();
         // TODO Auto-generated constructor stub
     }

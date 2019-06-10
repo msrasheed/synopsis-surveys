@@ -3,12 +3,12 @@
   <display-name>encuestas</display-name>
   
    <servlet>
-  	<servlet-name>RegistoEnvio</servlet-name>
-  	<servlet-class>ws.synopsis.surveys.servlets.RegistoEnvio</servlet-class>
+  	<servlet-name>EnviarRegistro</servlet-name>
+  	<servlet-class>ws.synopsis.surveys.servlets.EnviarRegistro</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>RegistoEnvio</servlet-name>
-  	<url-pattern>/RegistoEnvio</url-pattern>
+  	<servlet-name>EnviarRegistro</servlet-name>
+  	<url-pattern>/EnviarRegistro</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
