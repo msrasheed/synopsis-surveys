@@ -34,8 +34,6 @@ public class EncuestaRedHat implements Serializable {
 	private String respuesta16;
 	
 	
-	
-	
 	public EncuestaRedHat() {
 		super();
 	}
