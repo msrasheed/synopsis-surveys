@@ -17,7 +17,7 @@ public class Registro implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String curso;
+	private String curso; 
 	private Date fechaInicio;
 	private Date fechaFin;
 	private Time tiempoInicio;

@@ -15,7 +15,7 @@ public class EncuestaRedHat implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int respuesta1;
+	private int respuesta1; 
 	private int respuesta2;
 	private int respuesta3;
 	private int respuesta4;
