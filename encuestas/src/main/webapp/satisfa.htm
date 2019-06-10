@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action ="file:///home/synopsis/Escritorio/Gracias.htm">
+<style>
+table #stat tr td {
+    width: 15em;
+    font-size: 32px;
+   
+}
+table.fontss tr th{
+    font-size: 20px;
+    font-weight: 100;
+}
+th.question {
+    text-align:left;
+    padding:10px;
+
+}
+
+h2{
+    font-weight: 100;
+}
+p.satis {
+    text-align:right;
+    font-size: 28px;
+    line-height: 0.8em;
+}
+p.lastQ{
+    font-size: 22px;
+}
+p.lastInfo{
+    font-size:15px;
+}
+body {margin:1em;padding:1em;
+    background-color: rgba(211,211,211,0.7);}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:5px;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
+<h1> <img src="data:image/png;base64,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" alt = "synopsis">  </h1>
+
+
+<h2>
+<p class= "satis"> <strong> ENCUESTA DE SATISFACCIÓN </strong> </p>
+
+<p>Curso: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="Curso" > <br>
+   Instructor:&nbsp<input type="text" name="instructor">
+</p>
+
+<p1 >
+
+<table id = "stat" class="fontss" align=center border = 1 width = 1150 height = 300>
+    <tr>
+        <th class="question"><strong> Evaluación General del Curso</strong></th>
+        <th><strong> Muy Bueno </strong></th>
+        <th><strong> Bueno </strong></th>
+        <th><strong> Regular </strong></th>
+        <th><strong> Malo </strong></th>
+        <th><strong> Muy Malo </strong></th>
+    </tr>
+
+    <tr>
+        <th class="question"> Equipos de cómputo usados durante el curso</th>
+        <th> <input type="radio" name="rate1" value="Muy Bueno">  </th>
+        <th> <input type="radio" name="rate1" value="Bueno"> </th>
+        <th> <input type="radio" name="rate1" value="Regular"> </th>
+        <th> <input type="radio" name="rate1" value="Malo"> </th>
+        <th> <input type="radio" name="rate1" value="Muy Malo">  </th>
+    </tr>
+    <tr>
+        <th class="question">Infraestructura de las salas </th>
+        <th> <input type="radio" name="rate2" value="Muy Bueno">  </th>
+        <th> <input type="radio" name="rate2" value="Bueno"> </th>
+        <th> <input type="radio" name="rate2" value="Regular"> </th>
+        <th> <input type="radio" name="rate2" value="Malo"> </th>
+        <th> <input type="radio" name="rate2" value="Muy Malo">  </th>
+    </tr>
+    <tr>
+        <th class="question">Coffee Break </th>
+        <th> <input type="radio" name="rate3" value="Muy Bueno">  </th>
+        <th> <input type="radio" name="rate3" value="Bueno"> </th>
+        <th> <input type="radio" name="rate3" value="Regular"> </th>
+        <th> <input type="radio" name="rate3" value="Malo"> </th>
+        <th> <input type="radio" name="rate3" value="Muy Malo">  </th>
+    </tr>
+    <tr>
+        <th class="question">Atención del personal de Synopsis </th>
+        <th> <input type="radio" name="rate4" value="Muy Bueno">  </th>
+        <th> <input type="radio" name="rate4" value="Bueno"> </th>
+        <th> <input type="radio" name="rate4" value="Regular"> </th>
+        <th> <input type="radio" name="rate4" value="Malo"> </th>
+        <th> <input type="radio" name="rate4" value="Muy Malo">  </th>
+    </tr>
+    <tr>
+        <th class="question"><strong>En general, ¿cuán satisfecho está con la  <br> educación que recibió en esta clases? </strong> </th>
+        <th> <input type="radio" name="rate5" value="Muy Bueno">  </th>
+        <th> <input type="radio" name="rate5" value="Bueno"> </th>
+        <th> <input type="radio" name="rate5" value="Regular"> </th>
+        <th> <input type="radio" name="rate5" value="Malo"> </th>
+        <th> <input type="radio" name="rate5" value="Muy Malo">  </th>
+    </tr>
+
+</table>
+
+</p1>
+<p class="lastQ">
+<br> ¿Qué áreas mejoraría? (Puede referirse a cualquier aspecto del curso, incluidos el instructor, la infraestructura, los materiales, el quipo, etc.)
+<textarea name="Text1" cols="40" rows="5"  style="width:1250px; height:70px;" > 
+</textarea>
+</p>
+<p class="lastInfo">
+ &nbsp&nbspPara cualquier consulta y/o sugerencia puede contactarse con:<br>
+ &nbsp&nbspAlexandra García(amgarcia@synopsis.ws), Karina Vega (kmvega@synopsis.ws).<br>
+<div align="middle">
+     <button class="button" style="vertical-align:middle"><span>Enviar </span></button>
+</div>
+</h2>
+
+</body>
+</html>
