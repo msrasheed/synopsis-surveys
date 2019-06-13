@@ -67,14 +67,5 @@
     <servlet-name>UserAuthenticationI</servlet-name>
     <url-pattern>/UserAuthenticationI</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>LogIn</display-name>
-    <servlet-name>LogIn</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.LogIn</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LogIn</servlet-name>
-    <url-pattern>/LogIn</url-pattern>
-  </servlet-mapping>
+
 </web-app>
