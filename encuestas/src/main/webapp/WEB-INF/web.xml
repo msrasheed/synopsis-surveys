@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>encuestas</display-name>
-  
-   <servlet>
-  	<servlet-name>EnviarRegistro</servlet-name>
-  	<servlet-class>ws.synopsis.surveys.servlets.EnviarRegistro</servlet-class>
+  <servlet>
+    <servlet-name>EnviarRegistro</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.EnviarRegistro</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>EnviarRegistro</servlet-name>
-  	<url-pattern>/EnviarRegistro</url-pattern>
+    <servlet-name>EnviarRegistro</servlet-name>
+    <url-pattern>/EnviarRegistro</url-pattern>
   </servlet-mapping>
-  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -19,4 +17,64 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>LogInEIA</display-name>
+    <servlet-name>LogInEIA</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.LogInEIA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogInEIA</servlet-name>
+    <url-pattern>/LogInEIA?Key=value</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserAuthentication</display-name>
+    <servlet-name>UserAuthentication</servlet-name>
+    <servlet-class>ws.synopsis.surveys.auth.UserAuthentication</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserAuthentication</servlet-name>
+    <url-pattern>/UserAuthentication</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PostgresDBUtil</display-name>
+    <servlet-name>PostgresDBUtil</servlet-name>
+    <servlet-class>ws.synopsis.surveys.utils.PostgresDBUtil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostgresDBUtil</servlet-name>
+    <url-pattern>/PostgresDBUtil</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserAuthenticationI</display-name>
+    <servlet-name>UserAuthenticationI</servlet-name>
+    <servlet-class>ws.synopsis.surveys.auth.UserAuthenticationI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserAuthenticationI</servlet-name>
+    <url-pattern>/UserAuthenticationI</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogIn</display-name>
+    <servlet-name>LogIn</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.LogIn</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogIn</servlet-name>
+    <url-pattern>/LogIn</url-pattern>
+  </servlet-mapping>
 </web-app>

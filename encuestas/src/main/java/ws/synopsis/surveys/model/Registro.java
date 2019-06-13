@@ -29,6 +29,7 @@ public class Registro implements Serializable {
 	private String cargo;
 	private String correo;
 	private int telefono;
+	private String value;
 	
 	
 	public Registro() {
@@ -177,6 +178,18 @@ public class Registro implements Serializable {
 
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
+	}
+
+
+
+	public String getValue() {
+		return value;
+	}
+
+
+
+	public void setValue(String value) {
+		this.value = value;
 	}
    
 }
