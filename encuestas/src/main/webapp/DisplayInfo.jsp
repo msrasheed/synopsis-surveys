@@ -7,7 +7,7 @@
 <title>Display Info</title>
 </head>
 <body>
-
+	<jsp:useBean id="user" class="ws.synopsis.surveys.servlets.Estudiante">
 <h1>Por favor, verifica si esta informaci&oacuten es correcta</h1>
 
 <label>Nombre</label>
@@ -23,5 +23,6 @@
 <label>Cargo</label>
 <span>$user.cargo</span><br>
 
+</jsp:useBean>
 </body>
 </html>

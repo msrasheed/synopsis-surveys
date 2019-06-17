@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ws.synopsis.surveys.model.User;
+import ws.synopsis.surveys.utils.EstudianteDB;
 
 /**
  * Servlet implementation class Estudiante
@@ -32,8 +33,17 @@ public class Estudiante extends HttpServlet {
 		String compania = request.getParameter("compania");
 		String cargo = request.getParameter("cargo");
 		User estudiante = new User(nombre, apellido, userName, correo, telefono, compania, cargo); 
-		
+		EstudianteDB.insertEstudiante(estudiante);
 	}
+
+
+	public Object getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 	
 
 	

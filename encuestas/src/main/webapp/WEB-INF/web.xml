@@ -87,4 +87,24 @@
     <servlet-name>UserType</servlet-name>
     <url-pattern>/UserType</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EstudianteDB</display-name>
+    <servlet-name>EstudianteDB</servlet-name>
+    <servlet-class>ws.synopsis.surveys.utils.EstudianteDB</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EstudianteDB</servlet-name>
+    <url-pattern>/EstudianteDB</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HashingUtil</display-name>
+    <servlet-name>HashingUtil</servlet-name>
+    <servlet-class>ws.synopsis.surveys.utils.HashingUtil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HashingUtil</servlet-name>
+    <url-pattern>/HashingUtil</url-pattern>
+  </servlet-mapping>
 </web-app>
