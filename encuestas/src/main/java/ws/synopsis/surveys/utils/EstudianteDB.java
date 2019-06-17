@@ -45,7 +45,7 @@ public class EstudianteDB {
 		}
 	}
 	
-	public static Estudiante getEstudianteByID(int id) {
+	public static Estudiante getEstudianteByID(int id) { 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
 						"FROM Estudiante e " +

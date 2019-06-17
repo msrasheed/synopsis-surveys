@@ -1,4 +1,4 @@
-package ws.synopsis.surveys.servlets;
+package ws.synopsis.surveys.servlets; 
 
 import java.io.IOException;
 import javax.servlet.ServletException;

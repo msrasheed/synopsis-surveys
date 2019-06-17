@@ -1,4 +1,4 @@
-package ws.synopsis.surveys.utils;
+package ws.synopsis.surveys.utils; 
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

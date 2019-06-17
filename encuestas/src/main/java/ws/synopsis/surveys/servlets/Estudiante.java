@@ -16,7 +16,7 @@ public class Estudiante extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-    public Estudiante() {
+    public Estudiante() { 
         super();
         // TODO Auto-generated constructor stub
     }

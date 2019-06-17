@@ -1,6 +1,6 @@
 package ws.synopsis.surveys.utils;
 
-import javax.persistence.EntityManager;
+import javax.persistence.EntityManager; 
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
