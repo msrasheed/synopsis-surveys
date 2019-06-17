@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ws.synopsis.surveys.model.User;
-import ws.synopsis.surveys.utils.EstudianteDB;
+import ws.synopsis.surveys.utils.AdminDB;
 
 /**
- * Servlet implementation class Estudiante
+ * Servlet implementation class Admin
  */
-public class Estudiante extends HttpServlet {
+public class Admin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-    public Estudiante() {
+    public Admin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,8 +32,8 @@ public class Estudiante extends HttpServlet {
 		String telefono = request.getParameter("telefono");
 		String compania = request.getParameter("compania");
 		String cargo = request.getParameter("cargo");
-		User estudiante = new User(nombre, apellido, userName, correo, telefono, compania, cargo); 
-		EstudianteDB.insertEstudiante(estudiante);
+		User Admin = new User(nombre, apellido, userName, correo, telefono, compania, cargo); 
+		AdminDB.insertAdmin(Admin);
 	}
 
 

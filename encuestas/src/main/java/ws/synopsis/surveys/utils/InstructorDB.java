@@ -5,9 +5,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import ws.synopsis.surveys.model.User;
-import ws.synopsis.surveys.servlets.Estudiante;
+import ws.synopsis.surveys.servlets.Instructor;
 
-public class EstudianteDB {
+public class InstructorDB {
 	public static boolean checkCredentials(String username, String password) {
 		if(checkUsernameExists(username) == true) {
 			if(checkPasswordMatches(username, password) == true) return true;
@@ -18,9 +18,9 @@ public class EstudianteDB {
 	public static boolean checkPasswordMatches(String username, String password) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e " +
-							"FROM Estudiante as e " +
+							"FROM Instructor as e " +
 							"WHERE e.username = :user";
-		TypedQuery<Estudiante> q = em.createQuery(qString, Estudiante.class);
+		TypedQuery<Instructor> q = em.createQuery(qString, Instructor.class);
 		q.setParameter("user", username);
 		try {
 			if(q.getSingleResult().getPassword().equals(password)) return true;
@@ -33,7 +33,7 @@ public class EstudianteDB {
 	public static boolean checkUsernameExists(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e.username " +
-							"FROM Estudiante as e " +
+							"FROM Instructor as e " +
 							"WHERE e.username = :user";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);
@@ -45,12 +45,12 @@ public class EstudianteDB {
 		}
 	}
 	
-	public static Estudiante getEstudianteByID(int id) {
+	public static Instructor getInstructorByID(int id) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
-						"FROM Estudiante e " +
+						"FROM Instructor e " +
 						"WHERE e.userid = :id";
-		TypedQuery<Estudiante> q = em.createQuery(qString, Estudiante.class);
+		TypedQuery<Instructor> q = em.createQuery(qString, Instructor.class);
 		q.setParameter("id", id);
 		try {
 			return q.getSingleResult();
@@ -62,7 +62,7 @@ public class EstudianteDB {
 	public static String getPasswordByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e.password " +
-							"FROM Estudiante as e " +
+							"FROM Instructor as e " +
 							"WHERE e.username = :user";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);
@@ -76,7 +76,7 @@ public class EstudianteDB {
 	public static String getUsernameByID(int id) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e.username " +
-						"FROM Estudiante e " +
+						"FROM Instructor e " +
 						"WHERE e.userid = :id";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("id", id);
@@ -87,14 +87,14 @@ public class EstudianteDB {
 		}
 	}
 	
-	public static boolean insertEstudiante(Estudiante Estudiante) {
+	public static boolean insertInstructor(Instructor Instructor) {
 		boolean isSuccessful = false;
 		
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		try {
 			trans.begin();
-			em.persist(Estudiante);
+			em.persist(Instructor);
 			trans.commit();
 			isSuccessful = true;
 		} catch (Exception e) {
@@ -107,14 +107,14 @@ public class EstudianteDB {
 		return isSuccessful;
 	}
 	
-	public static boolean mergeEstudiante(Estudiante Estudiante) {
+	public static boolean mergeInstructor(Instructor Instructor) {
 		boolean isSuccessful = false;
 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		try {
 			trans.begin();
-			em.merge(Estudiante);
+			em.merge(Instructor);
 			trans.commit();
 			isSuccessful = true;
 		} catch (Exception e) {
@@ -127,7 +127,7 @@ public class EstudianteDB {
 		return isSuccessful;
 	}
 
-	public static void insertEstudiante(User estudiante) {
+	public static void insertInstructor(User Instructor) {
 		// tbh don't want this. Just did it so it would compile
 		
 	}

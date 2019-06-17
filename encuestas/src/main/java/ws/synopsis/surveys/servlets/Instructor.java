@@ -10,13 +10,13 @@ import ws.synopsis.surveys.model.User;
 import ws.synopsis.surveys.utils.EstudianteDB;
 
 /**
- * Servlet implementation class Estudiante
+ * Servlet implementation class Instructor
  */
-public class Estudiante extends HttpServlet {
+public class Instructor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-    public Estudiante() {
+    public Instructor() {
         super();
         // TODO Auto-generated constructor stub
     }

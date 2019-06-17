@@ -107,4 +107,44 @@
     <servlet-name>HashingUtil</servlet-name>
     <url-pattern>/HashingUtil</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InstructorDB</display-name>
+    <servlet-name>InstructorDB</servlet-name>
+    <servlet-class>ws.synopsis.surveys.utils.InstructorDB</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InstructorDB</servlet-name>
+    <url-pattern>/InstructorDB</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Instructor</display-name>
+    <servlet-name>Instructor</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Instructor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Instructor</servlet-name>
+    <url-pattern>/Instructor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Admin</display-name>
+    <servlet-name>Admin</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Admin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin</servlet-name>
+    <url-pattern>/Admin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminDB</display-name>
+    <servlet-name>AdminDB</servlet-name>
+    <servlet-class>ws.synopsis.surveys.utils.AdminDB</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDB</servlet-name>
+    <url-pattern>/AdminDB</url-pattern>
+  </servlet-mapping>
 </web-app>
