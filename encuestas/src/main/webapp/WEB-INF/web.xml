@@ -67,5 +67,24 @@
     <servlet-name>UserAuthenticationI</servlet-name>
     <url-pattern>/UserAuthenticationI</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>Estudiante</display-name>
+    <servlet-name>Estudiante</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Estudiante</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Estudiante</servlet-name>
+    <url-pattern>/Estudiante</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserType</display-name>
+    <servlet-name>UserType</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.UserType</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserType</servlet-name>
+    <url-pattern>/UserType</url-pattern>
+  </servlet-mapping>
 </web-app>

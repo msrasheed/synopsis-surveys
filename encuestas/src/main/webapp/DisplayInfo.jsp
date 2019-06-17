@@ -14,9 +14,9 @@
 <span>$user.nombre</span><br>
 <label>Apellido</label>
 <span>$user.apellido</span><br>
-<label>correo</label>
+<label>Correo</label>
 <span>$user.correo</span><br>
-<label>tel&eacutefono</label>
+<label>Tel&eacutefono</label>
 <span>$user.telefono</span><br>
 <label>Compania</label>
 <span>$user.empresa</span><br>

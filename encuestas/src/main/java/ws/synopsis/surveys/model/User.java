@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Entity
 public class User implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -19,7 +18,25 @@ public class User implements Serializable {
 	private String nombre;
 	private String apellido;
 	private String userName;
+	private String correo;
+	private String telefono;
+	private String compania;
+	private String cargo;
 	
+	public User() {
+		super();
+	}
+	
+	public User(String nombre, String apellido, String userName, String correo, String telefono, String compania, String cargo) {
+		
+		this.apellido = apellido;
+		this.nombre = nombre;
+		this.userName = userName;
+		this.correo = correo;
+		this.telefono = telefono;
+		this.compania = compania;
+		this.cargo = cargo;
+	}	
 	
 	
 	public String getUserType() {
@@ -45,6 +62,30 @@ public class User implements Serializable {
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	public String getCorreo() {
+		return correo;
+	}
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+	public String getCompania() {
+		return compania;
+	}
+	public void setCompania(String compania) {
+		this.compania = compania;
+	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
 	}
 	
 	
