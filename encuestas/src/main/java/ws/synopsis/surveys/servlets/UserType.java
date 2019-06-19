@@ -27,17 +27,18 @@ public class UserType extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String userType = request.getParameter("userType");
+		System.out.println("asuh bitch");
 		if (userType == "estudiante") 
 		{
-		response.sendRedirect("/Estudiante");
+		response.sendRedirect("/LogInE");
 		}
 		else if (userType == "instuctor")
 		{
-		response.sendRedirect("/Instructor");
+		response.sendRedirect("/LogInI");
 		}
 		else if (userType == "admin")
 		{
-		response.sendRedirect("/Admin");
+		response.sendRedirect("/LogInA");
 		}
 		
 	}

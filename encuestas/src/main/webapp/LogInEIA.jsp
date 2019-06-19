@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="UTF-8">
@@ -68,13 +70,14 @@ body {margin:1em;padding:1em;
 <body>
 <h1> &iquestEres un...?</h1>
 <br>
-<form action="LogInE" class="monospace">
+<form action="/UserType?userType=estudiante" class="monospace">
 <button class="button" style="vertical-align:middle"><span>Estudiante </span></button>
 </form>
-<form action="LogInI" class="monospace">
+<form action="/UserType?userType=instructor" class="monospace" >
 <button class="button" style="vertical-align:middle"><span>Instructor </span></button>
 </form>
-<form action="LogInA" class="monospace">
+<%System.out.println("Success bitch"); %>
+<form action="/UserType?userType=admin" class="monospace" >
 <button class="button" style="vertical-align:middle"><span>Administrador </span></button>
 </form>
 </body>
