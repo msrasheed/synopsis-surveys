@@ -27,15 +27,18 @@ public class Estudiante extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		String DNI = request.getParameter("DNI");
 		String nombre = request.getParameter("nombre");
 		String apellido = request.getParameter("apellido");
 		String userName = request.getParameter("userName");
+		String contrasena = request.getParameter("contrasena");
 		String correo = request.getParameter("correo");
 		String telefono = request.getParameter("telefono");
 		String compania = request.getParameter("compania");
 		String cargo = request.getParameter("cargo");
-		User estudiante = new User(nombre, apellido, userName, correo, telefono, compania, cargo); 
+		User estudiante = new User(DNI, nombre, apellido, userName, contrasena, correo, telefono, compania, cargo); 
 		EstudianteDB.insertEstudiante(estudiante);
+		request.setAttribute("estudiante", estudiante);
 	}
 
 

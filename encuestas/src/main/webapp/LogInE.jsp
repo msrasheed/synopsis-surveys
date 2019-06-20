@@ -82,6 +82,12 @@ body {margin:1em;padding:1em;
   <button class="button" style="vertical-align:middle"><span>Creer una cuenta </span></button><br>
   &iquestOlvidaste tu contraseña?
   <button class="button" style="vertical-align:middle"><span>Restablecer la contraseña </span></button>
+  <%
+  
+  
+  %>
+  
+  
   </form>
 </body>
 </html>
