@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 <style>
-* {box-sizing: border-box}
-
-/* Set height of body and the document to 100% */
 body, html {
   height: 100%;
   margin: 0;
@@ -39,8 +36,6 @@ background-color:rgba(255,69,0,0.7);
   height: 100%;
 }
 
-#Info {background-color: rgba(128,128,128,0.2);}
-#Encuestas {background-color: rgba(128,128,128,0.2);}
 h1 {
 margin:0;
 font-size:2em;
@@ -61,40 +56,27 @@ background-color:beige;
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
 }
-
+#curso {background-color: rgba(128,128,128,0.2);}
+#hoja {background-color: rgba(128,128,128,0.2);}
 </style>
 </head>
 <h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">Hola! ¿Cómo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
 <body>
-
 <div class="tab" style="overflow:auto;">
-  <button class="tablink" onclick="openPage('Info',this,'rgba(242, 38, 19, 1)')" color>Info</button>
-  <button class="tablink" onclick="openPage('Encuestas',this,'rgba(242, 38, 19, 1)')" color>Encuestas</button>
+  <button class="tablink" onclick="openPage('Mi Curso',this,'rgba(242, 38, 19, 1)')" color>Mi Curso</button>
+  <button class="tablink" onclick="openPage('hoja de asistencia',this,'rgba(242, 38, 19, 1)')" color>Asistencia</button>
 </div>
 
-<div id="Info" class="tabcontent">
-  Información Personal
-  <p>Nombre
-  <br> ...servlet handles data from DB</p>
+<div id="Mi Curso" class="tabcontent">
+view data from DB with current classes <br>
+with conditon of end date >= current date
 </div>
 
-<div id="Encuestas" class="tabcontent">
-
-¡Gracias por tomarse el tiempo!
-  <p>
-  <form action="/redhat"><button type="button">ENCUESTA DE REDHAT</button></form>
-  <br>
-  </p>
-  <p>
-  <form action="/cafebreak">
-  <button type="button">ENCUESTA DE SATISFACCIÓN</button>
-  </form>
-  <br>
-  </p>
-  <p>
-  <form action="http:IBM">
-  <button type="submit">ENCUESTA DE IBM</button></form>
-  </p>
+<div id="hoja de asistencia" class="tabcontent">
+updating student hour <br>
+<br> pulling the info from course info for instructor where end date >= current date<br>
+edit in a new page<br>
+my idea is to insert hours added with every attendance to database.
 </div>
 
 <script>
@@ -115,7 +97,6 @@ function openPage(pageName,elmnt,color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
-   
 
 </body>
 </html>
