@@ -13,6 +13,8 @@ import ws.synopsis.surveys.utils.EstudianteDB;
  * Servlet implementation class Estudiante
  */
 public class Estudiante extends HttpServlet {
+	
+		
 	private static final long serialVersionUID = 1L;
        
    
@@ -47,6 +49,6 @@ public class Estudiante extends HttpServlet {
 	
 
 	
+	}
 
 
-}
