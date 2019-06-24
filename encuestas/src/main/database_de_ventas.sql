@@ -1,6 +1,6 @@
 CREATE TABLE studentinfo(
 
-DNI int NOT NULL,
+DNI varchar(30) NOT NULL,
 nombre varchar(255) NOT NULL,
 apellido varchar(255) NOT NULL,
 empresa varchar(255) NOT NULL,
@@ -61,15 +61,17 @@ corsocodigo varchar(50),
 aula varchar(50),
 instructor varchar(50),
 hora float
-foreign key (nombre),
-foreign key (apellido),
-foreign key (corsocodigo)
+foreign key (nombre) REFERENCES studentinfo(nombre),
+foreign key (apellido) REFERENCES studentinfo(apellido),
+foreign key (corsocodigo) REFERENCES studentinfo(corsocodigo)
 );
 
 CREATE TABLE estudianteaccount (
 
+DNI varchar(30),
 username varchar(20),
-password varchar(30)
+password varchar(30),
+foreign key DNI REFERENCES studentinfo(DNI)
 
 );
 

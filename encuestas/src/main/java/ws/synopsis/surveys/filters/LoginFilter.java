@@ -1,30 +1,27 @@
-package ws.synopsis.surveys.auth;
+package ws.synopsis.surveys.filters;
 
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.validator.internal.util.privilegedactions.GetInstancesFromServiceLoader;
-
 /**
- * Servlet Filter implementation class AuthorizationFilter
+ * Servlet Filter implementation class LoginFilter
  */
-public class AuthFilter implements Filter {
+public class LoginFilter implements Filter {
 
-	public static final String DASHBOARD_URL = "/systemorders-webapp/app/dashboard";
-	
+
     /**
      * Default constructor. 
      */
-    public AuthFilter() {
+    public LoginFilter() {
         // TODO Auto-generated constructor stub
     }
 
@@ -53,16 +50,20 @@ public class AuthFilter implements Filter {
 			System.out.println("Session exists. Forwarding Request.");
 			chain.doFilter(httpRequest, httpResponse);
 		}
-		else if (requestURI.equals(DASHBOARD_URL)) {
-			System.out.println("Forwarding to Dashboard Servlet.");
-			chain.doFilter(httpRequest, httpResponse);
-		}
+
 		else {
 			System.out.println("Redirecting to Login;");
 			httpResponse.sendRedirect("/systemorders-webapp/index.html");
 		}
 		
 		System.out.println("Exiting Authorization Filter\n");
+	}
+
+	/**
+	 * @see Filter#init(FilterConfig)
+	 */
+	public void init(FilterConfig fConfig) throws ServletException {
+		// TODO Auto-generated method stub
 	}
 
 	/**
