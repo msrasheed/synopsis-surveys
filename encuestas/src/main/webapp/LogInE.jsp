@@ -69,19 +69,27 @@ body {margin:1em;padding:1em;
 }
 </style>
 <body>
-<form class ="monospace" action="" method="post">
+
+<form class ="monospace" action="/encuestas/CursosE.jsp" method="post">
 <br><br><br><br><br><br>
   User Name:&nbsp
   <input type="text" name="userName">
   <br><br>
   Contraseña:
-  <input type="text" name="contraseña">
+  <input type="password" name="contraseña">
   <br><br>
   <button class="button" style="vertical-align:middle"><span>Iniciar sesi&oacuten </span></button><br><br><br><br><br><br>
+    </form>
+    
+    <form class ="monospace" action="/encuestas/CuentaNueva.jsp" method="post">  
   &iquestNo tienes una cuenta?&nbsp&nbsp&nbsp
-  <button class="button" style="vertical-align:middle"><span>Creer una cuenta </span></button><br>
+  <button class="button" style="vertical-align:middle"><span>Crear una cuenta </span></button><br>
+  </form>
+  
+  <form class ="monospace" action="/encuestas/Olvidaste.jsp" method="post">
   &iquestOlvidaste tu contraseña?
   <button class="button" style="vertical-align:middle"><span>Restablecer la contraseña </span></button>
   </form>
+  
 </body>
 </html>

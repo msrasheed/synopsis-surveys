@@ -3,6 +3,7 @@ package ws.synopsis.surveys.model;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import java.sql.*;
 
 /**
  * Entity implementation class for Entity: Survey
@@ -15,31 +16,43 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="dni")
+	private String DNI;
 	private String userType; //estudiante, instructor, o administrador
 	private String nombre;
 	private String apellido;
 	private String userName;
+	private String contrasena;
 	private String correo;
 	private String telefono;
-	private String compania;
+	private String empresa;
 	private String cargo;
 	
 	public User() {
 		super();
 	}
 	
-	public User(String nombre, String apellido, String userName, String correo, String telefono, String compania, String cargo) {
+	public User(String DNI, String userType, String nombre, String apellido, String userName, String contrasena, String correo, String telefono, String empresa, String cargo) {
 		
+		this.DNI = DNI;
+		this.userType = userType;
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.userName = userName;
+		this.contrasena = contrasena;
 		this.correo = correo;
 		this.telefono = telefono;
-		this.compania = compania;
+		this.empresa = empresa;
 		this.cargo = cargo;
 	}	
 	
-	
+	public String getDNI() {
+		return DNI;
+	}
+	public void setDNI(String DNI) {
+		this.DNI = DNI;
+	}
 	public String getUserType() {
 		return userType;
 	}
@@ -76,17 +89,25 @@ public class User implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getCompania() {
-		return compania;
+	public String getEmpresa() {
+		return empresa;
 	}
-	public void setCompania(String compania) {
-		this.compania = compania;
+	public void setCompania(String empresa) {
+		this.empresa = empresa;
 	}
 	public String getCargo() {
 		return cargo;
 	}
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	
 	
