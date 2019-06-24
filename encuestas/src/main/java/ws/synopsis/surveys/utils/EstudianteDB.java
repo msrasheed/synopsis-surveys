@@ -87,7 +87,7 @@ public class EstudianteDB {
 		}
 	}
 	
-	public static boolean insertEstudiante(Estudiante Estudiante) {
+	public static boolean insertEstudiante(User Estudiante) {
 		boolean isSuccessful = false;
 		
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
@@ -127,8 +127,4 @@ public class EstudianteDB {
 		return isSuccessful;
 	}
 
-	public static void insertEstudiante(User estudiante) {
-		// tbh don't want this. Just did it so it would compile
-		
-	}
 }

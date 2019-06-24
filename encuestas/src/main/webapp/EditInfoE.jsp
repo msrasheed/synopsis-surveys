@@ -68,32 +68,34 @@ form.monospace {
 
 <head>
   <meta charset = "utf-8">
-  <title> Crear una cuenta nueva </title>
+  <title> Corregir su informaci&oactuen </title>
 </head>
-
+<jsp:useBean id="user" class="ws.synopsis.surveys.model.User">
 <h1>
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br>Complete la informaci&oacuten requerida para crear su nueva cuenta
+<br>Corregir su informaci&oacuten 
 
 </h1>
 
-<form class ="monospace" action="/encuestas/DisplayInfo.jsp" method="post">
+<form class ="monospace" action="/encuestas/CursosE.jsp" method="post">
 <br>
 
   Nombre:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="nombre">
+  <input type="text" name="nombre" >
+  <jsp:getProperty name='user' property='nombre'/>
   <br><br>
   Apellido:&nbsp&nbsp
-  <input type="text" name="apellido">
+  <input type="text" name="apellido" value=apellido>
   <br><br>
   DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="int" name="DNI">
+  <input type="int" name="DNI" value="DNI">
   <br><br>
   Correo:&nbsp&nbsp&nbsp&nbsp
   <input type="email" name="correo">
   <br><br>
-  Teléfono: &nbsp&nbsp<input type="text" name="telefono" >
+  Teléfono: &nbsp&nbsp
+  <input type="text" name="telefono" >
   <br><br>
   Empresa:&nbsp&nbsp&nbsp 
   <input type="text" name="empresa">
@@ -108,7 +110,7 @@ form.monospace {
   Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <input type="password" name="contrasena" required>
   <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>Crear la cuenta </span></button>
+     <button class="button" style="vertical-align:middle"><span>Corregir la cuenta </span></button>
   
   
      
@@ -116,6 +118,7 @@ form.monospace {
      
      
 </form>
+</jsp:useBean>
 </body>
 </html>
     

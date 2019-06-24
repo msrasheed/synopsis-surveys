@@ -33,9 +33,10 @@ public class User implements Serializable {
 		super();
 	}
 	
-	public User(String DNI, String nombre, String apellido, String userName, String contrasena, String correo, String telefono, String empresa, String cargo) {
+	public User(String DNI, String userType, String nombre, String apellido, String userName, String contrasena, String correo, String telefono, String empresa, String cargo) {
 		
 		this.DNI = DNI;
+		this.userType = userType;
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.userName = userName;

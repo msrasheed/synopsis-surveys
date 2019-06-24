@@ -26,6 +26,7 @@ public class Instructor extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String DNI = request.getParameter("DNI");
+		String userType = request.getParameter("userType");
 		String nombre = request.getParameter("nombre");
 		String apellido = request.getParameter("apellido");
 		String userName = request.getParameter("userName");
@@ -34,7 +35,7 @@ public class Instructor extends HttpServlet {
 		String telefono = request.getParameter("telefono");
 		String compania = request.getParameter("compania");
 		String cargo = request.getParameter("cargo");
-		User estudiante = new User(DNI, nombre, apellido, userName, contrasena, correo, telefono, compania, cargo);
+		User estudiante = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, compania, cargo);
 		EstudianteDB.insertEstudiante(estudiante);
 	}
 

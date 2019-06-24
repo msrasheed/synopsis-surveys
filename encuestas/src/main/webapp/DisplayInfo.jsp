@@ -7,6 +7,7 @@
 <%@ page import ="javax.servlet.http.HttpServletRequest"%>
 <%@ page import ="javax.servlet.http.HttpServletResponse"%>
 <%@ page import= "ws.synopsis.surveys.model.User" %>
+<%@ page import ="ws.synopsis.surveys.servlets.Estudiante"%>
 <%@ page import= "ws.synopsis.surveys.utils.EstudianteDB" %>
 <%@ page import= "ws.synopsis.surveys.utils.EntityMan" %>
 <%@ page import ="javax.persistence.*" %>
@@ -21,24 +22,6 @@
 </head>
 <body>
 
-  <%
-
-	String DNI = request.getParameter("DNI");
-	String nombre = request.getParameter("nombre");
-	String apellido = request.getParameter("apellido");
-	String userName = request.getParameter("userName");
-	String contrasena = request.getParameter("contrasena");
-	String correo = request.getParameter("correo");
-	String telefono = request.getParameter("telefono");
-	String empresa = request.getParameter("empresa");
-	String cargo = request.getParameter("cargo");
-	User estudiante = new User(DNI, nombre, apellido, userName, contrasena, correo, telefono, empresa, cargo); 
-	request.setAttribute("estudiante", estudiante);
-	System.out.println(estudiante);
-	EstudianteDB.insertEstudiante(estudiante);
-
-	
-  %>
 <style>
 h1{
 font-size: 3em;
@@ -47,6 +30,45 @@ margin:0;
 padding-top:1000px;
 text-align: center;
 height: 300px;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 div {
   font-family: "Lucia Console", "Courier New", monospace;
@@ -77,7 +99,7 @@ div {
 }
 
 </style>
-	<jsp:useBean id="user" class="ws.synopsis.surveys.servlets.Estudiante">
+	<jsp:useBean id="user" class="ws.synopsis.surveys.model.User">
 <h1>
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br>Por favor, verifica si esta informaci&oacuten es correcta
@@ -87,6 +109,21 @@ div {
 <<jsp:include page="/CuentaNueva.jsp"></jsp:include>
 </div>
 
+  <%
+	String DNI = request.getParameter("DNI");
+    String userType = request.getParameter("userType");
+	String nombre = request.getParameter("nombre");
+	String apellido = request.getParameter("apellido");
+	String userName = request.getParameter("userName");
+	String contrasena = request.getParameter("contrasena");
+	String correo = request.getParameter("correo");
+	String telefono = request.getParameter("telefono");
+	String empresa = request.getParameter("empresa");
+	String cargo = request.getParameter("cargo");
+	User estudiante = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, empresa, cargo); 
+	EstudianteDB.insertEstudiante(estudiante);
+	request.setAttribute("estudiante", estudiante);
+  %>
 <div class= "column left" style="text-align:right">
 
 User Name: <br>
@@ -111,6 +148,12 @@ ${estudiante.cargo}<br>
 
 
 </div>
+<form class ="monospace" action="/encuestas/CursosE.jsp" method="post">
+<button class="button" style="vertical-align:middle"><span>S&iacute </span></button>
+</form>
+<form class ="monospace" action="/encuestas/EditInfoE.jsp" method="post">
+<button class="button" style="vertical-align:middle"><span>No </span></button>
+</form>
 
 </jsp:useBean>
 </body>

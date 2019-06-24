@@ -5,6 +5,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import ws.synopsis.surveys.model.User;
 //import ws.synopsis.surveys.model.User;
 /**
  * Servlet implementation class UserType
@@ -28,17 +30,20 @@ public class UserType extends HttpServlet {
 		
 		String userType = request.getParameter("userType");
 		System.out.println("asuh bitch");
-		if (userType == "estudiante") 
+		System.out.println(userType);
+		
+		if (userType.equals("estudiante"))
 		{
-		response.sendRedirect("/LogInE");
+				
+		response.sendRedirect("/encuestas/LogInE.jsp");
 		}
-		else if (userType == "instuctor")
+		else if (userType.equals("instructor"))
 		{
-		response.sendRedirect("/LogInI");
+		response.sendRedirect("encuestas/LogInI.jsp");
 		}
-		else if (userType == "admin")
+		else if (userType.equals("admin"))
 		{
-		response.sendRedirect("/LogInA");
+		response.sendRedirect("encuestas/LogInA.jsp");
 		}
 		
 	}
