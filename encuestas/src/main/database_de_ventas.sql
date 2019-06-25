@@ -66,7 +66,7 @@ foreign key (apellido) REFERENCES studentinfo(apellido),
 foreign key (corsocodigo) REFERENCES studentinfo(corsocodigo)
 );
 
-CREATE TABLE estudianteaccount (
+CREATE TABLE stuaccount (
 
 DNI varchar(30),
 username varchar(20),
@@ -75,7 +75,7 @@ foreign key DNI REFERENCES studentinfo(DNI)
 
 );
 
-CREATE TABLE instructoraccount (
+CREATE TABLE insaccount (
 
 username varchar(20),
 password varchar(20)
