@@ -34,7 +34,7 @@ public class EstudianteDB {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT username " +
 							"FROM stuaccount " +
-							"WHERE e.username = :user";
+							"WHERE e.username  = :user";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);
 		try {
