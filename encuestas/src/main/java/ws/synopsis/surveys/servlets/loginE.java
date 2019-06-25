@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ws.synopsis.surveys.auth.Authentication;
-import ws.synopsis.surveys.filters.AuthorizationFilter;
-import ws.synopsis.surveys.model.Employee;
-import ws.synopsis.surveys.utils.EmployeeDB;
+import ws.synopsis.surveys.auth.UserAuthenticationE;
+import ws.synopsis.surveys.filters.LoginFilter;
+import ws.synopsis.surveys.model.User;
+import ws.synopsis.surveys.utils.EstudianteDB;
 
 public class loginE extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -44,9 +44,8 @@ public class loginE extends HttpServlet {
 			if (UserAuthenticationE.authenticateUser(username, password)) {
 				HttpSession session = request.getSession();
 				session.setMaxInactiveInterval(30 * 60); //the lines below still need adjustments
-		        Employee employee = EmployeeDB.getEmployeeByUsername(username); // student DB util needs to be set up.
-				session.setAttribute("employee", employee);
-				request.setAttribute("employee", employee);
+//				session.setAttribute("Estudiante", estudiante);
+//				request.setAttribute("Estudiante", estudiante);
 				System.out.println("Dashboard serving dashboard"); //This chunk
 				getServletContext().getRequestDispatcher("/app/stuDash/stuDash.html").forward(request, response);
 			}
