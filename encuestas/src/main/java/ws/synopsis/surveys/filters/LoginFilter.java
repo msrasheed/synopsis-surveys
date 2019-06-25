@@ -56,7 +56,7 @@ public class LoginFilter implements Filter {
 			httpResponse.sendRedirect("/systemorders-webapp/index.html");
 		}
 
-		System.out.println("Exiting Authorization Filter\n"); 
+		System.out.println("Exiting Authorization Filter\n");
 	}
 
 	/**
@@ -72,5 +72,5 @@ public class LoginFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 	}
-
+ 
 }
