@@ -19,7 +19,7 @@ public class LoginFilter implements Filter {
 
 
     /**
-     * Default constructor. 
+     * Default constructor.
      */
     public LoginFilter() {
         // TODO Auto-generated constructor stub
@@ -40,12 +40,12 @@ public class LoginFilter implements Filter {
 		// place your code here
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		
+
 		String requestURI = httpRequest.getRequestURI();
 		System.out.println("Entering Authorization Filter: " + requestURI);
-		
+
 		HttpSession session = httpRequest.getSession(false);
-		
+
 		if (session != null) {
 			System.out.println("Session exists. Forwarding Request.");
 			chain.doFilter(httpRequest, httpResponse);
@@ -55,8 +55,8 @@ public class LoginFilter implements Filter {
 			System.out.println("Redirecting to Login;");
 			httpResponse.sendRedirect("/systemorders-webapp/index.html");
 		}
-		
-		System.out.println("Exiting Authorization Filter\n");
+
+		System.out.println("Exiting Authorization Filter\n"); 
 	}
 
 	/**
@@ -72,5 +72,5 @@ public class LoginFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 	}
- 
+
 }
