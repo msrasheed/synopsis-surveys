@@ -52,7 +52,7 @@ public class loginE extends HttpServlet {
 			}
 			else {
 				System.out.println("Dashboard Rediricting to login");
-				response.sendRedirect("/surveys/loginE");
+				response.sendRedirect("/surveys/loginE ");
 			}
 		}
 		else if (operation.equals("logout")) {

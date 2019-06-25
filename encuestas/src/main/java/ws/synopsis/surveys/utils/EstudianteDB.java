@@ -32,8 +32,8 @@ public class EstudianteDB {
 	
 	public static boolean checkUsernameExists(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		String qString =	"SELECT e.username " +
-							"FROM Estudiante as e " +
+		String qString =	"SELECT username " +
+							"FROM stuaccount " +
 							"WHERE e.username = :user";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);

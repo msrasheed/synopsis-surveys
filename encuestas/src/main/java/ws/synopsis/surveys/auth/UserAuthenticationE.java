@@ -11,7 +11,7 @@ public class UserAuthenticationE{
 		
 		password = HashingUtil.shaw256(password);
 		String actualPassword = EstudianteDB.getPasswordByUsername(username);//student DB pending
-		System.out.println("Success bitch");
+		System.out.println("Checking if username and password match and exsit...");
 		if (password.equals(actualPassword)) {
 			isCorrect = true;
 		}
