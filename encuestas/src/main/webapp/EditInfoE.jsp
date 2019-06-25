@@ -72,7 +72,12 @@ form.monospace {
 </head>
 <jsp:useBean id="user" class="ws.synopsis.surveys.model.User">
 <h1>
-
+   <%
+   HttpSession sess = request.getSession(true);
+   String userType = (String) session.getAttribute("userType"); 
+   System.out.println(userType);
+   System.out.println("EditInfoE.jsp");
+   %>
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br>Corregir su informaci&oacuten 
 
@@ -83,7 +88,7 @@ form.monospace {
 
   Nombre:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="nombre" >
-  <jsp:getProperty name='user' property='nombre'/>
+  <jsp:getProperty name="user" property="nombre"/>
   <br><br>
   Apellido:&nbsp&nbsp
   <input type="text" name="apellido" value=apellido>

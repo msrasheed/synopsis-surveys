@@ -72,10 +72,11 @@ body {margin:1em;padding:1em;
 
    <%
    String userType = (String) session.getAttribute("userType"); 
-   System.out.println(userType); 
+   System.out.println(userType);
+   System.out.println("LogIn.jsp");
    %>
     
-<form class ="monospace" action="/encuestas/CursosE.jsp" method="post">
+<form class ="monospace" action="/encuestas/LogIn" method="post">
 <br><br><br><br><br><br>
   User Name:&nbsp
   <input type="text" name="userName">
@@ -84,16 +85,19 @@ body {margin:1em;padding:1em;
   <input type="password" name="contraseña">
   <br><br>
   <button class="button" style="vertical-align:middle"><span>Iniciar sesi&oacuten </span></button><br><br><br><br><br><br>
+
   </form>
     
   <form class ="monospace" action="/encuestas/CuentaNueva.jsp" method="post">  
   &iquestNo tienes una cuenta?&nbsp&nbsp&nbsp
   <button class="button" style="vertical-align:middle"><span>Crear una cuenta </span></button><br>
+
   </form>
   
   <form class ="monospace" action="/encuestas/Olvidaste.jsp" method="post">
   &iquestOlvidaste tu contraseña?
   <button class="button" style="vertical-align:middle"><span>Restablecer la contraseña </span></button>
+
   </form>
   
 </body>

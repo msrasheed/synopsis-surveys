@@ -89,7 +89,7 @@ body {margin:1em;padding:1em;
 
 <br><button id="admin" class="button" style="vertical-align:middle"><span>Administrador </span></button>
 </form>
-<%System.out.println("Success bitch"); %>
+<%System.out.println("LogInEIA.jsp"); %>
 
 
 

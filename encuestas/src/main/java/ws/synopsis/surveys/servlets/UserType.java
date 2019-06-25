@@ -30,28 +30,10 @@ public class UserType extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String userType = request.getParameter("userType");
-//		System.out.println("asuh bitch");
-//		System.out.println(userType);
 		HttpSession session = request.getSession();
 		session.setAttribute("userType", userType);
-		response.sendRedirect("/encuestas/LogInE.jsp");
-	    
-//	    if (userType.equals("estudiante"))
-//		{		
-//		response.sendRedirect("/encuestas");
-//		}
-//		else if (userType.equals("instructor"))
-//		{
-//		response.sendRedirect("encuestas/");
-//		}
-//		else if (userType.equals("admin"))
-//		{
-//		response.sendRedirect("encuestas/");
-//		}
-		  
-		
-		
-		
+		response.sendRedirect("/encuestas/LogIn.jsp");
+		System.out.println("UserType.java"); 
 	}
 
 	/**
