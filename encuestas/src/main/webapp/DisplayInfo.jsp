@@ -6,7 +6,7 @@
 <%@ page import ="javax.servlet.http.HttpServlet" %>
 <%@ page import ="javax.servlet.http.HttpServletRequest"%>
 <%@ page import ="javax.servlet.http.HttpServletResponse"%>
-<%@ page import= "ws.synopsis.surveys.model.User" %>
+
 <%@ page import ="ws.synopsis.surveys.servlets.Estudiante"%>
 <%@ page import= "ws.synopsis.surveys.utils.EstudianteDB" %>
 <%@ page import= "ws.synopsis.surveys.utils.EntityMan" %>
@@ -110,8 +110,9 @@ div {
 </div>
 
   <%
+  
 	String DNI = request.getParameter("DNI");
-    String userType = request.getParameter("userType");
+    String userType = "estudiante";
 	String nombre = request.getParameter("nombre");
 	String apellido = request.getParameter("apellido");
 	String userName = request.getParameter("userName");
@@ -121,6 +122,7 @@ div {
 	String empresa = request.getParameter("empresa");
 	String cargo = request.getParameter("cargo");
 	User estudiante = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, empresa, cargo); 
+
 	EstudianteDB.insertEstudiante(estudiante);
 	request.setAttribute("estudiante", estudiante);
   %>
@@ -145,6 +147,7 @@ ${estudiante.correo}<br>
 ${estudiante.telefono}<br>
 ${estudiante.empresa}<br>
 ${estudiante.cargo}<br>
+
 
 
 </div>

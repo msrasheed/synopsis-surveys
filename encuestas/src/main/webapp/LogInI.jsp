@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import= "ws.synopsis.surveys.model.User"%>
+<%@ page import ="java.io.IOException"%>
+<%@ page import ="javax.servlet.ServletException" %>
+<%@ page import ="javax.servlet.http.HttpServlet" %>
+<%@ page import ="javax.servlet.http.HttpServletRequest"%>
+<%@ page import ="javax.servlet.http.HttpServletResponse"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,12 +76,7 @@ body {margin:1em;padding:1em;
 </style>
 <body>
 
-   <%
-   String userType = (String) session.getAttribute("userType"); 
-   System.out.println(userType); 
-   %>
-    
-<form class ="monospace" action="/encuestas/CursosE.jsp" method="post">
+<form class ="monospace" action="/encuestas/CursosI.jsp" method="post">
 <br><br><br><br><br><br>
   User Name:&nbsp
   <input type="text" name="userName">
@@ -84,9 +85,13 @@ body {margin:1em;padding:1em;
   <input type="password" name="contraseña">
   <br><br>
   <button class="button" style="vertical-align:middle"><span>Iniciar sesi&oacuten </span></button><br><br><br><br><br><br>
-  </form>
+    </form>
     
-  <form class ="monospace" action="/encuestas/CuentaNueva.jsp" method="post">  
+    <%String userType = request.getParameter("userType"); 
+    System.out.println("userType"); 
+    System.out.println(userType); %>
+    
+    <form class ="monospace" action="/encuestas/CuentaNueva.jsp" method="post">  
   &iquestNo tienes una cuenta?&nbsp&nbsp&nbsp
   <button class="button" style="vertical-align:middle"><span>Crear una cuenta </span></button><br>
   </form>
