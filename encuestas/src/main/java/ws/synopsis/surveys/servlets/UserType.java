@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ws.synopsis.surveys.model.User;
 //import ws.synopsis.surveys.model.User;
@@ -29,22 +30,27 @@ public class UserType extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String userType = request.getParameter("userType");
-		System.out.println("asuh bitch");
-		System.out.println(userType);
-		
-		if (userType.equals("estudiante"))
-		{
-				
+//		System.out.println("asuh bitch");
+//		System.out.println(userType);
+		HttpSession session = request.getSession();
+		session.setAttribute("userType", userType);
 		response.sendRedirect("/encuestas/LogInE.jsp");
-		}
-		else if (userType.equals("instructor"))
-		{
-		response.sendRedirect("encuestas/LogInI.jsp");
-		}
-		else if (userType.equals("admin"))
-		{
-		response.sendRedirect("encuestas/LogInA.jsp");
-		}
+	    
+//	    if (userType.equals("estudiante"))
+//		{		
+//		response.sendRedirect("/encuestas");
+//		}
+//		else if (userType.equals("instructor"))
+//		{
+//		response.sendRedirect("encuestas/");
+//		}
+//		else if (userType.equals("admin"))
+//		{
+//		response.sendRedirect("encuestas/");
+//		}
+		  
+		
+		
 		
 	}
 
