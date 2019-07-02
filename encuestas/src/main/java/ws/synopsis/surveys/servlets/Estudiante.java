@@ -26,7 +26,7 @@ public class Estudiante extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Estudiante.java");
 		String DNI = request.getParameter("DNI");
 		String userType = request.getParameter("userType");
 		String nombre = request.getParameter("nombre");
@@ -40,9 +40,14 @@ public class Estudiante extends HttpServlet {
 		User estudiante = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, empresa, cargo); 
 		EstudianteDB.insertEstudiante(estudiante);
 		request.setAttribute("estudiante", estudiante);
+		
+		
+		response.sendRedirect("/encuestas/DisplayInfo.jsp");
 	}
 
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			doGet(request, response);
+	}
 	public Object getPassword() {
 		// tbh i don't want this, but added it so it would compile
 		return null;

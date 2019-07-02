@@ -89,18 +89,24 @@ public class EstudianteDB {
 	
 	public static boolean insertEstudiante(User Estudiante) {
 		boolean isSuccessful = false;
+		System.out.println(isSuccessful);
 		
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		try {
+			System.out.println("try");
 			trans.begin();
+			System.out.println("begin");
 			em.persist(Estudiante);
+			System.out.println("persist");
 			trans.commit();
 			isSuccessful = true;
+			System.out.println("commit");
 		} catch (Exception e) {
 			trans.rollback();
 			isSuccessful = false;
 		}finally {
+			System.out.println(isSuccessful);
 			em.close();
 		}
 		

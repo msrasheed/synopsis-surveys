@@ -110,8 +110,10 @@ div {
 </div>
 
   <%
-  
-	String DNI = request.getParameter("DNI");
+  String userType = (String) session.getAttribute("userType"); 
+  System.out.println(userType);
+  User estudiante = (User) request.getAttribute("estudiante"); 
+/* 	String DNI = request.getParameter("DNI");
     String userType = "estudiante";
 	String nombre = request.getParameter("nombre");
 	String apellido = request.getParameter("apellido");
@@ -121,10 +123,15 @@ div {
 	String telefono = request.getParameter("telefono");
 	String empresa = request.getParameter("empresa");
 	String cargo = request.getParameter("cargo");
+	System.out.println("asuh");
 	User estudiante = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, empresa, cargo); 
-
-	EstudianteDB.insertEstudiante(estudiante);
 	request.setAttribute("estudiante", estudiante);
+	System.out.println(estudiante);
+	EstudianteDB.insertEstudiante(estudiante); */
+	
+	
+	System.out.println("bitch");
+	
   %>
 <div class= "column left" style="text-align:right">
 

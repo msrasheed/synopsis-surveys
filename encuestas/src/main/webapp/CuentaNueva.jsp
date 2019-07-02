@@ -82,7 +82,7 @@ form.monospace {
    System.out.println(userType);
    System.out.println("CuentaNueva.jsp");
    %>
-<form class ="monospace" action="/encuestas/DisplayInfo.jsp" method="post">
+<form class ="monospace" action="/encuestas/Estudiante" method="post">
 <br>
 
   Nombre:&nbsp&nbsp&nbsp&nbsp
@@ -97,14 +97,15 @@ form.monospace {
   Correo:&nbsp&nbsp&nbsp&nbsp
   <input type="email" name="correo">
   <br><br>
-  Teléfono: &nbsp&nbsp<input type="text" name="telefono" >
+  Teléfono: &nbsp&nbsp<input type="text" name=${userType} >
   <br><br>
   Empresa:&nbsp&nbsp&nbsp 
   <input type="text" name="empresa">
   <br><br>
   Cargo: &nbsp&nbsp&nbsp&nbsp
   <input type="text" name="cargo">
-  <br><br><br>
+  <br><br>
+  <input hidden type="text" name="userType" value="estudiante">
   
   El nombre de usuario:
   <input type="text" name="userName" required>
