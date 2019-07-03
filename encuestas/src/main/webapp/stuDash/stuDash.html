@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<script>
+function coffeefunc(){
+	document.forms['search_form_results'].action="coffeebreak.htm"
+	document.forms['search_form_results'].submit();
+}
+</script>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -82,17 +88,17 @@ background-color:beige;
 
 ¡Gracias por tomarse el tiempo!
   <p>
-  <form action="/redhat"><button type="button">ENCUESTA DE REDHAT</button></form>
+  <form class="rehat" action="/redhat"><button type="submit">ENCUESTA DE REDHAT</button></form>
   <br>
   </p>
   <p>
-  <form action="/cafebreak">
-  <button type="button">ENCUESTA DE SATISFACCIÓN</button>
+  <form class="coffee" action="/encuestas/coffeebreak.htm">
+  <button type="submit" onclick = "coffeefunc()">ENCUESTA DE SATISFACCIÓN</button>
   </form>
   <br>
   </p>
   <p>
-  <form action="http:IBM">
+  <form class="ibm" action="/IBM">
   <button type="submit">ENCUESTA DE IBM</button></form>
   </p>
 </div>

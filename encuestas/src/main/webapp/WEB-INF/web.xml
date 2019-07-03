@@ -29,6 +29,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>Coffeeinsert</display-name>
+    <servlet-name>Coffeeinsert</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Coffeeinsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Coffeeinsert</servlet-name>
+    <url-pattern>/Coffeeinsert</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>UserType</display-name>
     <servlet-name>UserType</servlet-name>
     <servlet-class>ws.synopsis.surveys.servlets.UserType</servlet-class>
@@ -58,12 +68,16 @@
     <url-pattern>/Admin</url-pattern>
   </servlet-mapping>
   <filter>
-    <display-name>AuthFilter</display-name>
-    <filter-name>AuthFilter</filter-name>
-    <filter-class>ws.synopsis.surveys.auth.AuthFilter</filter-class>
+    <display-name>loginFilter</display-name>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>ws.synopsis.surveys.filters.LoginFilter</filter-class>
   </filter>
   <filter-mapping>
-    <filter-name>AuthFilter</filter-name>
-    <url-pattern>/AuthFilter</url-pattern>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/loginFilter</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/app/*</url-pattern>
   </filter-mapping>
 </web-app>
