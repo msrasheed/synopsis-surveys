@@ -99,36 +99,21 @@ div {
 }
 
 </style>
-	<jsp:useBean id="user" class="ws.synopsis.surveys.model.User">
 <h1>
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br>Por favor, verifica si esta informaci&oacuten es correcta
 </h1>
 
-<div id="CuentaNueva" style="display: none">
-<<jsp:include page="/CuentaNueva.jsp"></jsp:include>
-</div>
-
   <%
-  String userType = (String) session.getAttribute("userType"); 
-  System.out.println(userType);
+  HttpSession sess = request.getSession(true);
+  String userType = (String) sess.getAttribute("userType"); 
+  String userName = (String) sess.getAttribute("userName");
+  System.out.println(userName);
   User estudiante = (User) request.getAttribute("estudiante"); 
-/* 	String DNI = request.getParameter("DNI");
-    String userType = "estudiante";
-	String nombre = request.getParameter("nombre");
-	String apellido = request.getParameter("apellido");
-	String userName = request.getParameter("userName");
-	String contrasena = request.getParameter("contrasena");
-	String correo = request.getParameter("correo");
-	String telefono = request.getParameter("telefono");
-	String empresa = request.getParameter("empresa");
-	String cargo = request.getParameter("cargo");
-	System.out.println("asuh");
-	User estudiante = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, empresa, cargo); 
-	request.setAttribute("estudiante", estudiante);
-	System.out.println(estudiante);
-	EstudianteDB.insertEstudiante(estudiante); */
-	
+  
+  System.out.println(sess);
+  
+  User estudiante2 = EstudianteDB.getEstudianteByUsername(userName);
 	
 	System.out.println("bitch");
 	
@@ -146,7 +131,9 @@ Cargo: <br>
 
 </div>
 <div class="column right"style="text-align:left">
-${estudiante.userName}<br>
+
+
+${estudiante2.userName}<br>
 ${estudiante.nombre}<br>
 ${estudiante.apellido}<br>
 ${estudiante.DNI}<br>
@@ -165,6 +152,5 @@ ${estudiante.cargo}<br>
 <button class="button" style="vertical-align:middle"><span>No </span></button>
 </form>
 
-</jsp:useBean>
 </body>
 </html>

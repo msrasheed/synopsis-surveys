@@ -97,7 +97,8 @@ form.monospace {
   Correo:&nbsp&nbsp&nbsp&nbsp
   <input type="email" name="correo">
   <br><br>
-  Teléfono: &nbsp&nbsp<input type="text" name=${userType} >
+  Teléfono: &nbsp&nbsp
+  <input type="text" name="telefono" >
   <br><br>
   Empresa:&nbsp&nbsp&nbsp 
   <input type="text" name="empresa">

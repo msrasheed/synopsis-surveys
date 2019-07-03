@@ -45,24 +45,25 @@ public class EstudianteDB {
 		}
 	}
 	
-	public static Estudiante getEstudianteByID(int id) { 
+	public static User getEstudianteByUsername(String username) { 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
-						"FROM Estudiante e " +
-						"WHERE e.userid = :id";
-		TypedQuery<Estudiante> q = em.createQuery(qString, Estudiante.class);
-		q.setParameter("id", id);
+						"FROM Estudiantes e " +
+						"WHERE e.username = :username";
+		TypedQuery<User> q = em.createQuery(qString, User.class);
+		q.setParameter("username", username);
 		try {
 			return q.getSingleResult();
 		} finally {
 			em.close();
 		}
 	}
+
 	
 	public static String getPasswordByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		String qString =	"SELECT e.password " +
-							"FROM Estudiante as e " +
+		String qString =	"SELECT e.contrasena " +
+							"FROM Estudiantes as e " +
 							"WHERE e.username = :user";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);
@@ -89,7 +90,6 @@ public class EstudianteDB {
 	
 	public static boolean insertEstudiante(User Estudiante) {
 		boolean isSuccessful = false;
-		System.out.println(isSuccessful);
 		
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
