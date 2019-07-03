@@ -28,10 +28,23 @@ public class LogIn extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		   
+		   System.out.println("LogIn.java");
+		   
 		   HttpSession session = request.getSession(true);
 		   String userType = (String) session.getAttribute("userType"); 
-		   System.out.println(userType); 
-		   System.out.println("LogIn.java");
+		   String username = request.getParameter("userName");
+		   String password = request.getParameter("contrasena");
+		   session.setAttribute("userName", username);
+		   session.setAttribute("password", password);
+		   
+		   String userName2 = (String) session.getAttribute("userName");
+		   System.out.println("This is what I'm interested in");
+		   System.out.println(userName2);
+		   
+		   
+		   System.out.println(session); 
+		   System.out.println(username);
+		  
 		   
 		if (userType.equals("estudiante"))
 			{		

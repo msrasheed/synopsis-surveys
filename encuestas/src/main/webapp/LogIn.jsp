@@ -82,7 +82,7 @@ body {margin:1em;padding:1em;
   <input type="text" name="userName">
   <br><br>
   Contraseña:
-  <input type="password" name="contraseña">
+  <input type="password" name="contrasena">
   <br><br>
   <button class="button" style="vertical-align:middle"><span>Iniciar sesi&oacuten </span></button><br><br><br><br><br><br>
 

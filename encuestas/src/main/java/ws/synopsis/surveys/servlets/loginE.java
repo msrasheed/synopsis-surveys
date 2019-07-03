@@ -31,14 +31,16 @@ public class loginE extends HttpServlet {
 		System.out.println("Entering Dashboard Servlet");
 		
 		HttpSession session = request.getSession(true);
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		
+		String username = (String) session.getAttribute("userName");
+		String password = (String) session.getAttribute("password");
+		
 			
 		
 			
 		if (UserAuthenticationE.authenticateUser(username, password)) {
 				session.setMaxInactiveInterval(30 * 60); //the lines below still need adjustments
-              response.sendRedirect("/encuestas/CursosE.jsp");
+              response.sendRedirect("/encuestas/stuDash");
 			}
 		else {
 				System.out.println("Wrong");
