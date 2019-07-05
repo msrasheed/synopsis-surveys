@@ -19,7 +19,7 @@ public class EstudianteDB {
 	public static boolean checkPasswordMatches(String username, String password) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e " +
-							"FROM Estudiante as e " +
+							"FROM Estudiantes as e " +
 							"WHERE e.username = :user";
 		TypedQuery<Estudiante> q = em.createQuery(qString, Estudiante.class);
 		q.setParameter("user", username);
@@ -43,7 +43,7 @@ public class EstudianteDB {
 			return false;
 		} finally {
 			em.close();
-		}
+		} 
 	}
 	
 	public static User getEstudianteByUsername(String username) { 
@@ -64,10 +64,10 @@ public class EstudianteDB {
 	public static String getPasswordByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e.contrasena " +
-							"FROM Estudiantes as e " +
-							"WHERE e.username = :user";
+							"FROM Estudiantes e " +
+							"WHERE e.username = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("user", username);
+		q.setParameter("username", username);
 		try {
 			return q.getSingleResult();
 		} finally {
@@ -75,10 +75,20 @@ public class EstudianteDB {
 		}
 	}
 	
+	public static User getUserByPK(String pk) {
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		try {
+			User user = em.find(User.class, pk);
+			return user;
+		}finally {
+			em.close();
+		}
+	}
+	
 	public static String getUsernameByID(int id) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e.username " +
-						"FROM Estudiante e " +
+						"FROM Estudiantes e " +
 						"WHERE e.userid = :id";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("id", id);

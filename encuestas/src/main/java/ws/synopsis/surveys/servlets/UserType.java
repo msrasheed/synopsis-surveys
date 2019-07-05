@@ -28,12 +28,15 @@ public class UserType extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("UserType.java"); 
 		
 		String userType = request.getParameter("userType");
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("userType", userType);
+		
 		response.sendRedirect("/encuestas/LogIn.jsp");
-		System.out.println("UserType.java"); 
+		
 	}
 
 	/**

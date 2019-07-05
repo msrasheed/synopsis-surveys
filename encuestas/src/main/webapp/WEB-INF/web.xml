@@ -80,4 +80,24 @@
     <filter-name>loginFilter</filter-name>
     <url-pattern>/app/*</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RedirectLogIn</display-name>
+    <servlet-name>RedirectLogIn</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.RedirectLogIn</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectLogIn</servlet-name>
+    <url-pattern>/RedirectLogIn</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>loginE</display-name>
+    <servlet-name>loginE</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.loginE</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginE</servlet-name>
+    <url-pattern>/loginE</url-pattern>
+  </servlet-mapping>
 </web-app>

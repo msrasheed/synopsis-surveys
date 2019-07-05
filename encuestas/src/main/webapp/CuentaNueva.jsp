@@ -78,8 +78,6 @@ form.monospace {
 
 </h1>
    <%
-   String userType = (String) session.getAttribute("userType"); 
-   System.out.println(userType);
    System.out.println("CuentaNueva.jsp");
    %>
 <form class ="monospace" action="/encuestas/Estudiante" method="post">

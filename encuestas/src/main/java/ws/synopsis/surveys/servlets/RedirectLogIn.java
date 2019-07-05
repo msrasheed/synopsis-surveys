@@ -1,24 +1,22 @@
 package ws.synopsis.surveys.servlets;
 
 import java.io.IOException;
-
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ws.synopsis.surveys.auth.UserAuthenticationE;
-
-
-public class loginE extends HttpServlet {
+/**
+ * Servlet implementation class RedirectLogIn
+ */
+public class RedirectLogIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginE() {
+    public RedirectLogIn() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,29 +25,32 @@ public class loginE extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		System.out.println("loginE.java");
-		
-		HttpSession session = request.getSession(true);
-		
-		String username = (String) session.getAttribute("userName");
-		String password = (String) session.getAttribute("password");
-		
-			
-		
-			
-		if (UserAuthenticationE.authenticateUser(username, password)) {
-				session.setMaxInactiveInterval(30 * 60); //the lines below still need adjustments
-              response.sendRedirect("/encuestas/stuDash");
-			}
-		else {
-				System.out.println("Wrong");
-				response.sendRedirect("/encuestas/LogIn.jsp");
-			}
+		// TODO Auto-generated method stub
+		System.out.println("RedirectLogIn.java");
+	      
+	      HttpSession session = request.getSession(true);
+	      
+	      String username = request.getParameter("userName");
+	      String password = request.getParameter("contrasena");
+	      session.setAttribute("userName", username);
+	      session.setAttribute("password", password);
+	      
+	      String userType = (String) session.getAttribute("userType");
+
+	   if (userType.equals("estudiante"))
+	     {		
+	     System.out.println(userType); 
+	     response.sendRedirect("/encuestas/loginE");
+	     }
+	     else if (userType.equals("instructor"))
+	     {
+	     response.sendRedirect("/encuestas/loginI");
+	     }
+	     else if (userType.equals("admin"))
+	     {
+	     response.sendRedirect("/encuestas/loginA");
+	     }
 	}
-		
-		
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

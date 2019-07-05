@@ -106,17 +106,20 @@ div {
 
   <%
   HttpSession sess = request.getSession(true);
-  String userType = (String) sess.getAttribute("userType"); 
-  String userName = (String) sess.getAttribute("userName");
-  System.out.println(userName);
-  User estudiante = (User) request.getAttribute("estudiante"); 
-  
+  System.out.println("DisplayInfo.jsp");
   System.out.println(sess);
+  System.out.println("Please God");
+  String pk = (String) sess.getAttribute("username");
+ 
+  System.out.println(pk);
+  System.out.println("Hey wtf");
   
-  User estudiante2 = EstudianteDB.getEstudianteByUsername(userName);
-	
-	System.out.println("bitch");
-	
+  User estudiante = EstudianteDB.getUserByPK(pk);
+  System.out.println("please");
+  String god = (String) estudiante.getUserName();
+  System.out.println(god);
+  
+  
   %>
 <div class= "column left" style="text-align:right">
 
@@ -133,14 +136,14 @@ Cargo: <br>
 <div class="column right"style="text-align:left">
 
 
-${estudiante2.userName}<br>
-${estudiante.nombre}<br>
+<%-- ${estudiante.getUserName}<br> --%>
+<%-- ${estudiante.nombre}<br>
 ${estudiante.apellido}<br>
 ${estudiante.DNI}<br>
 ${estudiante.correo}<br>
 ${estudiante.telefono}<br>
 ${estudiante.empresa}<br>
-${estudiante.cargo}<br>
+${estudiante.cargo}<br> --%>
 
 
 

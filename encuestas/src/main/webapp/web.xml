@@ -10,16 +10,20 @@
   <filter-name>loginFilter</filter-name>
   <url-pattern>/loginFilter</url-pattern>
  </filter-mapping>
- <filter-mapping>
-  <filter-name>loginsFilter</filter-name>
-  <url-pattern>/app/*</url-pattern>
- </filter-mapping>
  <servlet>
   <servlet-name>Estudiante</servlet-name>
-  <servlet-class>ws.synopsis.surveys.model.User</servlet-class>
+  <servlet-class>ws.synopsis.surveys.servlets.Estudiante</servlet-class>
  </servlet>
- <servlet-mapping>
+  <servlet-mapping>
   <servlet-name>Estudiante</servlet-name>
   <url-pattern>/encuestas/Estudiante</url-pattern>
+ </servlet-mapping>
+ <servlet>
+  <servlet-name>LogIn</servlet-name>
+  <servlet-class>ws.synopsis.surveys.servlets.LogIn</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>LogIn</servlet-name>
+ <url-pattern>/encuestas/LogIn</url-pattern>
  </servlet-mapping>
 </web-app>

@@ -71,12 +71,10 @@ body {margin:1em;padding:1em;
 <body>
 
    <%
-   String userType = (String) session.getAttribute("userType"); 
-   System.out.println(userType);
    System.out.println("LogIn.jsp");
    %>
     
-<form class ="monospace" action="/encuestas/LogIn" method="post">
+<form class ="monospace" action="/encuestas/RedirectLogIn" method="post">
 <br><br><br><br><br><br>
   User Name:&nbsp
   <input type="text" name="userName">

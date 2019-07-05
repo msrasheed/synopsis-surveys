@@ -10,7 +10,7 @@ import java.sql.*;
  * This is the JavaBean
  */
 @Entity
-@Table(name = "estudiantes")
+@Table(name = "ESTUDIANTES")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -92,7 +92,7 @@ public class User implements Serializable {
 	public String getEmpresa() {
 		return empresa;
 	}
-	public void setCompania(String empresa) {
+	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
 	}
 	public String getCargo() {
