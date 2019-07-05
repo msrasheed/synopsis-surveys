@@ -37,6 +37,16 @@
     <servlet-name>Coffeeinsert</servlet-name>
     <url-pattern>/Coffeeinsert</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>Redinsert</display-name>
+    <servlet-name>Redinsert</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Redinsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Redinsert</servlet-name>
+    <url-pattern>/Redinsert</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>UserType</display-name>

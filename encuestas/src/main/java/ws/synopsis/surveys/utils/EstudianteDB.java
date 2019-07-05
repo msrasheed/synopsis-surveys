@@ -5,6 +5,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import ws.synopsis.surveys.model.Coffeebean;
+import ws.synopsis.surveys.model.Redbean;
 import ws.synopsis.surveys.model.User;
 import ws.synopsis.surveys.servlets.Estudiante;
 
@@ -125,6 +126,33 @@ public class EstudianteDB {
 	}
 	
 	public static boolean insertCoffee(Coffeebean result) {
+		boolean isSuccessful = false;
+		System.out.println(isSuccessful);
+		
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			System.out.println("try");
+			trans.begin();
+			System.out.println("begin");
+			em.persist(result);
+			System.out.println("persist");
+			trans.commit();
+			isSuccessful = true;
+			System.out.println("commit");
+		} catch (Exception e) {
+			trans.rollback();
+			System.out.println(e);
+			isSuccessful = false;
+		}finally {
+			System.out.println(isSuccessful);
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
+	
+	public static boolean insertRed(Redbean result) {
 		boolean isSuccessful = false;
 		System.out.println(isSuccessful);
 		

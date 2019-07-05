@@ -28,6 +28,7 @@
       <jta-data-source>java:/PostgresDS</jta-data-source>
       <class>ws.synopsis.surveys.model.User</class>
       <class>ws.synopsis.surveys.model.Coffeebean</class>
+      <class>ws.synopsis.surveys.model.Redbean</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="update" />

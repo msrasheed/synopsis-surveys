@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html>
-<script>
-function coffeefunc(){
-	document.forms['search_form_results'].action="coffeebreak.htm"
-	document.forms['search_form_results'].submit();
-}
-</script>
+
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing: border-box}
@@ -29,8 +25,8 @@ background-color:rgba(255,69,0,0.7);
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 17px;
-  font-size: 17px;
+  padding: 14px ;
+  font-size: 20px;
   width: 25%;
 }
 
@@ -43,6 +39,7 @@ background-color:rgba(255,69,0,0.7);
   color: black;
   display: none;
   height: 100%;
+  paddinh: 50px;
 }
 
 #Info {background-color: rgba(128,128,128,0.2);}
@@ -67,10 +64,54 @@ background-color:beige;
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
 }
+.gracias{
+font-size:24px;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  width: 400px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:10px;
 
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ 
 </style>
+
 </head>
-<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">Hola! ¿Cómo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
+<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">&iexclHola! &iquestC&oacutemo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
 <body>
 
 <div class="tab" style="overflow:auto;">
@@ -79,27 +120,32 @@ background-color:beige;
 </div>
 
 <div id="Info" class="tabcontent">
-  Información Personal
+  Informacin Personal
   <p>Nombre
   <br> ...servlet handles data from DB</p>
 </div>
 
-<div id="Encuestas" class="tabcontent">
+<div id="Encuestas" class="tabcontent" style="padding:20px;">
 
-¡Gracias por tomarse el tiempo!
+<span class="gracias">&iexclGrac&iacuteas por tomarse el tiempo!</span>
+<br>
   <p>
-  <form class="rehat" action="/redhat"><button type="submit">ENCUESTA DE REDHAT</button></form>
+  <br>
+  <form class="rehat" action="/encuestas/encuesta.html">
+  <button class = "button" type="submit" ><span>ENCUESTA DE REDHAT</span></button></form>
+  <br>
   <br>
   </p>
   <p>
   <form class="coffee" action="/encuestas/coffeebreak.htm">
-  <button type="submit" onclick = "coffeefunc()">ENCUESTA DE SATISFACCIÓN</button>
+  <button type="submit" class="button" ><span>ENCUESTA DE SYNOPSIS</span></button>
   </form>
+  <br>
   <br>
   </p>
   <p>
-  <form class="ibm" action="/IBM">
-  <button type="submit">ENCUESTA DE IBM</button></form>
+  <form class="ibm" action="/somerandomwebsitde">
+  <button class="button" type="submit"><span>ENCUESTA DE IBM</span></button></form>
   </p>
 </div>
 
