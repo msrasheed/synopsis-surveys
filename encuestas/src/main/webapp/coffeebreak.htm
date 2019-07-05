@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 <form action ="/encuestas/Coffeeinsert" method="post">
 <style>
@@ -44,7 +45,7 @@ body {margin:1em;padding:1em;
   color: #FFFFFF;
   text-align: center;
   font-size: 20px;
-  padding: 10px;
+  padding: 20px;
   width: 150px;
   transition: all 0.5s;
   cursor: pointer;
@@ -82,17 +83,17 @@ body {margin:1em;padding:1em;
 
 
 <h2>
-<p class= "satis"> <strong> ENCUESTA DE SATISFACCIÓN </strong> </p>
+<p class= "satis"> <strong> ENCUESTA DE SATISFACCI&OacuteN </strong> </p>
 
-<p>Curso: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="Curso" > <br>
-   Instructor:&nbsp<input type="text" name="instructor">
+<p>Curso: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="curso" required> <br>
+   Instructor:&nbsp<input type="text" name="instructor" required>
 </p>
 
 <p1>
 
-<table id = "stat" class="fontss" align=center border = 1 width = 1150 height = 300>
+<table id = "stat" class="fontss" align=center border = 1 width = 1150 height = 300 required>
     <tr>
-        <th class="question"><strong> Evaluación General del Curso</strong></th>
+        <th class="question"><strong> Evaluaci&oacuten General del Curso</strong></th>
         <th><strong> Muy Bueno </strong></th>
         <th><strong> Bueno </strong></th>
         <th><strong> Regular </strong></th>
@@ -101,8 +102,8 @@ body {margin:1em;padding:1em;
     </tr>
 
     <tr>
-        <th class="question"> Equipos de cómputo usados durante el curso</th>
-        <th> <input type="radio" name="rate1" value="5">  </th>
+        <th class="question"> Equipos de c&oacutemputo usados durante el curso</th>
+        <th> <input type="radio" name="rate1" value="5" required>  </th>
         <th> <input type="radio" name="rate1" value="4"> </th>
         <th> <input type="radio" name="rate1" value="3"> </th>
         <th> <input type="radio" name="rate1" value="2"> </th>
@@ -110,7 +111,7 @@ body {margin:1em;padding:1em;
     </tr>
     <tr>
         <th class="question">Infraestructura de las salas </th>
-        <th> <input type="radio" name="rate2" value="5">  </th>
+        <th> <input type="radio" name="rate2" value="5" required>  </th>
         <th> <input type="radio" name="rate2" value="4"> </th>
         <th> <input type="radio" name="rate2" value="3"> </th>
         <th> <input type="radio" name="rate2" value="2"> </th>
@@ -118,23 +119,23 @@ body {margin:1em;padding:1em;
     </tr>
     <tr>
         <th class="question">Coffee Break </th>
-        <th> <input type="radio" name="rate3" value="5">  </th>
+        <th> <input type="radio" name="rate3" value="5" required>  </th>
         <th> <input type="radio" name="rate3" value="4"> </th>
         <th> <input type="radio" name="rate3" value="3"> </th>
         <th> <input type="radio" name="rate3" value="2"> </th>
         <th> <input type="radio" name="rate3" value="1">  </th>
     </tr>
     <tr>
-        <th class="question">Atención del personal de Synopsis </th>
-        <th> <input type="radio" name="rate4" value="5">  </th>
+        <th class="question">Atenci&oacuten del personal de Synopsis </th>
+        <th> <input type="radio" name="rate4" value="5" required>  </th>
         <th> <input type="radio" name="rate4" value="4"> </th>
         <th> <input type="radio" name="rate4" value="3"> </th>
         <th> <input type="radio" name="rate4" value="2"> </th>
         <th> <input type="radio" name="rate4" value="1">  </th>
     </tr>
     <tr>
-        <th class="question"><strong>En general, ¿cuán satisfecho está con la  <br> educación que recibió en esta clases? </strong> </th>
-        <th> <input type="radio" name="rate5" value="5">  </th>
+        <th class="question"><strong>En general, &iquestcu&aacuten satisfecho est&aacute con la  <br> educaci&oacuten que recibi&oacute en esta clases? </strong> </th>
+        <th> <input type="radio" name="rate5" value="5"required>  </th>
         <th> <input type="radio" name="rate5" value="4"> </th>
         <th> <input type="radio" name="rate5" value="3"> </th>
         <th> <input type="radio" name="rate5" value="2"> </th>
@@ -145,13 +146,12 @@ body {margin:1em;padding:1em;
 
 </p1>
 <p class="lastQ">
-<br> ¿Qué áreas mejoraría? (Puede referirse a cualquier aspecto del curso, incluidos el instructor, la infraestructura, los materiales, el quipo, etc.)
-<textarea name="mejoraria" cols="40" rows="5"  style="width:1250px; height:70px;" maxlength="290" > 
-</textarea>
+<br>&iquestQu&eacute &aacutereas mejorar&iacutea? (Puede referirse a cualquier aspecto del curso, incluidos el instructor, la infraestructura, los materiales, el quipo, etc.)
+<textarea name="mejoraria" cols="40" rows="5"  style="width:1250px; height:70px;" maxlength="290" required></textarea>
 </p>
 <p class="lastInfo">
  &nbsp&nbspPara cualquier consulta y/o sugerencia puede contactarse con:<br>
- &nbsp&nbspAlexandra García(amgarcia@synopsis.ws), Karina Vega (kmvega@synopsis.ws).<br>
+ &nbsp&nbspAlexandra Garc&iacutea(amgarcia@synopsis.ws), Karina Vega (kmvega@synopsis.ws).<br>
 </p>
 <div align="middle">
      <button class="button" style="vertical-align:middle"><span>Enviar </span></button>
