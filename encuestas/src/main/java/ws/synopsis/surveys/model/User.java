@@ -22,7 +22,7 @@ public class User implements Serializable {
 	private String userType; //estudiante, instructor, o administrador
 	private String nombre;
 	private String apellido;
-	private String userName;
+	private String username;
 	private String contrasena;
 	private String correo;
 	private String telefono;
@@ -33,13 +33,13 @@ public class User implements Serializable {
 		super();
 	}
 	
-	public User(String DNI, String userType, String nombre, String apellido, String userName, String contrasena, String correo, String telefono, String empresa, String cargo) {
+	public User(String DNI, String userType, String nombre, String apellido, String username, String contrasena, String correo, String telefono, String empresa, String cargo) {
 		
 		this.DNI = DNI;
 		this.userType = userType;
 		this.apellido = apellido;
 		this.nombre = nombre;
-		this.userName = userName;
+		this.username = username;
 		this.contrasena = contrasena;
 		this.correo = correo;
 		this.telefono = telefono;
@@ -72,10 +72,10 @@ public class User implements Serializable {
 		this.apellido = apellido;
 	}
 	public String getUserName() {
-		return userName;
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String username) {
+		this.username = username;
 	}
 	public String getCorreo() {
 		return correo;

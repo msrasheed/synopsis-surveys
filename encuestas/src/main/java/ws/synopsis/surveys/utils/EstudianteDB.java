@@ -50,7 +50,7 @@ public class EstudianteDB {
 	public static User getEstudianteByUsername(String username) { 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
-						"FROM Estudiantes e " +
+						"FROM User as e " +
 						"WHERE e.username = :username";
 		TypedQuery<User> q = em.createQuery(qString, User.class);
 		q.setParameter("username", username);
@@ -79,7 +79,14 @@ public class EstudianteDB {
 	public static User getUserByPK(String pk) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		try {
+			System.out.println("???");
 			User user = em.find(User.class, pk);
+			if(user==null)
+			{
+				System.out.println("is null");
+			}
+			System.out.println(user.getUserName());
+			System.out.println("!");
 			return user;
 		}finally {
 			em.close();
