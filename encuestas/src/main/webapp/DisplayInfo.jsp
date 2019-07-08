@@ -7,7 +7,7 @@
 <%@ page import ="javax.servlet.http.HttpServletRequest"%>
 <%@ page import ="javax.servlet.http.HttpServletResponse"%>
 
-<%@ page import ="ws.synopsis.surveys.servlets.Estudiante"%>
+<%@ page import ="ws.synopsis.surveys.servlets.InsertEstudiante"%>
 <%@ page import= "ws.synopsis.surveys.utils.EstudianteDB" %>
 <%@ page import= "ws.synopsis.surveys.utils.EntityMan" %>
 <%@ page import ="javax.persistence.*" %>
@@ -24,14 +24,18 @@
 
 <style>
 h1{
-font-size: 3em;
+font-size: 2em;
 background-color: rgba(255,69,0,0.7);
 margin:0;
-padding-top:1000px;
+padding-top:10px;
 text-align: center;
-height: 300px;
+height: 200px;
 }
-.button {
+form{
+    text-align:center;
+    background-color: rgba(128,128,128,0.3);
+    }
+button {
   display: inline-block;
   border-radius: 4px;
   background-color: #f4511e;
@@ -73,8 +77,8 @@ height: 300px;
 div {
   font-family: "Lucia Console", "Courier New", monospace;
   font-size: 1.5em;
-  line-height: 2;
-  background-color: rgba(128,128,128,0.3);
+  line-height: 1.5;
+ 
 }
 * {
   box-sizing: border-box;
@@ -101,18 +105,20 @@ div {
 </style>
 <h1>
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br>Por favor, verifica si esta informaci&oacuten es correcta
+<br><br>Por favor, verifica si esta informaci&oacuten es correcta<br>
 </h1>
 
   <%
   System.out.println("DisplayInfo.jsp");
-  User estudiante = EstudianteDB.getEstudianteByUsername((String)session.getAttribute("username"));
+  User estudiante = (User) session.getAttribute("estudiante");
+  //User estudiante = EstudianteDB.getEstudianteByUsername((String)session.getAttribute("username"));
   System.out.println(estudiante.getUserName());
+  String username = estudiante.getUserName();
   
-  %>
+  %> 
 <div class= "column left" style="text-align:right">
 
-User Name: <br>
+Username: <br>
 Nombre: <br>
 Apellido: <br>
 DNI: <br>
@@ -124,24 +130,24 @@ Cargo: <br>
 </div>
 <div class="column right"style="text-align:left">
 
-
-${estudiante.getUserName()}<br> 
-${estudiante.getNombre()}<br>
-${estudiante.getApellido()}<br>
-${estudiante.getDNI()}<br>
-${estudiante.getCorreo()}<br>
-${estudiante.getTelefono()}<br>
-${estudiante.getEmpresa()}<br>
-${estudiante.getCargo()}<br> 
+${estudiante.userName}<br>  
+${estudiante.nombre}<br>
+${estudiante.apellido}<br>
+${estudiante.DNI}<br>
+${estudiante.correo}<br>
+${estudiante.telefono}<br>
+${estudiante.empresa}<br>
+${estudiante.cargo}<br> 
 
 
 
 </div>
-<form class ="monospace" action="/encuestas/CursosE.jsp" method="post">
-<button class="button" style="vertical-align:middle"><span>S&iacute </span></button>
+
+<form action="/encuestas/stuDash.html" >
+<button class="button"><span>S&iacute </span></button>
 </form>
-<form class ="monospace" action="/encuestas/EditInfoE.jsp" method="post">
-<button class="button" style="vertical-align:middle"><span>No </span></button>
+<form action="/encuestas/EditInfoE.jsp" method="post">
+<button class="button"><span>No </span></button>
 </form>
 
 </body>

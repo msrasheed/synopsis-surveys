@@ -11,14 +11,6 @@
   <url-pattern>/loginFilter</url-pattern>
  </filter-mapping>
  <servlet>
-  <servlet-name>Estudiante</servlet-name>
-  <servlet-class>ws.synopsis.surveys.servlets.Estudiante</servlet-class>
- </servlet>
-  <servlet-mapping>
-  <servlet-name>Estudiante</servlet-name>
-  <url-pattern>/encuestas/Estudiante</url-pattern>
- </servlet-mapping>
- <servlet>
   <servlet-name>LogIn</servlet-name>
   <servlet-class>ws.synopsis.surveys.servlets.LogIn</servlet-class>
  </servlet>

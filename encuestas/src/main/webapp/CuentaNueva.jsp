@@ -14,14 +14,14 @@ h1{
 font-size: 2em;
 background-color: rgba(255,69,0,0.7);
 margin:0;
-padding-top:0;
+padding-top:10px;
 text-align: center;
-height: 175px;
+height: 200px;
 }
-form.monospace {
-  font-family: "Lucia Console", "Courier New", monospace;
-  font-size: 1.4em;
-  line-height: 0.7;
+form{
+ font-family: "Lucia Console", "Courier New", monospace;
+  font-size: 1.5em;
+  line-height: 1.5;
   text-align:center;
   background-color: rgba(128,128,128,0.3);
 }
@@ -74,44 +74,43 @@ form.monospace {
 <h1>
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br>Complete la informaci&oacuten requerida para crear su nueva cuenta
+<br><br>Complete la informaci&oacuten requerida para crear su nueva cuenta
 
 </h1>
    <%
    System.out.println("CuentaNueva.jsp");
    %>
-<form class ="monospace" action="/encuestas/Estudiante" method="post">
+<form action="/encuestas/InsertEstudiante" method="post">
 <br>
-
   Nombre:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="nombre">
-  <br><br>
+  <br>
   Apellido:&nbsp&nbsp
   <input type="text" name="apellido">
-  <br><br>
+  <br>
   DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <input type="int" name="DNI">
-  <br><br>
+  <br>
   Correo:&nbsp&nbsp&nbsp&nbsp
   <input type="email" name="correo">
-  <br><br>
-  Teléfono: &nbsp&nbsp
+  <br>
+  Teléfono:&nbsp&nbsp
   <input type="text" name="telefono" >
-  <br><br>
+  <br>
   Empresa:&nbsp&nbsp&nbsp 
   <input type="text" name="empresa">
-  <br><br>
+  <br>
   Cargo: &nbsp&nbsp&nbsp&nbsp
   <input type="text" name="cargo">
-  <br><br>
+  <br>
   <input hidden type="text" name="userType" value="estudiante">
   
   El nombre de usuario:
   <input type="text" name="userName" required>
-  <br><br>
+  <br>
   Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <input type="password" name="contrasena" required>
-  <br><br><br>
+  <br>
      <button class="button" style="vertical-align:middle"><span>Crear la cuenta </span></button>
   
   

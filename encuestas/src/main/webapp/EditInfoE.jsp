@@ -14,14 +14,14 @@ h1{
 font-size: 2em;
 background-color: rgba(255,69,0,0.7);
 margin:0;
-padding-top:0;
+padding-top:10px;
 text-align: center;
-height: 175px;
+height: 200px;
 }
-form.monospace {
+form{
   font-family: "Lucia Console", "Courier New", monospace;
-  font-size: 1.4em;
-  line-height: 0.7;
+  font-size: 1.5em;
+  line-height: 1.5;
   text-align:center;
   background-color: rgba(128,128,128,0.3);
 }
@@ -70,51 +70,46 @@ form.monospace {
   <meta charset = "utf-8">
   <title> Corregir su informaci&oactuen </title>
 </head>
-<jsp:useBean id="user" class="ws.synopsis.surveys.model.User">
+
 <h1>
    <%
-   HttpSession sess = request.getSession(true);
-   String userType = (String) session.getAttribute("userType"); 
-   System.out.println(userType);
    System.out.println("EditInfoE.jsp");
+   User estudiante = (User) session.getAttribute("estudiante");
    %>
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br>Corregir su informaci&oacuten 
+<br><br>Corregir su informaci&oacuten 
 
 </h1>
 
-<form class ="monospace" action="/encuestas/CursosE.jsp" method="post">
-<br>
-
+<form action="/encuestas/MergeEstudiante" method="post">
   Nombre:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="nombre" >
-  <jsp:getProperty name="user" property="nombre"/>
-  <br><br>
+  <input type="text" name="nombre" value=${estudiante.nombre}>
+  <br>
   Apellido:&nbsp&nbsp
-  <input type="text" name="apellido" value=apellido>
-  <br><br>
+  <input type="text" name="apellido" value=${estudiante.apellido}>
+  <br>
   DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="int" name="DNI" value="DNI">
-  <br><br>
+  <input type="int" name="DNI" value=${estudiante.DNI}>
+  <br>
   Correo:&nbsp&nbsp&nbsp&nbsp
-  <input type="email" name="correo">
-  <br><br>
-  Teléfono: &nbsp&nbsp
-  <input type="text" name="telefono" >
-  <br><br>
+  <input type="email" name="correo" value=${estudiante.correo}>
+  <br>
+  Teléfono:&nbsp&nbsp
+  <input type="text" name="telefono" value=${estudiante.telefono}>
+  <br>
   Empresa:&nbsp&nbsp&nbsp 
-  <input type="text" name="empresa">
-  <br><br>
+  <input type="text" name="empresa" value=${estudiante.empresa}>
+  <br>
   Cargo: &nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="cargo">
-  <br><br><br>
+  <input type="text" name="cargo" value=${estudiante.cargo}>
+  <br><br>
   
   El nombre de usuario:
-  <input type="text" name="userName" required>
-  <br><br>
+  <input type="text" name="userName" required value=${estudiante.userName}>
+  <br>
   Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <input type="password" name="contrasena" required>
-  <br><br><br>
+  <br>
      <button class="button" style="vertical-align:middle"><span>Corregir la cuenta </span></button>
   
   
@@ -123,7 +118,6 @@ form.monospace {
      
      
 </form>
-</jsp:useBean>
 </body>
 </html>
     

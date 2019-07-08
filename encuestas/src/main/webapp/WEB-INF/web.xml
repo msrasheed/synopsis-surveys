@@ -19,13 +19,13 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>Estudiante</display-name>
-    <servlet-name>Estudiante</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.Estudiante</servlet-class>
+    <display-name>InsertEstudiante</display-name>
+    <servlet-name>InsertEstudiante</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.InsertEstudiante</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Estudiante</servlet-name>
-    <url-pattern>/Estudiante</url-pattern>
+    <servlet-name>InsertEstudiante</servlet-name>
+    <url-pattern>/InsertEstudiante</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -37,7 +37,7 @@
     <servlet-name>Coffeeinsert</servlet-name>
     <url-pattern>/Coffeeinsert</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>Redinsert</display-name>
     <servlet-name>Redinsert</servlet-name>
@@ -100,7 +100,7 @@
     <servlet-name>RedirectLogIn</servlet-name>
     <url-pattern>/RedirectLogIn</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>loginE</display-name>
     <servlet-name>loginE</servlet-name>
@@ -109,5 +109,15 @@
   <servlet-mapping>
     <servlet-name>loginE</servlet-name>
     <url-pattern>/loginE</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MergeEstudiante</display-name>
+    <servlet-name>MergeEstudiante</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.MergeEstudiante</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MergeEstudiante</servlet-name>
+    <url-pattern>/MergeEstudiante</url-pattern>
   </servlet-mapping>
 </web-app>

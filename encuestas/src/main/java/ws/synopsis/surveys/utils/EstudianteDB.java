@@ -7,7 +7,7 @@ import javax.persistence.TypedQuery;
 import ws.synopsis.surveys.model.Coffeebean;
 import ws.synopsis.surveys.model.Redbean;
 import ws.synopsis.surveys.model.User;
-import ws.synopsis.surveys.servlets.Estudiante;
+import ws.synopsis.surveys.servlets.InsertEstudiante;
 
 public class EstudianteDB {
 	public static boolean checkCredentials(String username, String password) {
@@ -20,9 +20,9 @@ public class EstudianteDB {
 	public static boolean checkPasswordMatches(String username, String password) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e " +
-							"FROM Estudiantes as e " +
-							"WHERE e.username = :user";
-		TypedQuery<Estudiante> q = em.createQuery(qString, Estudiante.class);
+							"FROM User as e " +
+							"WHERE e.username = :username";
+		TypedQuery<InsertEstudiante> q = em.createQuery(qString, InsertEstudiante.class);
 		q.setParameter("user", username);
 		try {
 			if(q.getSingleResult().getPassword().equals(password)) return true;
@@ -35,8 +35,8 @@ public class EstudianteDB {
 	public static boolean checkUsernameExists(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT username " +
-							"FROM stuaccount " +
-							"WHERE e.username  = :user";
+							"FROM User " +
+							"WHERE e.username  = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);
 		try {
@@ -65,41 +65,10 @@ public class EstudianteDB {
 	public static String getPasswordByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e.contrasena " +
-							"FROM Estudiantes e " +
+							"FROM User e " +
 							"WHERE e.username = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("username", username);
-		try {
-			return q.getSingleResult();
-		} finally {
-			em.close();
-		}
-	}
-	
-	public static User getUserByPK(String pk) {
-		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		try {
-			System.out.println("???");
-			User user = em.find(User.class, pk);
-			if(user==null)
-			{
-				System.out.println("is null");
-			}
-			System.out.println(user.getUserName());
-			System.out.println("!");
-			return user;
-		}finally {
-			em.close();
-		}
-	}
-	
-	public static String getUsernameByID(int id) {
-		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		String qString ="SELECT e.username " +
-						"FROM Estudiantes e " +
-						"WHERE e.userid = :id";
-		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("id", id);
 		try {
 			return q.getSingleResult();
 		} finally {
@@ -186,7 +155,7 @@ public class EstudianteDB {
 		return isSuccessful;
 	}
 	
-	public static boolean mergeEstudiante(Estudiante Estudiante) {
+	public static boolean mergeEstudiante(User Estudiante) {
 		boolean isSuccessful = false;
 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();

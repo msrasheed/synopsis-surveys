@@ -14,13 +14,13 @@ import ws.synopsis.surveys.utils.HashingUtil;
 /**
  * Servlet implementation class Estudiante
  */
-public class Estudiante extends HttpServlet {
+public class MergeEstudiante extends HttpServlet {
 	
 		
 	private static final long serialVersionUID = 1L;
        
    
-    public Estudiante() { 
+    public MergeEstudiante() { 
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,37 +44,23 @@ public class Estudiante extends HttpServlet {
 		estudiante.setCargo(request.getParameter("cargo"));
 		
 		
-//		String DNI = request.getParameter("DNI");
-//		String userType = request.getParameter("userType");
-//		String nombre = request.getParameter("nombre");
-//		String apellido = request.getParameter("apellido");
-//		String userName = request.getParameter("userName");
-//		String contrasena = request.getParameter("contrasena");
-//		String correo = request.getParameter("correo");
-//		String telefono = request.getParameter("telefono");
-//		String empresa = request.getParameter("empresa");
-//		String cargo = request.getParameter("cargo");
-//		
-//		User estudiante2 = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, empresa, cargo); 
+		EstudianteDB.mergeEstudiante(estudiante);
 		
-		EstudianteDB.insertEstudiante(estudiante);
-		
-		System.out.println("God help me");
+		System.out.println("maybe this worked??");
 		
 		HttpSession session = request.getSession(true);
 		System.out.println(session);
+		
 		session.setAttribute("username", request.getParameter("userName"));
+		session.setAttribute("estudiante", estudiante);
 	
-		response.sendRedirect("/encuestas/DisplayInfo.jsp");
+		response.sendRedirect("/encuestas/stuDash.html");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			doGet(request, response);
 	}
-	public Object getPassword() {
-		// tbh i don't want this, but added it so it would compile
-		return null;
-	}
+
 
 
 
