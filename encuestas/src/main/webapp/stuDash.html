@@ -117,6 +117,7 @@ font-size:24px;
 <div class="tab" style="overflow:auto;">
   <button class="tablink" onclick="openPage('Info',this,'rgba(242, 38, 19, 1)')" color>Info</button>
   <button class="tablink" onclick="openPage('Encuestas',this,'rgba(242, 38, 19, 1)')" color>Encuestas</button>
+
 </div>
 
 <div id="Info" class="tabcontent">
@@ -153,6 +154,7 @@ font-size:24px;
 </div>
 
 <script>
+document.getElementsByClassName('tablink')[0].click()
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
