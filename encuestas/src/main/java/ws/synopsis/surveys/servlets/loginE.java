@@ -40,7 +40,7 @@ public class loginE extends HttpServlet {
 			
 		if (UserAuthenticationE.authenticateUser(username, password)) {
 				session.setMaxInactiveInterval(30 * 60); //the lines below still need adjustments
-              response.sendRedirect("/encuestas/stuDash");
+              response.sendRedirect("/encuestas/stuDash.html");
 			}
 		else {
 				System.out.println("Wrong");

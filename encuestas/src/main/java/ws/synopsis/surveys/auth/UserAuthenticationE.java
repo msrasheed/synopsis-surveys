@@ -18,7 +18,7 @@ public class UserAuthenticationE{
 		if (password.equals(actualPassword)) {
 			isCorrect = true;
 		}
-		
+		System.out.println(isCorrect);
 		return isCorrect;
 
 	}
