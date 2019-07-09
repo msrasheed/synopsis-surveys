@@ -29,6 +29,7 @@
       <class>ws.synopsis.surveys.model.Estudiante</class>
       <class>ws.synopsis.surveys.model.Coffeebean</class>
       <class>ws.synopsis.surveys.model.Redbean</class>
+      <class>ws.synopsis.surveys.model.Instructor</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="update" />

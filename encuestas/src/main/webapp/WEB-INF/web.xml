@@ -27,6 +27,16 @@
     <servlet-name>InsertEstudiante</servlet-name>
     <url-pattern>/InsertEstudiante</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>InsertInstructor</display-name>
+    <servlet-name>InsertInstructor</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.InsertInstructor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertInstructor</servlet-name>
+    <url-pattern>/InsertInstructor</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>Coffeeinsert</display-name>
@@ -56,16 +66,6 @@
   <servlet-mapping>
     <servlet-name>UserType</servlet-name>
     <url-pattern>/UserType</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Instructor</display-name>
-    <servlet-name>Instructor</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.Instructor</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Instructor</servlet-name>
-    <url-pattern>/Instructor</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

@@ -26,12 +26,14 @@ public class InsertInstructor extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("/InsertInstructor.java");
+		System.out.println("InsertInstructor.java");
+		
+		HttpSession session = request.getSession(true);
 		
 		Instructor instructor = new Instructor();
 		
 		instructor.setDNI(request.getParameter("DNI"));
-		instructor.setUserType(request.getParameter("userType"));
+		instructor.setUserType((String) session.getAttribute("userType"));
 		instructor.setNombre(request.getParameter("nombre"));
 		instructor.setApellido(request.getParameter("apellido"));
 		instructor.setUsername(request.getParameter("userName"));
@@ -41,16 +43,18 @@ public class InsertInstructor extends HttpServlet {
 		
 		InstructorDB.insertInstructor(instructor);
 		
-		HttpSession session = request.getSession(true);
+		
 		System.out.println(session);
 		
 		session.setAttribute("username", request.getParameter("userName"));
 		session.setAttribute("instructor", instructor);
 	
-		response.sendRedirect("/encuestas/Dash.html");
+		response.sendRedirect("/encuestas/insDash.html");
 		
 	}
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 
 	public Object getPassword() {
 		// tbh i don't want this, but added it so it would compile

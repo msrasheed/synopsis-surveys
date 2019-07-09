@@ -2,8 +2,6 @@ package ws.synopsis.surveys.auth;
 
 import ws.synopsis.surveys.utils.*;
 
-import ws.synopsis.surveys.utils.HashingUtil;
-
 public class UserAuthentication {
 	public static boolean authenticateUser(String username, String password, String userType) {
 		boolean isCorrect = false;

@@ -72,6 +72,7 @@ body {margin:1em;padding:1em;
 
    <%
    System.out.println("LogIn.jsp");
+   String userType = (String) session.getAttribute("userType");
    %>
     
 <form class ="monospace" action="/encuestas/LogIn" method="post">

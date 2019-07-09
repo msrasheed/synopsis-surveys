@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import ws.synopsis.surveys.model.*;
 import ws.synopsis.surveys.utils.*;
-import javax.persistence.*;
 
 import ws.synopsis.surveys.auth.UserAuthentication;
 

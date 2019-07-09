@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import ws.synopsis.surveys.model.Estudiante;
 import ws.synopsis.surveys.model.Instructor;
 import ws.synopsis.surveys.servlets.InsertInstructor;
 
@@ -81,10 +80,15 @@ public class InstructorDB {
 		EntityTransaction trans = em.getTransaction();
 		try {
 			trans.begin();
+			System.out.println("begin");
 			em.persist(Instructor);
+			System.out.println("persist");
 			trans.commit();
+			System.out.println("commit");
 			isSuccessful = true;
+			System.out.println(isSuccessful);
 		} catch (Exception e) {
+			System.out.println(e);
 			trans.rollback();
 			isSuccessful = false;
 		}finally {

@@ -79,8 +79,18 @@ form{
 </h1>
    <%
    System.out.println("CuentaNueva.jsp");
+   String userType = (String) session.getAttribute("userType");
    %>
-<form action="/encuestas/InsertEstudiante" method="post">
+   
+<%if (userType.equals("estudiante")){
+	%><form action="/encuestas/InsertEstudiante" method="post"><% 
+}else if (userType.equals("instructor")){
+	%><form action="/encuestas/InsertInstructor" method="post"><% 
+}else if (userType.equals("admin")){
+	%><form action="/encuestas/InsertAdmin" method="post"><% 
+}
+%>
+
 <br>
   Nombre:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="nombre">
@@ -97,13 +107,20 @@ form{
   Teléfono:&nbsp&nbsp
   <input type="text" name="telefono" >
   <br>
-  Empresa:&nbsp&nbsp&nbsp 
+  <%
+  if(userType.equals("estudiante")){
+	  %>
+	Empresa:&nbsp&nbsp&nbsp 
   <input type="text" name="empresa">
   <br>
   Cargo: &nbsp&nbsp&nbsp&nbsp
   <input type="text" name="cargo">
   <br>
-  <input hidden type="text" name="userType" value="estudiante">
+	  <%
+  }
+  
+  %>
+
   
   El nombre de usuario:
   <input type="text" name="userName" required>
