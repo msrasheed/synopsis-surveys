@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import= "ws.synopsis.surveys.model.User"%>
+<%@ page import= "ws.synopsis.surveys.model.Estudiante"%>
 <%@ page import ="java.io.IOException"%>
 <%@ page import ="javax.servlet.ServletException" %>
 <%@ page import ="javax.servlet.http.HttpServlet" %>
@@ -109,12 +109,9 @@ div {
 </h1>
 
   <%
-  System.out.println("DisplayInfo.jsp");
-  User estudiante = (User) session.getAttribute("estudiante");
-  //User estudiante = EstudianteDB.getEstudianteByUsername((String)session.getAttribute("username"));
-  System.out.println(estudiante.getUserName());
-  String username = estudiante.getUserName();
-  
+  	System.out.println("DisplayInfo.jsp");
+    Estudiante estudiante = (Estudiante) session.getAttribute("estudiante");
+    System.out.println(estudiante.getUserName());
   %> 
 <div class= "column left" style="text-align:right">
 

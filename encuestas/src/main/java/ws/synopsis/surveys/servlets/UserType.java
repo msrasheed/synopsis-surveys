@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ws.synopsis.surveys.model.User;
-//import ws.synopsis.surveys.model.User;
+import ws.synopsis.surveys.model.Estudiante;
+//import ws.synopsis.surveys.model.Estudiante;
 /**
  * Servlet implementation class UserType
  */

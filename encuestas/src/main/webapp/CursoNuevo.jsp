@@ -74,50 +74,38 @@ form{
 <h1>
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br><br>Complete la informaci&oacuten requerida para crear su nueva cuenta
+<br><br>Complete la informaci&oacuten requerida para crear un curso nuevo
 
 </h1>
    <%
-   System.out.println("CuentaNueva.jsp");
+   System.out.println("CursoNuevo.jsp");
    %>
-<form action="/encuestas/InsertEstudiante" method="post">
+
+<form class ="monospace" action="/encuestas/InsertCurso" method="post">
 <br>
-  Nombre:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="nombre">
-  <br>
-  Apellido:&nbsp&nbsp
-  <input type="text" name="apellido">
-  <br>
-  DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="int" name="DNI">
-  <br>
-  Correo:&nbsp&nbsp&nbsp&nbsp
-  <input type="email" name="correo">
-  <br>
-  Teléfono:&nbsp&nbsp
-  <input type="text" name="telefono" >
-  <br>
-  Empresa:&nbsp&nbsp&nbsp 
-  <input type="text" name="empresa">
-  <br>
-  Cargo: &nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="cargo">
-  <br>
-  <input hidden type="text" name="userType" value="estudiante">
-  
-  El nombre de usuario:
-  <input type="text" name="userName" required>
-  <br>
-  Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="password" name="contrasena" required>
-  <br>
-     <button class="button" style="vertical-align:middle"><span>Crear la cuenta </span></button>
-  
-  
-     
-     
-     
-     
+  Curso:&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="curso">
+  <br><br>
+    C&oacutedigo:&nbsp&nbsp&nbsp
+<input type="text" name="codigo">
+<br><br>
+  Fecha Inicio:
+  <input type="date" name="fechaI">
+
+  Fecha Fin:
+  <input type="date" name="fechaF">
+  <br><br>
+  Tiempo Inicio:
+  <input type="time" name="tiempoI">
+  Tiempo Fin:
+  <input type="time" name="tiempoF">
+  <br><br>
+  Instructor:
+  <input type="text" name="instructor">
+  <br> <br>
+
+  <br><br><br>
+     <button class="button" style="vertical-align:middle"><span>Crear el curso</span></button>
 </form>
 </body>
 </html>

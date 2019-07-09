@@ -6,7 +6,7 @@ import javax.persistence.TypedQuery;
 
 import ws.synopsis.surveys.model.Coffeebean;
 import ws.synopsis.surveys.model.Redbean;
-import ws.synopsis.surveys.model.User;
+import ws.synopsis.surveys.model.Estudiante;
 import ws.synopsis.surveys.servlets.InsertEstudiante;
 
 public class EstudianteDB {
@@ -20,7 +20,7 @@ public class EstudianteDB {
 	public static boolean checkPasswordMatches(String username, String password) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e " +
-							"FROM User as e " +
+							"FROM Estudiante as e " +
 							"WHERE e.username = :username";
 		TypedQuery<InsertEstudiante> q = em.createQuery(qString, InsertEstudiante.class);
 		q.setParameter("user", username);
@@ -35,7 +35,7 @@ public class EstudianteDB {
 	public static boolean checkUsernameExists(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT username " +
-							"FROM User " +
+							"FROM Estudiante " +
 							"WHERE e.username  = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);
@@ -47,12 +47,12 @@ public class EstudianteDB {
 		} 
 	}
 	
-	public static User getEstudianteByUsername(String username) { 
+	public static Estudiante getEstudianteByUsername(String username) { 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
-						"FROM User as e " +
+						"FROM Estudiante as e " +
 						"WHERE e.username = :username";
-		TypedQuery<User> q = em.createQuery(qString, User.class);
+		TypedQuery<Estudiante> q = em.createQuery(qString, Estudiante.class);
 		q.setParameter("username", username);
 		try {
 			return q.getSingleResult();
@@ -65,7 +65,7 @@ public class EstudianteDB {
 	public static String getPasswordByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e.contrasena " +
-							"FROM User e " +
+							"FROM Estudiante e " +
 							"WHERE e.username = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("username", username);
@@ -76,25 +76,21 @@ public class EstudianteDB {
 		}
 	}
 	
-	public static boolean insertEstudiante(User Estudiante) {
+	public static boolean insertEstudiante(Estudiante Estudiante) {
 		boolean isSuccessful = false;
 		
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
+		
 		try {
-			System.out.println("try");
 			trans.begin();
-			System.out.println("begin");
 			em.persist(Estudiante);
-			System.out.println("persist");
 			trans.commit();
 			isSuccessful = true;
-			System.out.println("commit");
 		} catch (Exception e) {
 			trans.rollback();
 			isSuccessful = false;
 		}finally {
-			System.out.println(isSuccessful);
 			em.close();
 		}
 		
@@ -103,25 +99,18 @@ public class EstudianteDB {
 	
 	public static boolean insertCoffee(Coffeebean result) {
 		boolean isSuccessful = false;
-		System.out.println(isSuccessful);
 		
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		try {
-			System.out.println("try");
 			trans.begin();
-			System.out.println("begin");
 			em.persist(result);
-			System.out.println("persist");
 			trans.commit();
 			isSuccessful = true;
-			System.out.println("commit");
 		} catch (Exception e) {
 			trans.rollback();
-			System.out.println(e);
 			isSuccessful = false;
 		}finally {
-			System.out.println(isSuccessful);
 			em.close();
 		}
 		
@@ -130,32 +119,25 @@ public class EstudianteDB {
 	
 	public static boolean insertRed(Redbean result) {
 		boolean isSuccessful = false;
-		System.out.println(isSuccessful);
 		
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		try {
-			System.out.println("try");
 			trans.begin();
-			System.out.println("begin");
 			em.persist(result);
-			System.out.println("persist");
 			trans.commit();
 			isSuccessful = true;
-			System.out.println("commit");
 		} catch (Exception e) {
 			trans.rollback();
-			System.out.println(e);
 			isSuccessful = false;
 		}finally {
-			System.out.println(isSuccessful);
 			em.close();
 		}
 		
 		return isSuccessful;
 	}
 	
-	public static boolean mergeEstudiante(User Estudiante) {
+	public static boolean mergeEstudiante(Estudiante Estudiante) {
 		boolean isSuccessful = false;
 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();

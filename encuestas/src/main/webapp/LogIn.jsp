@@ -74,7 +74,7 @@ body {margin:1em;padding:1em;
    System.out.println("LogIn.jsp");
    %>
     
-<form class ="monospace" action="/encuestas/RedirectLogIn" method="post">
+<form class ="monospace" action="/encuestas/LogIn" method="post">
 <br><br><br><br><br><br>
   User Name:&nbsp
   <input type="text" name="userName">

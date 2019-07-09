@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ws.synopsis.surveys.model.User;
+import ws.synopsis.surveys.model.Estudiante;
 import ws.synopsis.surveys.utils.AdminDB;
 
 /**
@@ -35,7 +35,7 @@ public class Admin extends HttpServlet {
 		String telefono = request.getParameter("telefono");
 		String compania = request.getParameter("compania");
 		String cargo = request.getParameter("cargo");
-		User Admin = new User(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, compania, cargo);
+		Estudiante Admin = new Estudiante(DNI, userType, nombre, apellido, userName, contrasena, correo, telefono, compania, cargo);
 		AdminDB.insertAdmin(Admin);
 	}
 

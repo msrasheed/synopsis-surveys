@@ -120,4 +120,33 @@
     <servlet-name>MergeEstudiante</servlet-name>
     <url-pattern>/MergeEstudiante</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InsertCurso</display-name>
+    <servlet-name>InsertCurso</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.InsertCurso</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertCurso</servlet-name>
+    <url-pattern>/InsertCurso</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>CursoNuevo</servlet-name>
+    <jsp-file>/CursoNuevo.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CursoNuevo</servlet-name>
+    <url-pattern>/CursoNuevo.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginI</display-name>
+    <servlet-name>LoginI</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.LoginI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginI</servlet-name>
+    <url-pattern>/LoginI</url-pattern>
+  </servlet-mapping>
 </web-app>

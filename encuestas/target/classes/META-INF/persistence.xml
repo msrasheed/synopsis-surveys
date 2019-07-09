@@ -26,7 +26,7 @@
       <!-- The datasource is deployed as WEB-INF/encuestas-ds.xml, you
          can find it in the source at src/main/webapp/WEB-INF/encuestas-ds.xml -->
       <jta-data-source>java:/PostgresDS</jta-data-source>
-      <class>ws.synopsis.surveys.model.User</class>
+      <class>ws.synopsis.surveys.model.Estudiante</class>
       <class>ws.synopsis.surveys.model.Coffeebean</class>
       <class>ws.synopsis.surveys.model.Redbean</class>
       <properties>

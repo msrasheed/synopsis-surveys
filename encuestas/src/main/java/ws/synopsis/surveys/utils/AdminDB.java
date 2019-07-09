@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import ws.synopsis.surveys.model.User;
+import ws.synopsis.surveys.model.Estudiante;
 import ws.synopsis.surveys.servlets.Admin;
 
 public class AdminDB {
@@ -45,13 +45,13 @@ public class AdminDB {
 		}
 	}
 	
-	public static Admin getAdminByID(int id) {
+	public static Admin getAdminByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
 						"FROM Admin e " +
 						"WHERE e.userid = :id";
 		TypedQuery<Admin> q = em.createQuery(qString, Admin.class);
-		q.setParameter("id", id);
+		q.setParameter("username", username);
 		try {
 			return q.getSingleResult();
 		} finally {
@@ -127,7 +127,7 @@ public class AdminDB {
 		return isSuccessful;
 	}
 
-	public static void insertAdmin(User Admin) {
+	public static void insertAdmin(Estudiante Admin) {
 		// tbh don't want this. Just did it so it would compile
 		
 	}

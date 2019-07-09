@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import= "ws.synopsis.surveys.model.User" %>
+<%@ page import= "ws.synopsis.surveys.model.Estudiante" %>
 <%@ page import= "ws.synopsis.surveys.utils.EstudianteDB" %>
 <%@ page import= "ws.synopsis.surveys.utils.EntityMan" %>
 <%@ page import ="javax.persistence.*" %>
@@ -73,8 +73,9 @@ form{
 
 <h1>
    <%
-   System.out.println("EditInfoE.jsp");
-   User estudiante = (User) session.getAttribute("estudiante");
+   	System.out.println("EditInfoE.jsp");
+      Estudiante estudiante = (Estudiante) session.getAttribute("estudiante");
+      String userType = (String) session.getAttribute("userType");
    %>
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br><br>Corregir su informaci&oacuten 
@@ -103,7 +104,7 @@ form{
   Cargo: &nbsp&nbsp&nbsp&nbsp
   <input type="text" name="cargo" value=${estudiante.cargo}>
   <br><br>
-  
+  <input hidden type="text" name="userType" value=estudiante>
   El nombre de usuario:
   <input type="text" name="userName" required value=${estudiante.userName}>
   <br>

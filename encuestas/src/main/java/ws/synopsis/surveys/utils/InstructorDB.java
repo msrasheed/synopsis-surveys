@@ -4,8 +4,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import ws.synopsis.surveys.model.User;
-import ws.synopsis.surveys.servlets.Instructor;
+import ws.synopsis.surveys.model.Estudiante;
+import ws.synopsis.surveys.model.Instructor;
+import ws.synopsis.surveys.servlets.InsertInstructor;
 
 public class InstructorDB {
 	public static boolean checkCredentials(String username, String password) {
@@ -20,7 +21,7 @@ public class InstructorDB {
 		String qString =	"SELECT e " +
 							"FROM Instructor as e " +
 							"WHERE e.username = :user";
-		TypedQuery<Instructor> q = em.createQuery(qString, Instructor.class);
+		TypedQuery<InsertInstructor> q = em.createQuery(qString, InsertInstructor.class);
 		q.setParameter("user", username);
 		try {
 			if(q.getSingleResult().getPassword().equals(password)) return true;
@@ -45,13 +46,13 @@ public class InstructorDB {
 		}
 	}
 	
-	public static Instructor getInstructorByID(int id) {
+	public static Instructor getInstructorByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
 						"FROM Instructor e " +
 						"WHERE e.userid = :id";
 		TypedQuery<Instructor> q = em.createQuery(qString, Instructor.class);
-		q.setParameter("id", id);
+		q.setParameter("username", username);
 		try {
 			return q.getSingleResult();
 		} finally {
@@ -66,20 +67,6 @@ public class InstructorDB {
 							"WHERE e.username = :user";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
 		q.setParameter("user", username);
-		try {
-			return q.getSingleResult();
-		} finally {
-			em.close();
-		}
-	}
-	
-	public static String getUsernameByID(int id) {
-		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		String qString ="SELECT e.username " +
-						"FROM Instructor e " +
-						"WHERE e.userid = :id";
-		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("id", id);
 		try {
 			return q.getSingleResult();
 		} finally {
@@ -107,7 +94,7 @@ public class InstructorDB {
 		return isSuccessful;
 	}
 	
-	public static boolean mergeInstructor(Instructor Instructor) {
+	public static boolean mergeInstructor(InsertInstructor Instructor) {
 		boolean isSuccessful = false;
 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
@@ -127,8 +114,4 @@ public class InstructorDB {
 		return isSuccessful;
 	}
 
-	public static void insertInstructor(User Instructor) {
-		// tbh don't want this. Just did it so it would compile
-		
-	}
 }

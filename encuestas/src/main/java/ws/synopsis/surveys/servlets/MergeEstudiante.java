@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ws.synopsis.surveys.model.User;
+import ws.synopsis.surveys.model.Estudiante;
 import ws.synopsis.surveys.utils.EstudianteDB;
 import ws.synopsis.surveys.utils.HashingUtil;
 
@@ -30,7 +30,7 @@ public class MergeEstudiante extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("Estudiante.java");
 		
-		User estudiante = new User();
+		Estudiante estudiante = new Estudiante();
 		
 		estudiante.setDNI(request.getParameter("DNI")); 
 		estudiante.setuserType(request.getParameter("userType"));

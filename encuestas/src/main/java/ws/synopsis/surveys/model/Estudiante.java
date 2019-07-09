@@ -3,7 +3,6 @@ package ws.synopsis.surveys.model;
 import java.io.Serializable;
 
 import javax.persistence.*;
-import java.sql.*;
 
 /**
  * Entity implementation class for Entity: Survey
@@ -11,7 +10,7 @@ import java.sql.*;
  */
 @Entity
 @Table(name = "ESTUDIANTES")
-public class User implements Serializable {
+public class Estudiante implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,11 +28,11 @@ public class User implements Serializable {
 	private String empresa;
 	private String cargo;
 	
-	public User() {
+	public Estudiante() {
 		super();
 	}
 	
-	public User(String DNI, String userType, String nombre, String apellido, String username, String contrasena, String correo, String telefono, String empresa, String cargo) {
+	public Estudiante(String DNI, String userType, String nombre, String apellido, String username, String contrasena, String correo, String telefono, String empresa, String cargo) {
 		
 		this.DNI = DNI;
 		this.userType = userType;
