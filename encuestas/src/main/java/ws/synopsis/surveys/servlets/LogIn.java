@@ -50,7 +50,7 @@ public class LogIn extends HttpServlet {
 				{
 					Estudiante estudiante = EstudianteDB.getEstudianteByUsername(username);
 					session.setAttribute("estudiante",estudiante);
-					response.sendRedirect("/encuestas/stuDash.html");
+					response.sendRedirect("/encuestas/login/stuDash.html");
 				}
 				else if (userType.equals("instructor")) 
 				{

@@ -77,19 +77,6 @@
     <servlet-name>Admin</servlet-name>
     <url-pattern>/Admin</url-pattern>
   </servlet-mapping>
-  <filter>
-    <display-name>loginFilter</display-name>
-    <filter-name>loginFilter</filter-name>
-    <filter-class>ws.synopsis.surveys.filters.LoginFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>loginFilter</filter-name>
-    <url-pattern>/loginFilter</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-    <filter-name>loginFilter</filter-name>
-    <url-pattern>/app/*</url-pattern>
-  </filter-mapping>
   <servlet>
     <description></description>
     <display-name>MergeEstudiante</display-name>
@@ -128,5 +115,28 @@
   <servlet-mapping>
     <servlet-name>LogIn</servlet-name>
     <url-pattern>/LogIn</url-pattern>
+  </servlet-mapping>
+   <filter>
+    <display-name>loginFilter</display-name>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>ws.synopsis.surveys.filters.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/loginFilter</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/login/*</url-pattern>
+  </filter-mapping>
+   <servlet>
+    <description></description>
+    <display-name>Logout</display-name>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
   </servlet-mapping>
 </web-app>

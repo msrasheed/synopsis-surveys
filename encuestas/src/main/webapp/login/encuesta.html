@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+form.monospace {
+  font-family: "Arial", "Courier New", monospace;
+  line-height: 1.5;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding:10px;
+}
+h1.monospace {
+  font-family: "Arial", "Courier New", monospace;
+  line-height: 1;
+  text-align: center;
+}
+body {margin:1em;padding:1em;
+    background-color: rgba(211,211,211,0.7);
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Encuesta de RedHat</title>
+</head>
+<body>
+	<div >
+
+		<h1 class = "monospace" > <img src= "https://upload.wikimedia.org/wikipedia/sco/thumb/6/6c/RedHat.svg/1280px-RedHat.svg.png" style="padding-right:100px;padding-top:25px;padding-bottom:70px;width:200px;height:70px;"> <label style= "float:right; padding-top:70px; padding-right:100px;padding-bottom:70px;font-size: 50px;"> <ins>Encuesta de cursos Red Hat</ins> </label></h1>
+
+		<form class ="monospace" action="/encuestas/Redinsert" id="quiz">
+      <ol> <!-- este tag representa una lista ordenada. Para cada pregunta, se necesita abrir y cerrar el "li" tag  -->
+      <li><h3 > El equipamiento de la sala era adecuado para las demonstraciones del instructor:</h3>
+      <input type="radio" name="pregunta1" id="pregunta11" value=1 required/>  <!-- el primero 1 en "pregunta11" signifia el numero de la pregunta. el segundo 1 significa la pregunta "Sí"-->
+      <label for="pregunta11">S&iacute </label> &nbsp&nbsp&nbsp  <!-- &iacutea signifia í. Hubo problemas en Google Chrome y esto los solucionó  --> 
+      <input type="radio" name="pregunta1" id="pregunta10" value=0 required/> <!-- el 1 signifia el numero de la pregunta. el 0 significa la pregunta "No"-->
+      <label for="pregunta10">No </label>
+
+    </li><li><h3> El equipameiento de la sala fue adecuado para las practicas hands-on:</h3> <!--al principio de esta declaración es el cierre de el "li" tag de la pregunta anterior y la apertura de la siguiente "li" tag -->
+      <input type="radio" name="pregunta2" id="pregunta21" value=1 required />
+      <label for="pregunta21">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta2" id="pregunta20" value=0 required/>
+      <label for="pregunta20">No </label>
+
+      </li><li><h3> Antes de comenzar este curso usted contaba con las habilidades previas para tomarlo:</h3>
+      <input type="radio" name="pregunta3" id="pregunta31" value=1 required/>
+      <label for="pregunta31">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta3" id="pregunta30" value=0 required/>
+      <label for="pregunta30">No </label>
+
+      </li><li><h3> Este entrenamiento increment&oacute sus conocimientos y habilidades con los productos de Red Hat Enterprise Linux:</h3>
+      <input type="radio" name="pregunta4" id="pregunta41" value=1 required/>
+      <label for="pregunta41">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta4" id="pregunta40" value=0 required/>
+      <label for="pregunta40">No </label>
+
+      </li><li><h3> La calidad del formato y organizaci&oacuten del entrenamiento fue:</h3>
+      <input type="radio" name="pregunta5" id="pregunta52" value=2 required/> <!-- 2 signifia la pregunta "Buena" -->
+      <label for="pregunta52">Buena </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta5" id="pregunta51" value=1 required/> <!-- 1 signifia la pregunta "Regular" -->
+      <label for="pregunta51">Regular </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta5" id="pregunta50" value=0 required/> <!-- 0 signifia la pregunta "Mala" -->
+      <label for="pregunta50">Mala </label>
+
+      </li><li><h3> &iquestSe respetaron durante el desarrollo del curso los horarios pautados, tanto para el inicio como para la finalizaci&oacuten del mismo?</h3>
+      <input type="radio" name="pregunta6" id="pregunta61" value=1 required/>
+      <label for="pregunta61">S&iacute </label> &nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta6" id="pregunta60" value=0 required/>
+      <label for="pregunta60">No </label>
+
+      </li><li><h3> La calidad del material de estudio fue:</h3>
+      <input type="radio" name="pregunta7" id="pregunta72" value=2 required/>
+      <label for="pregunta72">Buena </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta7" id="pregunta71" value=1 required/>
+      <label for="pregunta71">Regular </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta7" id="pregunta70" value=0 required/>
+      <label for="pregunta70">Mala </label>
+
+
+      </li><li><h3> La habilidad del instuctor para demostrar sus conocimientos fue:</h3>
+      <input type="radio" name="pregunta8" id="pregunta82" value=2 required/>
+      <label for="pregunta82">Buena </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta8" id="pregunta81" value=1 required/>
+      <label for="pregunta81">Regular </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta8" id="pregunta80" value=0 required/>
+      <label for="pregunta80">Mala </label>
+
+      </li><li><h3> El instuctor demostr&oacute tener experiencia para dictar el curso:</h3>
+      <input type="radio" name="pregunta9" id="pregunta91" value=1 required/>
+      <label for="pregunta91">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta9" id="pregunta90" value=0 required/>
+      <label for="pregunta90">No </label>
+
+      </li><li><h3> Logr&oacute el instructor desarrollar conceptos claros:</h3>
+      <input type="radio" name="pregunta10" id="pregunta101" value=1 required/> <!-- 10 significa pregunta10 y 1 significa la pregunta "Sí" -->
+      <label for="pregunta101">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta10" id="pregunta100" value=0 required/>
+      <label for="pregunta100">No </label>
+
+      </li><li><h3> Las preguntas del instructor ante las preguntas de los alumnos fueron positivas:</h3>
+      <input type="radio" name="pregunta11" id="pregunta111" value=1 required/>
+      <label for="pregunta111">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta11" id="pregunta110" value=0 required/>
+      <label for="pregunta110">No </label>
+
+      </li><li><h3> Hay alg&uacuten aspecto de este curso que se pueda mejorar: </h3>
+      <input type="radio" name="pregunta12" id="pregunta121" value=1 required/>
+      <label for="pregunta121">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta12" id="pregunta120" value=0 required/>
+      <label for="pregunta120">No </label>
+      <br><br> <label class="monospace">Si es as&iacute &iquestcu&aacutel es?</label><br><br>
+      <textarea name="mejoraria12" type="text"  cols = "40" rows = "5" style="height:50px; width:750px;" required>Necesitan</textarea>
+
+      </li><li><h3> &iquestUsted recomendar&iacutea a sus colegas tomar este curso?</h3>
+      <input type="radio" name="pregunta13" id="pregunta131" value=1 required/>
+      <label for="pregunta131">S&iacute </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta13" id="pregunta130" value=0 required/>
+      <label for="pregunta130">No </label>
+
+      </li><li><h3> &iquestC&oacutemo eval&uacutea la infraestructura en el lugar en donde fue dictado el curso?</h3>
+      <input type="radio" name="pregunta14" id="pregunta142" value=2 required/>
+      <label for="pregunta142">Buena </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta14" id="pregunta141" value=1 required/>
+      <label for="pregunta141">Regular </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta14" id="pregunta140" value=0 required/>
+      <label for="pregunta140">Mala </label>
+
+      </li><li><h3> &iquestC&oacutemo eval&uacutea los coffee breaks durante el curso?</h3>
+      <input type="radio" name="pregunta15" id="pregunta152" value=2 required/>
+      <label for="pregunta152">Buena </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta15" id="pregunta151" value=1 required/>
+      <label for="pregunta151">Regular </label>&nbsp&nbsp&nbsp
+      <input type="radio" name="pregunta15" id="pregunta150" value=0 required/>
+      <label for="pregunta150">Mala </label>
+
+      </li><li><h3> &iquestQu&eacute servicio adicional podr&iacuteamos proveer para hacer m&aacutes productiva y agradable su estad&iacutea durante el curso? </h3>
+      <textarea name="pregunta16" type="text"  cols = "40" rows = "5" maxlength="290"  style="height:50px; width:750px;" required></textarea>
+
+      <br><br><button class="button" style="vertical-align:middle"><span>Enviar</span></button>
+</ol>
+</form>
+</div>
+</body>
+</html>
