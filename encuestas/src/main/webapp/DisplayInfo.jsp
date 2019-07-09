@@ -140,7 +140,7 @@ ${estudiante.cargo}<br>
 
 </div>
 
-<form action="/encuestas/stuDash.html" >
+<form action="/encuestas/login/stuDash.html" >
 <button class="button"><span>S&iacute </span></button>
 </form>
 <form action="/encuestas/EditInfoE.jsp" method="post">

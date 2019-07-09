@@ -54,7 +54,7 @@ public class InsertEstudiante extends HttpServlet {
 		session.setAttribute("username", request.getParameter("userName"));
 		session.setAttribute("estudiante", estudiante);
 	
-		response.sendRedirect("/encuestas/stuDash.html");
+		response.sendRedirect("/encuestas/login/stuDash.html");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
