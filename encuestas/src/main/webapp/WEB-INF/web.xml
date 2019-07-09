@@ -27,7 +27,7 @@
     <servlet-name>InsertEstudiante</servlet-name>
     <url-pattern>/InsertEstudiante</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>InsertInstructor</display-name>
     <servlet-name>InsertInstructor</servlet-name>
@@ -66,16 +66,6 @@
   <servlet-mapping>
     <servlet-name>UserType</servlet-name>
     <url-pattern>/UserType</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Admin</display-name>
-    <servlet-name>Admin</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.Admin</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Admin</servlet-name>
-    <url-pattern>/Admin</url-pattern>
   </servlet-mapping>
   <filter>
     <display-name>loginFilter</display-name>
@@ -119,7 +109,7 @@
     <servlet-name>CursoNuevo</servlet-name>
     <url-pattern>/CursoNuevo.jsp</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>LogIn</display-name>
     <servlet-name>LogIn</servlet-name>
@@ -128,5 +118,15 @@
   <servlet-mapping>
     <servlet-name>LogIn</servlet-name>
     <url-pattern>/LogIn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InsertAdmin</display-name>
+    <servlet-name>InsertAdmin</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.InsertAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertAdmin</servlet-name>
+    <url-pattern>/InsertAdmin</url-pattern>
   </servlet-mapping>
 </web-app>
