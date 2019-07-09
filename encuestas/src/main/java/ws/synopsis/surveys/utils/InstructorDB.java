@@ -19,7 +19,7 @@ public class InstructorDB {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e " +
 							"FROM Instructor as e " +
-							"WHERE e.username = :user";
+							"WHERE e.username = :username";
 		TypedQuery<InsertInstructor> q = em.createQuery(qString, InsertInstructor.class);
 		q.setParameter("user", username);
 		try {
@@ -34,9 +34,9 @@ public class InstructorDB {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e.username " +
 							"FROM Instructor as e " +
-							"WHERE e.username = :user";
+							"WHERE e.username = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("user", username);
+		q.setParameter("username", username);
 		try {
 			if(q.getSingleResult() != null) return true;
 			return false;
@@ -49,7 +49,7 @@ public class InstructorDB {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
 						"FROM Instructor e " +
-						"WHERE e.userid = :id";
+						"WHERE e.username = :username";
 		TypedQuery<Instructor> q = em.createQuery(qString, Instructor.class);
 		q.setParameter("username", username);
 		try {
@@ -61,11 +61,11 @@ public class InstructorDB {
 	
 	public static String getPasswordByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		String qString =	"SELECT e.password " +
+		String qString =	"SELECT e.contrasena " +
 							"FROM Instructor as e " +
-							"WHERE e.username = :user";
+							"WHERE e.username = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("user", username);
+		q.setParameter("username", username);
 		try {
 			return q.getSingleResult();
 		} finally {

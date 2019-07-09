@@ -30,7 +30,7 @@ public class LogIn extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		System.out.println("Login.java");
+		System.out.println("LogIn.java");
 		
 		HttpSession session = request.getSession(true);
 		
