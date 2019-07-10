@@ -22,8 +22,10 @@ public class AdminInsert extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("ImplementAdminDash.java");
+		HttpSession session = request.getSession(true);
 		
-		String type = request.getParameter("type");
+		String type = (String) session.getAttribute("type"); 
+		
 		if(type.equals("curso")) {
 			Curso curso = new Curso();
 			
@@ -33,6 +35,7 @@ public class AdminInsert extends HttpServlet {
 			curso.setEndDate(request.getParameter("endDate"));
 			curso.setStartTime(request.getParameter("startTime"));
 			curso.setEndTime(request.getParameter("endTime"));
+			curso.setInstructor(request.getParameter("instructor"));
 			
 			CursoDB.insertCurso(curso);
 			

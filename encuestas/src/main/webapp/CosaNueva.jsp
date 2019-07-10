@@ -78,11 +78,16 @@ form{
 
 </h1>
    <%
-   System.out.println("CursoNuevo.jsp");
+   System.out.println("CosaNueva.jsp");
+   String type = request.getParameter("type");
+   session.setAttribute("type", type);
    %>
 
-<form class ="monospace" action="/encuestas/InsertCurso" method="post">
+<form class ="monospace" action="/encuestas/AdminInsert" method="post">
 <br>
+<%
+if (type.equals("curso")){
+%>
   Curso:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="curso">
   <br><br>
@@ -90,15 +95,15 @@ form{
 <input type="text" name="codigo">
 <br><br>
   Fecha Inicio:
-  <input type="date" name="fechaI">
+  <input type="date" name="startDate">
 
   Fecha Fin:
-  <input type="date" name="fechaF">
+  <input type="date" name="endDate">
   <br><br>
   Tiempo Inicio:
-  <input type="time" name="tiempoI">
+  <input type="time" name="startTime">
   Tiempo Fin:
-  <input type="time" name="tiempoF">
+  <input type="time" name="endTime">
   <br><br>
   Instructor:
   <input type="text" name="instructor">
@@ -106,6 +111,52 @@ form{
 
   <br><br><br>
      <button class="button" style="vertical-align:middle"><span>Crear el curso</span></button>
+<% } else if(type.equals("instructor")) { %>
+<br>
+  Nombre:&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="nombre">
+  <br>
+  Apellido:&nbsp&nbsp
+  <input type="text" name="apellido">
+  <br>
+  DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <input type="int" name="DNI">
+  <br>
+  Correo:&nbsp&nbsp&nbsp&nbsp
+  <input type="email" name="correo">
+  <br>
+  Teléfono:&nbsp&nbsp
+  <input type="text" name="telefono" >
+  <br>
+    <br><br><br>
+     <button class="button" style="vertical-align:middle"><span>A&ntildadir un instructor</span></button>
+<% }else if(type.equals("aula")) { %>
+<br> 
+	Nombre:
+	<input type="text" name="nombre">
+	<br>
+	Ubicaci&oacuten:
+	<input type="text" name="ubicacion">
+	<br>
+     <br><br><br>
+     <button class="button" style="vertical-align:middle"><span>A&ntildadir una aula</span></button>
+  <% }else if(type.equals("empresa")) { %>   
+  <br>
+  	Nombre:
+	<input type="text" name="nombre">
+	<br>
+	Ubicaci&oacuten:
+	<input type="text" name="ubicacion">
+	<br>
+	Correo:&nbsp&nbsp&nbsp&nbsp
+  <input type="email" name="correo">
+  <br>
+  Teléfono:&nbsp&nbsp
+  <input type="text" name="telefono" >
+  <br>
+     <br><br><br>
+     <button class="button" style="vertical-align:middle"><span>A&ntildadir una empresa</span></button>
+     <%} %>
 </form>
 </body>
 </html>
