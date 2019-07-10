@@ -21,7 +21,7 @@ public class AdminInsert extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("ImplementAdminDash.java");
+		System.out.println("AdminInsert.java");
 		HttpSession session = request.getSession(true);
 		
 		String type = (String) session.getAttribute("type"); 

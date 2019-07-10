@@ -67,8 +67,22 @@ form{
 </style>
 
 <head>
+   <%
+   System.out.println("CosaNueva.jsp");
+   String type = request.getParameter("type");
+   System.out.println(type);
+   session.setAttribute("type", type);
+   %>
   <meta charset = "utf-8">
-  <title> Crear una cuenta nueva </title>
+  <%if(type.equals("curso")){ %>
+  <title> A&ntildeadir un curso nuevo </title>
+  <%}else if (type.equals("instructor")){ %>
+   <title> A&ntildeadir un instructor nuevo </title>
+  <%}else if (type.equals("aula")){ %>
+   <title> A&ntildeadir una aula nueva </title>
+  <%}else if (type.equals("empresa")){ %>
+  <title> A&ntildeadir una empresa nueva </title>
+  <%} %>
 </head>
 
 <h1>
@@ -77,11 +91,6 @@ form{
 <br><br>Complete la informaci&oacuten requerida para crear un curso nuevo
 
 </h1>
-   <%
-   System.out.println("CosaNueva.jsp");
-   String type = request.getParameter("type");
-   session.setAttribute("type", type);
-   %>
 
 <form class ="monospace" action="/encuestas/AdminInsert" method="post">
 <br>
@@ -128,8 +137,14 @@ if (type.equals("curso")){
   Teléfono:&nbsp&nbsp
   <input type="text" name="telefono" >
   <br>
+  El nombre de usuario:
+  <input type="text" name="userName" required>
+  <br>
+  Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <input type="password" name="contrasena" required>
+  <br>
     <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>A&ntildadir un instructor</span></button>
+     <button class="button" style="vertical-align:middle"><span>A&ntildeadir un instructor</span></button>
 <% }else if(type.equals("aula")) { %>
 <br> 
 	Nombre:
@@ -139,7 +154,7 @@ if (type.equals("curso")){
 	<input type="text" name="ubicacion">
 	<br>
      <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>A&ntildadir una aula</span></button>
+     <button class="button" style="vertical-align:middle"><span>A&ntildeadir una aula</span></button>
   <% }else if(type.equals("empresa")) { %>   
   <br>
   	Nombre:
@@ -155,7 +170,7 @@ if (type.equals("curso")){
   <input type="text" name="telefono" >
   <br>
      <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>A&ntildadir una empresa</span></button>
+     <button class="button" style="vertical-align:middle"><span>A&ntildeadir una empresa</span></button>
      <%} %>
 </form>
 </body>

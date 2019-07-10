@@ -81,12 +81,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <servlet-name>CursoNuevo</servlet-name>
-    <jsp-file>/CursoNuevo.jsp</jsp-file>
+    <servlet-name>CosaNueva</servlet-name>
+    <jsp-file>/CosaNueva.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CursoNuevo</servlet-name>
-    <url-pattern>/CursoNuevo.jsp</url-pattern>
+    <servlet-name>CosaNueva</servlet-name>
+    <url-pattern>/CosaNueva.jsp</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -126,5 +126,15 @@
   <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>AdminInsert</display-name>
+    <servlet-name>AdminInsert</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.AdminInsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminInsert</servlet-name>
+    <url-pattern>/AdminInsert</url-pattern>
   </servlet-mapping>
 </web-app>
