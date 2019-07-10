@@ -5,6 +5,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import ws.synopsis.surveys.model.Admin;
+import ws.synopsis.surveys.model.Aula;
+import ws.synopsis.surveys.model.Empresa;
 
 public class AdminDB {
 	public static boolean checkCredentials(String username, String contrasena) {
@@ -100,6 +102,44 @@ public class AdminDB {
 		try {
 			trans.begin();
 			em.merge(Admin);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
+	public static boolean insertAula(Aula Aula) {
+		boolean isSuccessful = false;
+		
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.persist(Aula);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
+	public static boolean insertEmpresa(Empresa Empresa) {
+		boolean isSuccessful = false;
+		
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.persist(Empresa);
 			trans.commit();
 			isSuccessful = true;
 		} catch (Exception e) {
