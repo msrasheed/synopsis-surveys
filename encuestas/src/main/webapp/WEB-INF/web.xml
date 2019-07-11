@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>encuestas</display-name>
-  <servlet>
-    <servlet-name>EnviarRegistro</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.EnviarRegistro</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EnviarRegistro</servlet-name>
-    <url-pattern>/EnviarRegistro</url-pattern>
-  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -27,7 +19,7 @@
     <servlet-name>InsertEstudiante</servlet-name>
     <url-pattern>/InsertEstudiante</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>InsertInstructor</display-name>
     <servlet-name>InsertInstructor</servlet-name>
@@ -69,16 +61,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Admin</display-name>
-    <servlet-name>Admin</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.Admin</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Admin</servlet-name>
-    <url-pattern>/Admin</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>MergeEstudiante</display-name>
     <servlet-name>MergeEstudiante</servlet-name>
     <servlet-class>ws.synopsis.surveys.servlets.MergeEstudiante</servlet-class>
@@ -99,14 +81,14 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <servlet-name>CursoNuevo</servlet-name>
-    <jsp-file>/CursoNuevo.jsp</jsp-file>
+    <servlet-name>CosaNueva</servlet-name>
+    <jsp-file>/CosaNueva.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CursoNuevo</servlet-name>
-    <url-pattern>/CursoNuevo.jsp</url-pattern>
+    <servlet-name>CosaNueva</servlet-name>
+    <url-pattern>/CosaNueva.jsp</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>LogIn</display-name>
     <servlet-name>LogIn</servlet-name>
@@ -116,20 +98,26 @@
     <servlet-name>LogIn</servlet-name>
     <url-pattern>/LogIn</url-pattern>
   </servlet-mapping>
-   <filter>
+  <servlet>
+    <description></description>
+    <display-name>InsertAdmin</display-name>
+    <servlet-name>InsertAdmin</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.InsertAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertAdmin</servlet-name>
+    <url-pattern>/InsertAdmin</url-pattern>
+  </servlet-mapping>
+  <filter>
     <display-name>loginFilter</display-name>
     <filter-name>loginFilter</filter-name>
     <filter-class>ws.synopsis.surveys.filters.LoginFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>loginFilter</filter-name>
-    <url-pattern>/loginFilter</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-    <filter-name>loginFilter</filter-name>
     <url-pattern>/login/*</url-pattern>
   </filter-mapping>
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>Logout</display-name>
     <servlet-name>Logout</servlet-name>
@@ -138,5 +126,15 @@
   <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>AdminInsert</display-name>
+    <servlet-name>AdminInsert</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.AdminInsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminInsert</servlet-name>
+    <url-pattern>/AdminInsert</url-pattern>
   </servlet-mapping>
 </web-app>

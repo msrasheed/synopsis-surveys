@@ -4,26 +4,27 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import ws.synopsis.surveys.model.Estudiante;
-import ws.synopsis.surveys.servlets.Admin;
+import ws.synopsis.surveys.model.Admin;
+import ws.synopsis.surveys.model.Aula;
+import ws.synopsis.surveys.model.Empresa;
 
 public class AdminDB {
-	public static boolean checkCredentials(String username, String password) {
+	public static boolean checkCredentials(String username, String contrasena) {
 		if(checkUsernameExists(username) == true) {
-			if(checkPasswordMatches(username, password) == true) return true;
+			if(checkcontrasenaMatches(username, contrasena) == true) return true;
 		}
 		return false;
 	}
 	
-	public static boolean checkPasswordMatches(String username, String password) {
+	public static boolean checkcontrasenaMatches(String username, String contrasena) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e " +
 							"FROM Admin as e " +
-							"WHERE e.username = :user";
+							"WHERE e.username = :username";
 		TypedQuery<Admin> q = em.createQuery(qString, Admin.class);
-		q.setParameter("user", username);
+		q.setParameter("username", username);
 		try {
-			if(q.getSingleResult().getPassword().equals(password)) return true;
+			if(q.getSingleResult().getContrasena().equals(contrasena)) return true;
 			return false;
 		} finally {
 			em.close();
@@ -34,9 +35,9 @@ public class AdminDB {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString =	"SELECT e.username " +
 							"FROM Admin as e " +
-							"WHERE e.username = :user";
+							"WHERE e.username = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("user", username);
+		q.setParameter("username", username);
 		try {
 			if(q.getSingleResult() != null) return true;
 			return false;
@@ -49,7 +50,7 @@ public class AdminDB {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
 						"FROM Admin e " +
-						"WHERE e.userid = :id";
+						"WHERE e.username = :username";
 		TypedQuery<Admin> q = em.createQuery(qString, Admin.class);
 		q.setParameter("username", username);
 		try {
@@ -61,25 +62,11 @@ public class AdminDB {
 	
 	public static String getPasswordByUsername(String username) {
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		String qString =	"SELECT e.password " +
+		String qString =	"SELECT e.contrasena " +
 							"FROM Admin as e " +
-							"WHERE e.username = :user";
+							"WHERE e.username = :username";
 		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("user", username);
-		try {
-			return q.getSingleResult();
-		} finally {
-			em.close();
-		}
-	}
-	
-	public static String getUsernameByID(int id) {
-		EntityManager em = EntityMan.getEmFactory().createEntityManager();
-		String qString ="SELECT e.username " +
-						"FROM Admin e " +
-						"WHERE e.userid = :id";
-		TypedQuery<String> q = em.createQuery(qString, String.class);
-		q.setParameter("id", id);
+		q.setParameter("username", username);
 		try {
 			return q.getSingleResult();
 		} finally {
@@ -126,9 +113,42 @@ public class AdminDB {
 		
 		return isSuccessful;
 	}
-
-	public static void insertAdmin(Estudiante Admin) {
-		// tbh don't want this. Just did it so it would compile
+	public static boolean insertAula(Aula Aula) {
+		boolean isSuccessful = false;
 		
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.persist(Aula);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
+	public static boolean insertEmpresa(Empresa Empresa) {
+		boolean isSuccessful = false;
+		
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.persist(Empresa);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
 	}
 }
