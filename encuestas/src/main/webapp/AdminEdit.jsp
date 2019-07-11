@@ -118,7 +118,7 @@ form{
 if (type.equals("curso")){
 %>
   Curso:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="courseName" value=${cosa.courseName}>
+  <input type="text" name="courseName" value="${cosa.courseName}">
   <br><br>
     C&oacutedigo:&nbsp&nbsp&nbsp
 <input type="text" name="courseId" value=${cosa.courseId}>
@@ -135,7 +135,7 @@ if (type.equals("curso")){
   <input type="time" name="endTime" value=${cosa.endTime}>
   <br><br>
   Instructor:
-  <input type="text" name="instructor" value=${cosa.instructor}>
+  <input type="text" name="instructor" value="${cosa.instructor}">
   <br> <br>
 
   <br><br><br>
@@ -149,7 +149,7 @@ if (type.equals("curso")){
   <input type="text" name="nombre" value=${cosa.nombre}>
   <br>
   Apellido:&nbsp&nbsp
-  <input type="text" name="apellido" value=${cosa.apellido}>
+  <input type="text" name="apellido" value="${cosa.apellido}">
   <br>
   DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <input type="int" name="DNI" value=${cosa.DNI}>
@@ -171,20 +171,20 @@ if (type.equals("curso")){
 <% }else if(type.equals("aula")) { %>
 <br> 
 	Nombre:
-	<input type="text" name="nombre" value=${cosa.nombre}>
+	<input type="text" name="nombre" value="${cosa.nombre}">
 	<br>
 	Ubicaci&oacuten:
-	<input type="text" name="ubicacion" value=${cosa.ubicacion}>
+	<input type="text" name="ubicacion" value="${cosa.ubicacion}">
 	<br>
      <br><br><br>
      <button class="button" style="vertical-align:middle"><span>Corregir la aula</span></button>
   <% }else if(type.equals("empresa")) { %>   
   <br>
 	Nombre:
-	<input type="text" name="nombre" value=${cosa.nombre}>
+	<input type="text" name="nombre" value="${cosa.nombre}">
 	<br>
 	Ubicaci&oacuten:
-	<input type="text" name="ubicacion" value=${cosa.ubicacion}>
+	<input type="text" name="ubicacion" value="${cosa.ubicacion}">
 	<br>
   Correo:&nbsp&nbsp&nbsp&nbsp
   <input type="email" name="correo" value=${cosa.correo}>
