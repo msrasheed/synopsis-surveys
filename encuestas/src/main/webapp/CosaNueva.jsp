@@ -71,6 +71,7 @@ form{
    System.out.println("CosaNueva.jsp");
    String type = request.getParameter("type");
    System.out.println(type);
+   session.setAttribute("action", request.getParameter("action"));
    session.setAttribute("type", type);
    %>
   <meta charset = "utf-8">
@@ -98,10 +99,10 @@ form{
 if (type.equals("curso")){
 %>
   Curso:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="curso">
+  <input type="text" name="courseName">
   <br><br>
     C&oacutedigo:&nbsp&nbsp&nbsp
-<input type="text" name="codigo">
+<input type="text" name="courseId">
 <br><br>
   Fecha Inicio:
   <input type="date" name="startDate">

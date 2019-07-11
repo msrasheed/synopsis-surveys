@@ -98,7 +98,7 @@ public class InstructorDB {
 		return isSuccessful;
 	}
 	
-	public static boolean mergeInstructor(InsertInstructor Instructor) {
+	public static boolean mergeInstructor(Instructor Instructor) {
 		boolean isSuccessful = false;
 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();

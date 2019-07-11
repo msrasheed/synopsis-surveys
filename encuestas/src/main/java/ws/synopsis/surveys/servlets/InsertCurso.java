@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import ws.synopsis.surveys.model.Curso;
-import ws.synopsis.surveys.utils.CursoDB; //tb created
+import ws.synopsis.surveys.utils.AdminDB; //tb created
 
 public class InsertCurso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -32,7 +32,7 @@ public class InsertCurso extends HttpServlet {
 		curso.setStartTime(request.getParameter("startTime"));
 		curso.setEndTime(request.getParameter("endTime"));
 		
-		CursoDB.insertCurso(curso);
+		AdminDB.insertCurso(curso);
 		
 		System.out.println("?¿?¿?¿?");
 		
