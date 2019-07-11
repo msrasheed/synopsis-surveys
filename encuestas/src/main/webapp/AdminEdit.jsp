@@ -101,14 +101,14 @@ form{
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br><br>  <%if(type.equals("curso")){ %>
-  <title> Corregir el curso </title>
+   Corregir el curso 
   <%}else if (type.equals("instructor")){ %>
-   <title> Corregir el instructor </title>
+    Corregir el instructor 
   <%}else if (type.equals("aula")){ %>
-   <title> Corregir la aula </title>
+   Corregir la aula 
   <%}else if (type.equals("empresa")){ %>
-  <title> Corregir la empresa </title>
-  <%} %>o
+  Corregir la empresa 
+  <%} %>
 
 </h1>
 
@@ -118,10 +118,10 @@ form{
 if (type.equals("curso")){
 %>
   Curso:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="curso" value=${cosa.curso}>
+  <input type="text" name="courseName" value=${cosa.courseName}>
   <br><br>
     C&oacutedigo:&nbsp&nbsp&nbsp
-<input type="text" name="codigo" value=${cosa.codigo}>
+<input type="text" name="courseId" value=${cosa.courseId}>
 <br><br>
   Fecha Inicio:
   <input type="date" name="startDate" value=${cosa.startDate}>
@@ -139,61 +139,61 @@ if (type.equals("curso")){
   <br> <br>
 
   <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>Crear el curso</span></button>
+     <button class="button" style="vertical-align:middle"><span>Corregir el curso</span></button>
 <% 
 /* AdminDB.mergeCurso(cosa); */
 
 } else if(type.equals("instructor")) { %>
 <br>
   Nombre:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="nombre">
+  <input type="text" name="nombre" value=${cosa.nombre}>
   <br>
   Apellido:&nbsp&nbsp
-  <input type="text" name="apellido">
+  <input type="text" name="apellido" value=${cosa.apellido}>
   <br>
   DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="int" name="DNI">
+  <input type="int" name="DNI" value=${cosa.DNI}>
   <br>
   Correo:&nbsp&nbsp&nbsp&nbsp
-  <input type="email" name="correo">
+  <input type="email" name="correo" value=${cosa.correo}>
   <br>
   Teléfono:&nbsp&nbsp
-  <input type="text" name="telefono" >
+  <input type="text" name="telefono" value=${cosa.telefono}>
   <br>
   El nombre de usuario:
-  <input type="text" name="userName" required>
+  <input type="text" name="userName"  value=${cosa.userName}required>
   <br>
   Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="password" name="contrasena" required>
+  <input type="password" name="contrasena" value=${cosa.contrasena} required>
   <br>
     <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>A&ntildeadir un instructor</span></button>
+     <button class="button" style="vertical-align:middle"><span>Corregir el instructor</span></button>
 <% }else if(type.equals("aula")) { %>
 <br> 
 	Nombre:
-	<input type="text" name="nombre">
+	<input type="text" name="nombre" value=${cosa.nombre}>
 	<br>
 	Ubicaci&oacuten:
-	<input type="text" name="ubicacion">
+	<input type="text" name="ubicacion" value=${cosa.ubicacion}>
 	<br>
      <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>A&ntildeadir una aula</span></button>
+     <button class="button" style="vertical-align:middle"><span>Corregir la aula</span></button>
   <% }else if(type.equals("empresa")) { %>   
   <br>
-  	Nombre:
-	<input type="text" name="nombre">
+	Nombre:
+	<input type="text" name="nombre" value=${cosa.nombre}>
 	<br>
 	Ubicaci&oacuten:
-	<input type="text" name="ubicacion">
+	<input type="text" name="ubicacion" value=${cosa.ubicacion}>
 	<br>
-	Correo:&nbsp&nbsp&nbsp&nbsp
-  <input type="email" name="correo">
+  Correo:&nbsp&nbsp&nbsp&nbsp
+  <input type="email" name="correo" value=${cosa.correo}>
   <br>
   Teléfono:&nbsp&nbsp
-  <input type="text" name="telefono" >
+  <input type="text" name="telefono" value=${cosa.telefono}>
   <br>
      <br><br><br>
-     <button class="button" style="vertical-align:middle"><span>A&ntildeadir una empresa</span></button>
+     <button class="button" style="vertical-align:middle"><span>Corregir la empresa</span></button>
      <%} %>
 </form>
 </body>

@@ -213,7 +213,7 @@ ${cosa.telefono}<br>
 <form action="/encuestas/adminDash.html" >
 <button class="button"><span>OK </span></button>
 </form>
-<form action="/encuestas/AdminEdit" method="post">
+<form action="/encuestas/AdminEdit.jsp" method="post">
 <button class="button"><span>Corregir </span></button>
 </form>
 
