@@ -25,6 +25,8 @@ public class AdminInsert extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		
 		String type = (String) session.getAttribute("type"); 
+		String action = (String) session.getAttribute("action");
+		System.out.println(action);
 		
 		if(type.equals("curso")) {
 			Curso curso = new Curso();
@@ -38,8 +40,12 @@ public class AdminInsert extends HttpServlet {
 			curso.setEndTime(request.getParameter("endTime"));
 			curso.setInstructor(request.getParameter("instructor"));
 			
+			if(action.equals("anadir")) {
+				AdminDB.insertCurso(curso);
+			}else if(action.equals("corregir")) {
+				AdminDB.mergeCurso(curso);
+			}
 			
-			AdminDB.insertCurso(curso);
 			
 		} else if (type.equals("instructor")) {
 			Instructor instructor = new Instructor();
@@ -53,7 +59,12 @@ public class AdminInsert extends HttpServlet {
 			instructor.setCorreo(request.getParameter("correo"));
 			instructor.setTelefono(request.getParameter("telefono"));
 			
-			InstructorDB.insertInstructor(instructor);
+			if(action.equals("anadir")) {
+				InstructorDB.insertInstructor(instructor);
+			}else if(action.equals("corregir")) {
+				InstructorDB.mergeInstructor(instructor);
+			}
+			
 			
 		} else if (type.equals("aula")) {
 			Aula aula = new Aula(); 
@@ -61,7 +72,11 @@ public class AdminInsert extends HttpServlet {
 			aula.setNombre(request.getParameter("nombre"));
 			aula.setUbicacion(request.getParameter("ubicacion"));
 			
-			AdminDB.insertAula(aula); 
+			if(action.equals("anadir")) {
+				AdminDB.insertAula(aula); 
+			}else if(action.equals("corregir")) {
+				AdminDB.mergeAula(aula);
+			}
 			
 		} else if (type.equals("empresa")) {
 			Empresa empresa = new Empresa(); 
@@ -71,7 +86,12 @@ public class AdminInsert extends HttpServlet {
 			empresa.setCorreo(request.getParameter("correo"));
 			empresa.setTelefono(request.getParameter("telefono"));
 			
-			AdminDB.insertEmpresa(empresa); 
+			if(action.equals("anadir")) {
+				AdminDB.insertEmpresa(empresa); 
+			}else if(action.equals("corregir")) {
+				AdminDB.mergeEmpresa(empresa);
+			}
+			
 		}
 	
 		response.sendRedirect("/encuestas/adminDash.html"); //tb created

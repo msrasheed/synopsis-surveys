@@ -15,9 +15,7 @@ public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	@Column(name="courseId")
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private String courseId;
 	private String courseName;
 	private String instructor;

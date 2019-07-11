@@ -67,10 +67,10 @@ form{
 
 <head>
    <%
-   System.out.println("AdmitEdit.java");
+   System.out.println("AdminEdit.java");
    String type = (String) session.getAttribute("type");
    String codigo = (String) session.getAttribute("codigo");
-   String action = (String) session.getAttribute("action");
+   session.setAttribute("action","corregir");
    
    if(type.equals("curso")){ 
 	   Curso cosa = (Curso) session.getAttribute("cosa");

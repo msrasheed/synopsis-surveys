@@ -133,6 +133,25 @@ public class AdminDB {
 		
 		return isSuccessful;
 	}
+	public static boolean mergeAula(Aula Aula) {
+		boolean isSuccessful = false;
+
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.merge(Aula);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
 	public static Aula getAulabyNombre(String nombre) { 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
 		String qString ="SELECT e " +
@@ -155,6 +174,25 @@ public class AdminDB {
 		try {
 			trans.begin();
 			em.persist(Empresa);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
+	public static boolean mergeEmpresa(Empresa Empresa) {
+		boolean isSuccessful = false;
+
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.merge(Empresa);
 			trans.commit();
 			isSuccessful = true;
 		} catch (Exception e) {
