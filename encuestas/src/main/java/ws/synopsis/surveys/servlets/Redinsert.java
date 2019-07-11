@@ -56,7 +56,7 @@ public class Redinsert extends HttpServlet {
 		request.setAttribute("result", result);
 		
 		
-		response.sendRedirect("/encuestas/stuDash.html");
+		response.sendRedirect("/encuestas/login/stuDash.html");
 	}
 
 	/**

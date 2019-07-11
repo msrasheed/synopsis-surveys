@@ -53,7 +53,7 @@ public class LoginFilter implements Filter {
 
 		else {
 			System.out.println("Redirecting to Login;");
-			httpResponse.sendRedirect("/systemorders-webapp/index.html");
+			httpResponse.sendRedirect("/encuestas/LogInEIA.jsp");
 		}
 
 		System.out.println("Exiting Authorization Filter\n");
