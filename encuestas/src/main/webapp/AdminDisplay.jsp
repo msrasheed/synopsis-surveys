@@ -196,7 +196,7 @@ Ubicaci&oacuten: <br>
 ${cosa.nombre }<br>
 ${cosa.ubicacion}<br>
 </div>
-<%}else if(type.equals("aula")){ %>
+<%}else if(type.equals("empresa")){ %>
 <div class= "column left" style="text-align:right">
 Nombre: <br>
 Ubicaci&oacuten: <br>
