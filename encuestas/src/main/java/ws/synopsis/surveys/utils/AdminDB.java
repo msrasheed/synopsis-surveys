@@ -6,6 +6,7 @@ import javax.persistence.TypedQuery;
 
 import ws.synopsis.surveys.model.Admin;
 import ws.synopsis.surveys.model.Aula;
+import ws.synopsis.surveys.model.Curso;
 import ws.synopsis.surveys.model.Empresa;
 
 public class AdminDB {
@@ -132,6 +133,20 @@ public class AdminDB {
 		
 		return isSuccessful;
 	}
+	public static Aula getAulabyNombre(String nombre) { 
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		String qString ="SELECT e " +
+						"FROM Aula as e " +
+						"WHERE e.nombre = :nombre";
+		TypedQuery<Aula> q = em.createQuery(qString, Aula.class);
+		q.setParameter("nombre", nombre);
+		try {
+			return q.getSingleResult();
+		} finally {
+			em.close();
+		}
+	}
+	
 	public static boolean insertEmpresa(Empresa Empresa) {
 		boolean isSuccessful = false;
 		
@@ -150,5 +165,71 @@ public class AdminDB {
 		}
 		
 		return isSuccessful;
+	}
+	public static Empresa getEmpresabyNombre(String nombre) { 
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		String qString ="SELECT e " +
+						"FROM Empresa as e " +
+						"WHERE e.nombre = :nombre";
+		TypedQuery<Empresa> q = em.createQuery(qString, Empresa.class);
+		q.setParameter("nombre", nombre);
+		try {
+			return q.getSingleResult();
+		} finally {
+			em.close();
+		}
+	}
+
+	public static boolean insertCurso(Curso Curso) {
+		boolean isSuccessful = false;
+		
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		
+		try {
+			trans.begin();
+			em.persist(Curso);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
+	public static boolean mergeCurso(Curso Curso) {
+		boolean isSuccessful = false;
+
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.merge(Curso);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
+	public static Curso getCursobyCourseId(String courseId) { 
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		String qString ="SELECT e " +
+						"FROM Curso as e " +
+						"WHERE e.courseId = :courseId";
+		TypedQuery<Curso> q = em.createQuery(qString, Curso.class);
+		q.setParameter("courseId", courseId);
+		try {
+			return q.getSingleResult();
+		} finally {
+			em.close();
+		}
 	}
 }

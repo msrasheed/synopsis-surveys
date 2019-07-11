@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import= "ws.synopsis.surveys.model.Estudiante" %>
-<%@ page import= "ws.synopsis.surveys.utils.EstudianteDB" %>
-<%@ page import= "ws.synopsis.surveys.utils.EntityMan" %>
+<%@ page import= "ws.synopsis.surveys.model.*" %>
+<%@ page import= "ws.synopsis.surveys.utils.*" %>
 <%@ page import ="javax.persistence.*" %>
 
 <!DOCTYPE html>
@@ -68,28 +67,48 @@ form{
 
 <head>
    <%
-   System.out.println("CosaNueva.jsp");
-   String type = request.getParameter("type");
+   System.out.println("AdmitEdit.java");
+   String type = (String) session.getAttribute("type");
+   String codigo = (String) session.getAttribute("codigo");
+   String action = (String) session.getAttribute("action");
+   
+   if(type.equals("curso")){ 
+	   Curso cosa = (Curso) session.getAttribute("cosa");
+   } else if (type.equals("instructor")){ 
+	   Instructor cosa = (Instructor) session.getAttribute("cosa");
+   } else if (type.equals("aula")){ 
+	   Aula cosa = (Aula) session.getAttribute("cosa");
+   } else if (type.equals("empresa")){ 
+	   Empresa cosa = (Empresa) session.getAttribute("cosa");
+   }
    System.out.println(type);
-   session.setAttribute("action", request.getParameter("action"));
-   session.setAttribute("type", type);
+
    %>
+   
   <meta charset = "utf-8">
   <%if(type.equals("curso")){ %>
-  <title> A&ntildeadir un curso nuevo </title>
+  <title> Corregir el curso </title>
   <%}else if (type.equals("instructor")){ %>
-   <title> A&ntildeadir un instructor nuevo </title>
+   <title> Corregir el instructor </title>
   <%}else if (type.equals("aula")){ %>
-   <title> A&ntildeadir una aula nueva </title>
+   <title> Corregir la aula </title>
   <%}else if (type.equals("empresa")){ %>
-  <title> A&ntildeadir una empresa nueva </title>
+  <title> Corregir la empresa </title>
   <%} %>
 </head>
 
 <h1>
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br><br>Complete la informaci&oacuten requerida para crear un curso nuevo
+<br><br>  <%if(type.equals("curso")){ %>
+  <title> Corregir el curso </title>
+  <%}else if (type.equals("instructor")){ %>
+   <title> Corregir el instructor </title>
+  <%}else if (type.equals("aula")){ %>
+   <title> Corregir la aula </title>
+  <%}else if (type.equals("empresa")){ %>
+  <title> Corregir la empresa </title>
+  <%} %>o
 
 </h1>
 
@@ -99,29 +118,32 @@ form{
 if (type.equals("curso")){
 %>
   Curso:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="courseName">
+  <input type="text" name="curso" value=${cosa.curso}>
   <br><br>
     C&oacutedigo:&nbsp&nbsp&nbsp
-<input type="text" name="courseId">
+<input type="text" name="codigo" value=${cosa.codigo}>
 <br><br>
   Fecha Inicio:
-  <input type="date" name="startDate">
+  <input type="date" name="startDate" value=${cosa.startDate}>
 
   Fecha Fin:
-  <input type="date" name="endDate">
+  <input type="date" name="endDate" value=${cosa.endDate}>
   <br><br>
   Tiempo Inicio:
-  <input type="time" name="startTime">
+  <input type="time" name="startTime" value=${cosa.startTime}>
   Tiempo Fin:
-  <input type="time" name="endTime">
+  <input type="time" name="endTime" value=${cosa.endTime}>
   <br><br>
   Instructor:
-  <input type="text" name="instructor">
+  <input type="text" name="instructor" value=${cosa.instructor}>
   <br> <br>
 
   <br><br><br>
      <button class="button" style="vertical-align:middle"><span>Crear el curso</span></button>
-<% } else if(type.equals("instructor")) { %>
+<% 
+/* AdminDB.mergeCurso(cosa); */
+
+} else if(type.equals("instructor")) { %>
 <br>
   Nombre:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="nombre">

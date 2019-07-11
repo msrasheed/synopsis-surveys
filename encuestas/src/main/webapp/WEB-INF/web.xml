@@ -127,7 +127,7 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/Logout</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>AdminInsert</display-name>
     <servlet-name>AdminInsert</servlet-name>
@@ -136,5 +136,15 @@
   <servlet-mapping>
     <servlet-name>AdminInsert</servlet-name>
     <url-pattern>/AdminInsert</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminView</display-name>
+    <servlet-name>AdminView</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.AdminView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminView</servlet-name>
+    <url-pattern>/AdminView</url-pattern>
   </servlet-mapping>
 </web-app>

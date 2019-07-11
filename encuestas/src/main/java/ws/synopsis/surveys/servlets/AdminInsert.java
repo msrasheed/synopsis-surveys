@@ -31,13 +31,15 @@ public class AdminInsert extends HttpServlet {
 			
 			curso.setCourseId(request.getParameter("courseId"));
 			curso.setCourseName(request.getParameter("courseName"));
+			System.out.println(request.getParameter("courseName"));
 			curso.setStartDate(request.getParameter("startDate"));
 			curso.setEndDate(request.getParameter("endDate"));
 			curso.setStartTime(request.getParameter("startTime"));
 			curso.setEndTime(request.getParameter("endTime"));
 			curso.setInstructor(request.getParameter("instructor"));
 			
-			CursoDB.insertCurso(curso);
+			
+			AdminDB.insertCurso(curso);
 			
 		} else if (type.equals("instructor")) {
 			Instructor instructor = new Instructor();
