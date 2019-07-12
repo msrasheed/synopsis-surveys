@@ -116,6 +116,7 @@ font-size:24px;
 
 <div class="tab" style="overflow:auto;">
   <button class="tablink" onclick="openPage('Cursos',this,'rgba(242, 38, 19, 1)')" color>Cursos</button>
+  <button class="tablink" onclick="openPage('Estudiantes',this,'rgba(242, 38, 19, 1)')" color>Estudiantes</button>
   <button class="tablink" onclick="openPage('Instructors',this,'rgba(242, 38, 19, 1)')" color>Instructors</button>
   <button class="tablink" onclick="openPage('Aulas',this,'rgba(242, 38, 19, 1)')" color>Aulas</button>
   <button class="tablink" onclick="openPage('Empresas',this,'rgba(242, 38, 19, 1)')" color>Empresas</button>
@@ -140,9 +141,38 @@ font-size:24px;
   <input type="text" name="codigo">
   <button type="submit" class="button" ><span>Ver/Corregir un curso</span></button>
    <input hidden type="text" name="type" value="curso">
-   <input hidden type="text" name="action" value="corregir">
+   <input hidden type="text" name="action" value="ver">
+  </form>
+  <form action="/encuestas/AdminView">
+  <input type="text" name="codigo">
+    <button type="submit" class="button" ><span>Ver encuesta respuestas</span></button>
+   <input hidden type="text" name="type" value="curso">
+   <input hidden type="text" name="action" value="respuestas">
   </form>
   <br>
+  </p>
+</div>
+
+<div id="Estudiantes" class="tabcontent" style="padding:20px;">
+<span class="gracias">&iquestQu&eacute quiere hacer?</span>
+<br>
+  <p>
+  <br>
+  <form action="/encuestas/CosaNueva.jsp">
+  <button class = "button" type="submit" ><span>A&ntildeadir un estudiante nuevo</span></button>
+  <input hidden type="text" name="type" value="estudiante">
+  <input hidden type="text" name="action" value="anadir">
+  </form><br>
+  </p><p>
+  <form action="/encuestas/AdminView">
+  Nombre de un instructor
+  <input type="text" name="codigo">
+  <button type="submit" class="button" ><span>Ver/Corregir un estudiante</span></button>
+   <input hidden type="text" name="type" value="estudiante">
+   <input hidden type="text" name="action" value="ver">
+  </form>
+  <br>
+
   </p>
 </div>
 
@@ -162,7 +192,7 @@ font-size:24px;
   <input type="text" name="codigo">
   <button type="submit" class="button" ><span>Ver/Corregir un instructor</span></button>
    <input hidden type="text" name="type" value="instructor">
-   <input hidden type="text" name="action" value="corregir">
+   <input hidden type="text" name="action" value="ver">
   </form>
   <br>
 
@@ -185,7 +215,7 @@ font-size:24px;
   <input type="text" name="codigo">
   <button type="submit" class="button" ><span>Ver/Corregir una aula</span></button>
    <input hidden type="text" name="type" value="aula">
-   <input hidden type="text" name="action" value="corregir">
+   <input hidden type="text" name="action" value="ver">
   </form>
   <br>
 
@@ -208,7 +238,7 @@ font-size:24px;
   <input type="text" name="codigo">
   <button type="submit" class="button" ><span>Ver/Corregir una empresa</span></button>
    <input hidden type="text" name="type" value="empresa">
-   <input hidden type="text" name="action" value="corregir">
+   <input hidden type="text" name="action" value="ver">
   </form>
   <br>
   </p>

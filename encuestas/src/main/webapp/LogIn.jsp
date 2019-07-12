@@ -87,11 +87,12 @@ body {margin:1em;padding:1em;
 
   </form>
     
+    <%if(userType.equals("admin")){ %>
   <form class ="monospace" action="/encuestas/CuentaNueva.jsp" method="post">  
   &iquestNo tienes una cuenta?&nbsp&nbsp&nbsp
   <button class="button" style="vertical-align:middle"><span>Crear una cuenta </span></button><br>
-
   </form>
+  <%} %>
   
   <form class ="monospace" action="/encuestas/Olvidaste.jsp" method="post">
   &iquestOlvidaste tu contraseña?

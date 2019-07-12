@@ -77,6 +77,8 @@ form{
   <meta charset = "utf-8">
   <%if(type.equals("curso")){ %>
   <title> A&ntildeadir un curso nuevo </title>
+  <%}else if (type.equals("estudiante")){ %>
+   <title> A&ntildeadir un estudiante nuevo </title>
   <%}else if (type.equals("instructor")){ %>
    <title> A&ntildeadir un instructor nuevo </title>
   <%}else if (type.equals("aula")){ %>
@@ -89,7 +91,17 @@ form{
 <h1>
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br><br>Complete la informaci&oacuten requerida para crear un curso nuevo
+<br><br>  <%if(type.equals("curso")){ %>
+ A&ntildeadir un curso nuevo 
+  <%}else if (type.equals("estudiante")){ %>
+   A&ntildeadir un estudiante nuevo 
+  <%}else if (type.equals("instructor")){ %>
+    A&ntildeadir un instructor nuevo 
+  <%}else if (type.equals("aula")){ %>
+    A&ntildeadir una aula nueva 
+  <%}else if (type.equals("empresa")){ %>
+ A&ntildeadir una empresa nueva 
+  <%} %>
 
 </h1>
 
@@ -119,9 +131,8 @@ if (type.equals("curso")){
   <input type="text" name="instructor">
   <br> <br>
 
-  <br><br><br>
      <button class="button" style="vertical-align:middle"><span>Crear el curso</span></button>
-<% } else if(type.equals("instructor")) { %>
+<% } else if(type.equals("instructor")||type.equals("estudiante")) { %>
 <br>
   Nombre:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="nombre">
@@ -144,8 +155,19 @@ if (type.equals("curso")){
   Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <input type="password" name="contrasena" required>
   <br>
-    <br><br><br>
+  <%if(type.equals("estudiante")){ %>
+  	Empresa:&nbsp&nbsp&nbsp 
+  <input type="text" name="empresa">
+  <br>
+  Cargo: &nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="cargo">
+  <br>
+ 
+     <button class="button" style="vertical-align:middle"><span>A&ntildeadir un estudiante</span></button>
+ <%}else{ %>
+
      <button class="button" style="vertical-align:middle"><span>A&ntildeadir un instructor</span></button>
+     <%} %>
 <% }else if(type.equals("aula")) { %>
 <br> 
 	Nombre:
@@ -170,7 +192,7 @@ if (type.equals("curso")){
   Teléfono:&nbsp&nbsp
   <input type="text" name="telefono" >
   <br>
-     <br><br><br>
+  
      <button class="button" style="vertical-align:middle"><span>A&ntildeadir una empresa</span></button>
      <%} %>
 </form>

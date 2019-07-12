@@ -65,6 +65,25 @@ public class AdminInsert extends HttpServlet {
 				InstructorDB.mergeInstructor(instructor);
 			}
 			
+		} else if (type.equals("estudiante")) {
+			Estudiante estudiante = new Estudiante();
+			
+			estudiante.setDNI(request.getParameter("DNI"));
+			estudiante.setuserType("estudiante");
+			estudiante.setNombre(request.getParameter("nombre"));
+			estudiante.setApellido(request.getParameter("apellido"));
+			estudiante.setUserName(request.getParameter("userName"));
+			estudiante.setContrasena(HashingUtil.shaw256((request.getParameter("contrasena"))));
+			estudiante.setCorreo(request.getParameter("correo"));
+			estudiante.setTelefono(request.getParameter("telefono"));
+			estudiante.setEmpresa(request.getParameter("empresa"));
+			estudiante.setCargo(request.getParameter("cargo"));
+			
+			if(action.equals("anadir")) {
+				EstudianteDB.insertEstudiante(estudiante);
+			}else if(action.equals("corregir")) {
+				EstudianteDB.mergeEstudiante(estudiante);
+			}
 			
 		} else if (type.equals("aula")) {
 			Aula aula = new Aula(); 

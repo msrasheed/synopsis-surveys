@@ -1,6 +1,8 @@
 package ws.synopsis.surveys.servlets;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,11 +32,19 @@ public class AdminView extends HttpServlet {
 		
 	    String type = request.getParameter("type");
 		String codigo = request.getParameter("codigo");
+		String action = request.getParameter("action");
 		session.setAttribute("type", type);
 		
 		if(type.equals("curso")) {
-			Curso cosa = AdminDB.getCursobyCourseId(codigo);
-			session.setAttribute("cosa", cosa);
+			if(action.equals("ver")) {
+				Curso cosa = AdminDB.getCursobyCourseId(codigo);
+				session.setAttribute("cosa", cosa);
+			}else if (action.equals("respuestas")) {
+				List<Coffeebean> respuestas = AdminDB.getCoffeebeansbyCurso(codigo);
+				session.setAttribute("respuestas", respuestas);
+				response.sendRedirect("/encuestas/AdminRespuestas");
+			}
+			
 		} else if (type.equals("instructor")) {
 			Instructor cosa = InstructorDB.getInstructorByUsername(codigo);
 			session.setAttribute("cosa", cosa);

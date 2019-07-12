@@ -1,13 +1,12 @@
 package ws.synopsis.surveys.utils;
 
+import java.util.List;
+
 import javax.persistence.EntityManager; 
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import ws.synopsis.surveys.model.Admin;
-import ws.synopsis.surveys.model.Aula;
-import ws.synopsis.surveys.model.Curso;
-import ws.synopsis.surveys.model.Empresa;
+import ws.synopsis.surveys.model.*;
 
 public class AdminDB {
 	public static boolean checkCredentials(String username, String contrasena) {
@@ -266,6 +265,18 @@ public class AdminDB {
 		q.setParameter("courseId", courseId);
 		try {
 			return q.getSingleResult();
+		} finally {
+			em.close();
+		}
+	}
+	public static List<Coffeebean> getCoffeebeansbyCurso(String curso) { 
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		String qString ="SELECT e " +
+						"FROM Coffeebean as e " +
+						"WHERE e.curso = :curso";
+		TypedQuery<Coffeebean> q = em.createQuery(qString, Coffeebean.class);
+		try {
+			return q.getResultList();
 		} finally {
 			em.close();
 		}
