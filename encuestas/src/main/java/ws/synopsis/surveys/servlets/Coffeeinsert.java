@@ -15,22 +15,19 @@ import ws.synopsis.surveys.model.Coffeebean;
 import ws.synopsis.surveys.utils.EstudianteDB;
 
 /**
- * Servlet implementation class coffee
+ * Servlet implementation class coffeeinsert
+ * 
+ * This is the servlet that takes student survey responses and puts them in the coffeebreak table on 
+ * the database. It then takes the user back to the student Dash
  */
 public class Coffeeinsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public Coffeeinsert() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("I am in insert mode");

@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+//This is the java bean for responses to the redhat questionnaire. 
 @Entity
 @Table(name = "redhatsurvey")
 public class Redbean implements Serializable {

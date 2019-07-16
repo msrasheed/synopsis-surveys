@@ -8,7 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+//This is the java bean for responses to the coffee break questionnaire. 
 @Entity
 @Table(name = "coffeebreak")
 public class Coffeebean implements Serializable {
