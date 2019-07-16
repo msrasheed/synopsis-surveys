@@ -147,4 +147,13 @@
     <servlet-name>AdminView</servlet-name>
     <url-pattern>/AdminView</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>AdminRespuestas</servlet-name>
+    <jsp-file>/AdminRespuestas.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminRespuestas</servlet-name>
+    <url-pattern>/AdminRespuestas.jsp</url-pattern>
+  </servlet-mapping>
 </web-app>

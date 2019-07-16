@@ -271,14 +271,19 @@ public class AdminDB {
 	}
 	public static List<Coffeebean> getCoffeebeansbyCurso(String curso) { 
 		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		System.out.println("Let's go girls");
 		String qString ="SELECT e " +
 						"FROM Coffeebean as e " +
 						"WHERE e.curso = :curso";
 		TypedQuery<Coffeebean> q = em.createQuery(qString, Coffeebean.class);
+		q.setParameter("curso", curso);
+		List<Coffeebean> coffeebean;
 		try {
-			return q.getResultList();
+			System.out.println("did this work?");
+			coffeebean = q.getResultList();
 		} finally {
 			em.close();
 		}
+		return coffeebean;
 	}
 }

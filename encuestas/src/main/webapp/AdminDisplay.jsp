@@ -3,6 +3,7 @@
 <%@ page import= "ws.synopsis.surveys.model.*" %>
 <%@ page import= "ws.synopsis.surveys.utils.*" %>
 <%@ page import ="javax.persistence.*" %>
+<%@ page import = "java.util.List" %>
 
 <!DOCTYPE html>
 
@@ -97,10 +98,17 @@ div {
    <%
    System.out.println("AdminDisplay.jsp");
    String type = (String) session.getAttribute("type");
-   session.setAttribute("action", request.getParameter("action"));
+   String action = (String) session.getAttribute("action");
+   System.out.println(type);
+   System.out.println(action);
    
    if(type.equals("curso")){ 
-	   Curso cosa = (Curso) session.getAttribute("cosa");
+	   if(action.equals("ver")){
+		   System.out.println("Why is this a problem??");
+		   Curso cosa = (Curso) session.getAttribute("cosa"); 
+	   } else if (action.equals("respuestas")){
+		   List<Coffeebean> respuestas = (List<Coffeebean>) session.getAttribute("respuestas");
+	   }
    } else if (type.equals("instructor")){ 
 	   Instructor cosa = (Instructor) session.getAttribute("cosa");
    } else if (type.equals("aula")){ 

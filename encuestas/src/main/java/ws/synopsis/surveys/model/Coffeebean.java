@@ -17,7 +17,7 @@ public class Coffeebean implements Serializable {
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private int id;
-		@Column(name="curso")
+		@Column(name="courseid")
 		private String curso;
 		private String instructor; 
 		private int rate1;
