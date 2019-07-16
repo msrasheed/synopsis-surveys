@@ -13,6 +13,10 @@ import ws.synopsis.surveys.utils.InstructorDB;
 
 /**
  * Servlet implementation class InsertInstructor
+ * 
+ * This servlet takes in information about new instructors and inserts it into the database table for 
+ * instructors. Then takes you back to the instructor Dash
+ * 
  */
 public class InsertInstructor extends HttpServlet {
 	private static final long serialVersionUID = 1L;

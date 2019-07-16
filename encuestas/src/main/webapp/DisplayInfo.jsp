@@ -1,21 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import= "ws.synopsis.surveys.model.Estudiante"%>
-<%@ page import ="java.io.IOException"%>
-<%@ page import ="javax.servlet.ServletException" %>
-<%@ page import ="javax.servlet.http.HttpServlet" %>
-<%@ page import ="javax.servlet.http.HttpServletRequest"%>
-<%@ page import ="javax.servlet.http.HttpServletResponse"%>
-
-<%@ page import ="ws.synopsis.surveys.servlets.InsertEstudiante"%>
-<%@ page import= "ws.synopsis.surveys.utils.EstudianteDB" %>
-<%@ page import= "ws.synopsis.surveys.utils.EntityMan" %>
+<%@ page import= "ws.synopsis.surveys.model.*" %>
+<%@ page import= "ws.synopsis.surveys.utils.*" %>
 <%@ page import ="javax.persistence.*" %>
 
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<%--
+Displays the student information from the table on the database
+ --%>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Display Info</title>

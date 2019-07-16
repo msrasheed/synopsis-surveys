@@ -2,7 +2,14 @@
 <html>
 
 <head>
-
+<!-- 
+This is the main dash for administrators. Here, they can view, correct, and create new Courses, Student Accounts,
+Instructor Accounts, Classrooms, and Companies that we work with. It is my idea that this info be stored on its
+own table in the database, and the primary keys for these tables used as foreign keys for a table combining the infomation
+later. It was my intention to make everything as similar as possible, so if a new course, account, classroom, or empresa
+is to be added, they are all redirected to the jsp CosaNueva.jsp. There, depending on the hidden text input box "type", different 
+information will be asked for and displayed. There is another hidden text input box "action" that is used later as well. 
+ -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing: border-box}
@@ -27,7 +34,7 @@ background-color:rgba(255,69,0,0.7);
   cursor: pointer;
   padding: 14px ;
   font-size: 20px;
-  width: 20%;
+  width: 20%; /*If you want to add more tabs, change this number. Since there are 5 tabs currently, the width is 20% or 1/5 */
 }
 
 .tablink:hover {
@@ -127,6 +134,10 @@ font-size:24px;
 <div id="Cursos" class="tabcontent" style="padding:20px;">
 
 <span class="gracias">&iquestQu&eacute quiere hacer?</span>
+<!-- 
+the reason for the "&iquest" and other strange characters is that in some browsers
+special characters do not show up. So "&iquest" is the specific character for "¿" and similar for other strange characters.  
+-->
 <br>
   <p>
   <br>
@@ -144,6 +155,7 @@ font-size:24px;
    <input hidden type="text" name="action" value="ver">
   </form>
   <form action="/encuestas/AdminView">
+  C&oacutedigo de un curso:
   <input type="text" name="codigo">
     <button type="submit" class="button" ><span>Ver encuesta respuestas</span></button>
    <input hidden type="text" name="type" value="curso">
@@ -177,7 +189,7 @@ font-size:24px;
 </div>
 
 <div id="Instructors" class="tabcontent" style="padding:20px;">
-<span class="gracias">&iquestQu&eacute quiere hacer?</span>
+<span class="gracias">&iquestQu&eacute quiere hacer?</span> 
 <br>
   <p>
   <br>

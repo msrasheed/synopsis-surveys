@@ -13,6 +13,9 @@ import ws.synopsis.surveys.utils.HashingUtil;
 
 /**
  * Servlet implementation class Estudiante
+ * 
+ * This servlet takes the information supplied by the CuentaNueva.jsp and inputs it into the estudiantes table
+ * on the database. Then sends the user back to the student Dash
  */
 public class InsertEstudiante extends HttpServlet {
 	

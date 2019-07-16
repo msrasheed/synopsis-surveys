@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 /**
  * Entity implementation class for Entity: Survey
- * This is the JavaBean
+ * This is the JavaBean for the table "cursos" on the database
  */
 @Entity
 @Table(name = "CURSOS")

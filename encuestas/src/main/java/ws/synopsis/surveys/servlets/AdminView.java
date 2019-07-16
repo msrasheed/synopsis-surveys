@@ -13,6 +13,14 @@ import ws.synopsis.surveys.model.*;
 import ws.synopsis.surveys.utils.*; 
 /**
  * Servlet implementation class AdminView
+ * 
+ * This servlet retrieves the requested object from the appropriate database table and stores it in the session 
+ * object to be displayed on the next jsp AdminDisplay.jsp
+ * 
+ * I also set it up to retrieve the survey responses and send them to the jsp AdminRespuestas.jsp but I have 
+ * yet to get this to work properly
+ * 
+ * 
  */
 public class AdminView extends HttpServlet {
 	private static final long serialVersionUID = 1L;

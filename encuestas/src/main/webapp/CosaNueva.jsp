@@ -6,7 +6,10 @@
 <%@ page import ="javax.persistence.*" %>
 
 <!DOCTYPE html>
-
+<%--
+This jsp is used by the admin to create new courses, students, instructos, classrooms, and companies, depending
+on the variable "type". All of the collected information is then sent to the servlet AdminInsert.java
+ --%>
 <html>
 <body>
 <style>

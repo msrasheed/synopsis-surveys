@@ -3,6 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<!-- 
+This is the second page in the website. Here users enter their usernames and passwords. 
+I've set it up so that only administrators can create new accounts, but it probably needs to only be an option after loging in
+to prove that they are actually an admin. 
+Also, I've set up a button for if someone forgets their password, but I couldn't figure out how to send emails with jsp, so 
+that currently does nothing. 
+After entering their username and password, we are redirected to the servlet LogIn.java
+To create a new account, you are redirected to the jsp CuentaNueva.jsp
+ -->
 <meta charset="UTF-8">
  <title> Log In </title>
 
@@ -72,7 +81,9 @@ body {margin:1em;padding:1em;
 
    <%
    System.out.println("LogIn.jsp");
-   String userType = (String) session.getAttribute("userType");
+   String userType = request.getParameter("userType");
+
+	session.setAttribute("userType", userType);
    %>
     
 <form class ="monospace" action="/encuestas/LogIn" method="post">

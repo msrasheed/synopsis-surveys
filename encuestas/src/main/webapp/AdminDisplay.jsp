@@ -6,7 +6,12 @@
 <%@ page import = "java.util.List" %>
 
 <!DOCTYPE html>
-
+<%--
+This page displays the information from the database tables depending on the variable "type"
+if this information looks correct, the user presses the button "OK" and is sent to the adminDash
+if there is an error or an update needs to be made, they can press the "Corregir" button and 
+go to the next jsp AdminEdit.jsp to change the information.
+ --%>
 <html>
 <body>
 <style>

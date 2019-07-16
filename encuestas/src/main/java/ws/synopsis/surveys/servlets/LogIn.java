@@ -19,6 +19,18 @@ public class LogIn extends HttpServlet {
        
     /**
      * @see HttpServlet#HttpServlet()
+     * 
+     * First, users are authenticated using the authenticateUser method in the userAuthentication class. This 
+     * method takes the username, password, and userType, since the log in information will be stored on different
+     * tables in the database depending on userType
+     * 
+     * After a successful log in, the userbean information is retrieved using the get___byUsername method in
+     * the appropriate _____DB class. This user object is then stored in the session object for later use. 
+     * 
+     * After this page, we are redirected to the appropriate dash board.
+     * 
+     * If the log in attempt is failed, we are redirected to the first jsp LogInEIA.jsp
+     * 
      */
     public LogIn() {
         super();
@@ -69,7 +81,7 @@ public class LogIn extends HttpServlet {
 			}
 		else {
 				System.out.println("Wrong");
-				response.sendRedirect("/encuestas/LogIn.jsp");
+				response.sendRedirect("/encuestas/LogInEIA.jsp");
 			}
 	}
 		

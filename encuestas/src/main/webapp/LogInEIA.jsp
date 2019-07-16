@@ -4,6 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<!-- 
+This is the very first page of the website. It is used to determine the userType of the user who wishes to 
+log in. The user presses a button, which activates the hidden text input box with the appropriate value, 
+either estudiante, instructor, or admin 
+After this page, we are redirected to the jsp LogIn.jsp for the user to input their username and password
+-->
 <meta charset="UTF-8">
  <title> Eres un </title>
 
@@ -74,17 +80,17 @@ body {margin:1em;padding:1em;
 
 
 
-<form action="/encuestas/UserType" class="monospace" method="get">
+<form action="/encuestas/LogIn.jsp" class="monospace" method="get">
 <input hidden type="text" name="userType" value="estudiante">
 
 <button id="estudiante" class="button" style="vertical-align:middle" ><span>Estudiante </span></button>
 </form>
-<form action="/encuestas/UserType" class="monospace" method="get">
+<form action="/encuestas/LogIn.jsp" class="monospace" method="get">
 <input hidden type="text" name="userType" value="instructor">
 
 <br><button id="instructor" class="button" style="vertical-align:middle" ><span>Instructor </span></button>
 </form>
-<form action="/encuestas/UserType" class="monospace" method="get">
+<form action="/encuestas/LogIn.jsp" class="monospace" method="get">
 <input hidden type="text" name="userType" value="admin">
 
 <br><button id="admin" class="button" style="vertical-align:middle"><span>Administrador </span></button>

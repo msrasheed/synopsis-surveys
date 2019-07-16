@@ -11,6 +11,8 @@ import ws.synopsis.surveys.model.Estudiante;
 //import ws.synopsis.surveys.model.Estudiante;
 /**
  * Servlet implementation class UserType
+ * 
+Pretty sure I do not need this but I am cautious to delete it. 
  */
 public class UserType extends HttpServlet {
 	private static final long serialVersionUID = 1L;

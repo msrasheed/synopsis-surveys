@@ -8,6 +8,14 @@
 <!DOCTYPE html>
 
 <html>
+<%--
+This page is used to create new accounts. Currently, only admins can make new admin accounts, but that 
+can be changed easily by altering the LogIn.jsp to display the crear cuenta nueva button. That button leads
+to this jsp which takes in the appropriate information and sends it to the appropriate servlet to insert
+the information to the database table
+ --%>
+
+
 <body>
 <style>
 h1{

@@ -5,7 +5,10 @@
 <%@ page import ="javax.persistence.*" %>
 
 <!DOCTYPE html>
-
+<%--
+This page displays the information from the database in the input text boxes, but allows for edits. 
+After making the desired updates, we are redirected to the servlet AdminInsert.java.
+ --%>
 <html>
 <body>
 <style>
@@ -70,7 +73,8 @@ form{
    System.out.println("AdminEdit.java");
    String type = (String) session.getAttribute("type");
    String codigo = (String) session.getAttribute("codigo");
-   session.setAttribute("action","corregir");
+   session.setAttribute("action","corregir"); //This sets the "action" variable to "corregir" for when we go to 
+   //servlet AdminInsert.java we simply change the row on the table instead of making a new entry on the table.
    
    if(type.equals("curso")){ 
 	   Curso cosa = (Curso) session.getAttribute("cosa");
