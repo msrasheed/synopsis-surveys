@@ -105,4 +105,15 @@
     <servlet-name>stuDash</servlet-name>
     <url-pattern>/stuDash.jsp</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <display-name>Assign</display-name>
+    <servlet-name>Assign</servlet-name>
+    <servlet-class>ws.synopsis.surveys.servlets.Assign</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Assign</servlet-name>
+    <url-pattern>/Assign</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

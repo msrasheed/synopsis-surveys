@@ -2,14 +2,7 @@
 <html>
 
 <head>
-<!-- 
-This is the main dash for administrators. Here, they can view, correct, and create new Courses, Student Accounts,
-Instructor Accounts, Classrooms, and Companies that we work with. It is my idea that this info be stored on its
-own table in the database, and the primary keys for these tables used as foreign keys for a table combining the infomation
-later. It was my intention to make everything as similar as possible, so if a new course, account, classroom, or empresa
-is to be added, they are all redirected to the jsp CosaNueva.jsp. There, depending on the hidden text input box "type", different 
-information will be asked for and displayed. There is another hidden text input box "action" that is used later as well. 
- -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing: border-box}
@@ -34,7 +27,7 @@ background-color:rgba(255,69,0,0.7);
   cursor: pointer;
   padding: 14px ;
   font-size: 20px;
-  width: 20%; /*If you want to add more tabs, change this number. Since there are 5 tabs currently, the width is 20% or 1/5 */
+  width: 16.66%;
 }
 
 .tablink:hover {
@@ -114,7 +107,10 @@ font-size:24px;
   opacity: 1;
   right: 0;
 }
- 
+.Assign
+{
+	text-align:center; 
+}
 </style>
 
 </head>
@@ -127,17 +123,13 @@ font-size:24px;
   <button class="tablink" onclick="openPage('Instructors',this,'rgba(242, 38, 19, 1)')" color>Instructors</button>
   <button class="tablink" onclick="openPage('Aulas',this,'rgba(242, 38, 19, 1)')" color>Aulas</button>
   <button class="tablink" onclick="openPage('Empresas',this,'rgba(242, 38, 19, 1)')" color>Empresas</button>
-
+  <button class="tablink" onclick="openPage('Assign',this,'rgba(242, 38, ,19, 1)')" color>Assign</button>
 </div>
 
 
 <div id="Cursos" class="tabcontent" style="padding:20px;">
 
 <span class="gracias">&iquestQu&eacute quiere hacer?</span>
-<!-- 
-the reason for the "&iquest" and other strange characters is that in some browsers
-special characters do not show up. So "&iquest" is the specific character for "Â¿" and similar for other strange characters.  
--->
 <br>
   <p>
   <br>
@@ -155,7 +147,6 @@ special characters do not show up. So "&iquest" is the specific character for "Â
    <input hidden type="text" name="action" value="ver">
   </form>
   <form action="/encuestas/AdminView">
-  C&oacutedigo de un curso:
   <input type="text" name="codigo">
     <button type="submit" class="button" ><span>Ver encuesta respuestas</span></button>
    <input hidden type="text" name="type" value="curso">
@@ -189,7 +180,7 @@ special characters do not show up. So "&iquest" is the specific character for "Â
 </div>
 
 <div id="Instructors" class="tabcontent" style="padding:20px;">
-<span class="gracias">&iquestQu&eacute quiere hacer?</span> 
+<span class="gracias">&iquestQu&eacute quiere hacer?</span>
 <br>
   <p>
   <br>
@@ -254,6 +245,27 @@ special characters do not show up. So "&iquest" is the specific character for "Â
   </form>
   <br>
   </p>
+  
+</div>
+
+<div id="Assign" class="tabcontent" style="padding:20px;">
+
+  <br> 
+<form action="/encuestas/Assign">
+Registrar un estudiante con un clase nuevo <br>
+Nombre: <input type="text" name="nombre"><br>
+Apellido: <input type="text" name="apellido"><br>
+Curso C&oacutedigo: <input type="text" name="coursecode"><br>
+Curso nombre: <input type="text" name="coursename"><br>
+Aula: <input type="text" name="aula"><br>
+Instructor: <input type="text" name="instructor"><br>
+Start date: <input type="date" name="startdate"> 
+ End date: <input type="date" name="endate"><br>
+<input hidden type="int" name="hora" value=0><br>
+
+<button type="submit" class="button" ><span>Terminar</span></button>
+
+</form>
 </div>
 
 <script>

@@ -286,4 +286,26 @@ public class AdminDB {
 		}
 		return coffeebean;
 	}
+	
+	public static boolean insertAttendance (Attendance attendance) {
+	boolean isSuccessful = false;
+		EntityManager em = EntityMan.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		
+		try {
+			trans.begin();
+			System.out.println("Did I try?");
+			em.persist(attendance);
+			trans.commit();
+			isSuccessful = true;
+		} catch (Exception e) {
+			trans.rollback();
+			System.out.println(e);
+			isSuccessful = false;
+		}finally {
+			em.close();
+		}
+		
+		return isSuccessful;
+	}
 }

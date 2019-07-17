@@ -34,6 +34,7 @@
       <class>ws.synopsis.surveys.model.Curso</class>
       <class>ws.synopsis.surveys.model.Aula</class>
       <class>ws.synopsis.surveys.model.Empresa</class>
+      <class>ws.synopsis.surveys.model.Attendance</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="update" />
