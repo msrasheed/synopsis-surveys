@@ -30,6 +30,7 @@ public class AdminInsert extends HttpServlet {
 		System.out.println("AdminInsert.java");
 		HttpSession session = request.getSession(true);
 		
+		String userType = (String) session.getAttribute("userType");
 		String type = (String) session.getAttribute("type"); 
 		String action = (String) session.getAttribute("action");
 		System.out.println(action);
@@ -52,6 +53,23 @@ public class AdminInsert extends HttpServlet {
 				AdminDB.mergeCurso(curso);
 			}
 			
+		} else if (type.equals("admin")) {
+			Admin admin = new Admin();
+			
+			admin.setDNI(request.getParameter("DNI"));
+			admin.setUserType((String) session.getAttribute("userType"));
+			admin.setNombre(request.getParameter("nombre"));
+			admin.setApellido(request.getParameter("apellido"));
+			admin.setUsername(request.getParameter("userName"));
+			admin.setContrasena(HashingUtil.shaw256((request.getParameter("contrasena"))));
+			admin.setCorreo(request.getParameter("correo"));
+			admin.setTelefono(request.getParameter("telefono"));
+			
+			if(action.equals("anadir")) {
+				AdminDB.insertAdmin(admin);
+			}else if(action.equals("corregir")) {
+				AdminDB.mergeAdmin(admin);
+			}
 			
 		} else if (type.equals("instructor")) {
 			Instructor instructor = new Instructor();
@@ -118,8 +136,14 @@ public class AdminInsert extends HttpServlet {
 			}
 			
 		}
-	
-		response.sendRedirect("/encuestas/adminDash.html"); //tb created
+		if (userType.equals("estudiante")) {
+			response.sendRedirect("/encuestas/stuDash.html");
+		}else if (userType.equals("instructor")) {
+			response.sendRedirect("/encuestas/insDash.html");
+		}else if (userType.equals("admin")) {
+			response.sendRedirect("/encuestas/adminDash.html"); 
+		}
+		
 		
 		
 	}

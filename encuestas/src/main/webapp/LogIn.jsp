@@ -98,12 +98,14 @@ body {margin:1em;padding:1em;
 
   </form>
     
-    <%if(userType.equals("admin")){ %>
-  <form class ="monospace" action="/encuestas/CuentaNueva.jsp" method="post">  
+<%if(userType.equals("admin")){ %> <!-- if you want to allow students and instructors to make their own accounts, delete this line and line 107 -->
+  <form class ="monospace" action="/encuestas/CosaNueva.jsp" method="post">  
   &iquestNo tienes una cuenta?&nbsp&nbsp&nbsp
+  <input hidden type="text" name="type" value=${userType}>
+  <input hidden type="text" name="action" value="anadir">
   <button class="button" style="vertical-align:middle"><span>Crear una cuenta </span></button><br>
   </form>
-  <%} %>
+<%} %>
   
   <form class ="monospace" action="/encuestas/Olvidaste.jsp" method="post">
   &iquestOlvidaste tu contraseña?

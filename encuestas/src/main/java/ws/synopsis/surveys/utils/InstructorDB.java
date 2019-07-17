@@ -5,7 +5,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import ws.synopsis.surveys.model.Instructor;
-import ws.synopsis.surveys.servlets.InsertInstructor;
 
 public class InstructorDB {
 	public static boolean checkCredentials(String username, String password) {
@@ -20,7 +19,7 @@ public class InstructorDB {
 		String qString =	"SELECT e " +
 							"FROM Instructor as e " +
 							"WHERE e.username = :username";
-		TypedQuery<InsertInstructor> q = em.createQuery(qString, InsertInstructor.class);
+		TypedQuery<Instructor> q = em.createQuery(qString, Instructor.class);
 		q.setParameter("user", username);
 		try {
 			if(q.getSingleResult().getPassword().equals(password)) return true;

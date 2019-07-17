@@ -1,7 +1,9 @@
 package ws.synopsis.surveys.utils;
 
 import java.security.MessageDigest;
-
+/*
+ * This hashes the passwords so that even though they are stored on the database, they can't be stolen as easily
+ */
 public class HashingUtil {
 	public static String shaw256(String msg) {
 		

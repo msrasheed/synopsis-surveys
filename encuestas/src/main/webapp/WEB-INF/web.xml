@@ -11,26 +11,6 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>InsertEstudiante</display-name>
-    <servlet-name>InsertEstudiante</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.InsertEstudiante</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>InsertEstudiante</servlet-name>
-    <url-pattern>/InsertEstudiante</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>InsertInstructor</display-name>
-    <servlet-name>InsertInstructor</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.InsertInstructor</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>InsertInstructor</servlet-name>
-    <url-pattern>/InsertInstructor</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>Coffeeinsert</display-name>
     <servlet-name>Coffeeinsert</servlet-name>
     <servlet-class>ws.synopsis.surveys.servlets.Coffeeinsert</servlet-class>
@@ -51,36 +31,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>UserType</display-name>
-    <servlet-name>UserType</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.UserType</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UserType</servlet-name>
-    <url-pattern>/UserType</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>MergeEstudiante</display-name>
-    <servlet-name>MergeEstudiante</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.MergeEstudiante</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MergeEstudiante</servlet-name>
-    <url-pattern>/MergeEstudiante</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>InsertCurso</display-name>
-    <servlet-name>InsertCurso</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.InsertCurso</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>InsertCurso</servlet-name>
-    <url-pattern>/InsertCurso</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <servlet-name>CosaNueva</servlet-name>
     <jsp-file>/CosaNueva.jsp</jsp-file>
   </servlet>
@@ -97,16 +47,6 @@
   <servlet-mapping>
     <servlet-name>LogIn</servlet-name>
     <url-pattern>/LogIn</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>InsertAdmin</display-name>
-    <servlet-name>InsertAdmin</servlet-name>
-    <servlet-class>ws.synopsis.surveys.servlets.InsertAdmin</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>InsertAdmin</servlet-name>
-    <url-pattern>/InsertAdmin</url-pattern>
   </servlet-mapping>
   <filter>
     <display-name>loginFilter</display-name>

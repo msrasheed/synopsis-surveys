@@ -114,12 +114,12 @@ div {
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br><br>  
-   Respuestas de curso ${session.codigo } 
+   Respuestas de curso ${session.codigo} 
 
 
 </h1>
 <table>
-	<c:forEach items="$Coffeebean" var="respuestas">
+	<c:forEach items="$respuestas" var="respuestas">
 		<tr>
 			<td><c:out value ="waddup"> </c:out></td>
 			<td><c:out value="${respuestas.rate1}" ></c:out></td>
@@ -128,10 +128,10 @@ div {
 	</c:forEach>
 </table>
 <form action="/encuestas/adminDash.html" >
-<button class="button"><span>OK </span></button>
+<button class="button"><span>OK</span></button>
 </form>
 <form action="/encuestas/AdminEdit.jsp" method="post">
-<button class="button"><span>Corregir </span></button>
+<button class="button"><span>Corregir</span></button>
 </form>
 
 

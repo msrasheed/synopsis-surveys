@@ -99,4 +99,9 @@ public class Instructor implements Serializable {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
+
+	public Object getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -7,7 +7,6 @@ import javax.persistence.TypedQuery;
 import ws.synopsis.surveys.model.Coffeebean;
 import ws.synopsis.surveys.model.Redbean;
 import ws.synopsis.surveys.model.Estudiante;
-import ws.synopsis.surveys.servlets.InsertEstudiante;
 
 public class EstudianteDB {
 	public static boolean checkCredentials(String username, String password) {
@@ -22,7 +21,7 @@ public class EstudianteDB {
 		String qString =	"SELECT e " +
 							"FROM Estudiante as e " +
 							"WHERE e.username = :username";
-		TypedQuery<InsertEstudiante> q = em.createQuery(qString, InsertEstudiante.class);
+		TypedQuery<Estudiante> q = em.createQuery(qString, Estudiante.class);
 		q.setParameter("user", username);
 		try {
 			if(q.getSingleResult().getPassword().equals(password)) return true;

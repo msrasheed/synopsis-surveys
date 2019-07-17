@@ -135,8 +135,8 @@ if (type.equals("curso")){
   <br> <br>
 
      <button class="button" style="vertical-align:middle"><span>Crear el curso</span></button>
-<% } else if(type.equals("instructor")||type.equals("estudiante")) { %>
-<br>
+<% } else if(type.equals("instructor")||type.equals("estudiante")||type.equals("admin")) { %>
+
   Nombre:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="nombre">
   <br>
@@ -152,20 +152,22 @@ if (type.equals("curso")){
   Teléfono:&nbsp&nbsp
   <input type="text" name="telefono" >
   <br>
-  El nombre de usuario:
-  <input type="text" name="userName" required>
-  <br>
-  Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="password" name="contrasena" required>
-  <br>
-  <%if(type.equals("estudiante")){ %>
+    <%if(type.equals("estudiante")){ %>
   	Empresa:&nbsp&nbsp&nbsp 
   <input type="text" name="empresa">
   <br>
   Cargo: &nbsp&nbsp&nbsp&nbsp
   <input type="text" name="cargo">
   <br>
- 
+  <%} %>
+  <br>El nombre de usuario:
+  <input type="text" name="userName" required>
+  <br>
+  Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <input type="password" name="contrasena" required>
+  <br>
+
+ <%if(type.equals("estudiante")){ %>
      <button class="button" style="vertical-align:middle"><span>A&ntildeadir un estudiante</span></button>
  <%}else{ %>
 
