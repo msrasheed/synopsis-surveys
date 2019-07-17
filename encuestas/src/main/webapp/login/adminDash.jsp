@@ -136,7 +136,7 @@ font-size:24px;
 <span class="gracias">&iquestQu&eacute quiere hacer?</span>
 <!-- 
 the reason for the "&iquest" and other strange characters is that in some browsers
-special characters do not show up. So "&iquest" is the specific character for "Â¿" and similar for other strange characters.  
+special characters do not show up. So "&iquest" is the specific character for "¿" and similar for other strange characters.  
 -->
 <br>
   <p>

@@ -60,7 +60,7 @@ background-color:beige;
 #hoja {background-color: rgba(128,128,128,0.2);}
 </style>
 </head>
-<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">Hola! Â¿CÃ³mo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
+<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">Hola! ¿Cómo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
 <body>
 <div class="tab" style="overflow:auto;">
   <button class="tablink" onclick="openPage('Mi Curso',this,'rgba(242, 38, 19, 1)')" color>Mi Curso</button>
