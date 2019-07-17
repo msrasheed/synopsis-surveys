@@ -169,9 +169,10 @@ if (type.equals("curso")){
 
  <%if(type.equals("estudiante")){ %>
      <button class="button" style="vertical-align:middle"><span>A&ntildeadir un estudiante</span></button>
- <%}else{ %>
-
+ <%}else if (type.equals("instructor")){ %>
      <button class="button" style="vertical-align:middle"><span>A&ntildeadir un instructor</span></button>
+     <%}else if (type.equals("admin")){ %>
+     <button class="button" style="vertical-align:middle"><span>A&ntildeadir un admin</span></button>
      <%} %>
 <% }else if(type.equals("aula")) { %>
 <br> 

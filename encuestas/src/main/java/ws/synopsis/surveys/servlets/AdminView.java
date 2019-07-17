@@ -37,15 +37,22 @@ public class AdminView extends HttpServlet {
 		System.out.println("AdminView.java");
 		
 		HttpSession session = request.getSession(true);
-		
+		String userType = (String) session.getAttribute("userType");
 	    String type = request.getParameter("type");
-		String codigo = request.getParameter("codigo");
 		String action = request.getParameter("action");
+		String codigo = null;
+		   if(userType.equals("estudiante")||type.equals("instructor")||type.equals("admin")){
+			   codigo = (String) session.getAttribute("userName");
+		   }else{
+		   		codigo = (String) session.getAttribute("codigo");
+		   }
+		
 		System.out.println(type);
 		System.out.println(codigo);
 		System.out.println(action);
 		session.setAttribute("type", type);
 		session.setAttribute("action", action);
+		session.setAttribute("codigo", codigo);
 		
 		if(type.equals("curso")) {
 			if(action.equals("ver")) {
@@ -61,9 +68,16 @@ public class AdminView extends HttpServlet {
 				session.setAttribute("respuestas", respuestas);
 				response.sendRedirect("/encuestas/AdminRespuestas.jsp");
 			}
-			
+		} else if (type.equals("estudiante")) {
+			Estudiante cosa = EstudianteDB.getEstudianteByUsername(codigo);
+			session.setAttribute("cosa", cosa);
+			response.sendRedirect("/encuestas/AdminDisplay.jsp");
 		} else if (type.equals("instructor")) {
 			Instructor cosa = InstructorDB.getInstructorByUsername(codigo);
+			session.setAttribute("cosa", cosa);
+			response.sendRedirect("/encuestas/AdminDisplay.jsp");
+		} else if (type.equals("admin")) {
+			Admin cosa = AdminDB.getAdminByUsername(codigo);
 			session.setAttribute("cosa", cosa);
 			response.sendRedirect("/encuestas/AdminDisplay.jsp");
 		} else if (type.equals("aula")) {

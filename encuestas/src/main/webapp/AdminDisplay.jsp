@@ -104,8 +104,11 @@ div {
    System.out.println("AdminDisplay.jsp");
    String type = (String) session.getAttribute("type");
    String action = (String) session.getAttribute("action");
+   String codigo = (String) session.getAttribute("codigo");
+
    System.out.println(type);
    System.out.println(action);
+   System.out.println(codigo);
    
    if(type.equals("curso")){ 
 	   if(action.equals("ver")){
@@ -114,40 +117,52 @@ div {
 	   } else if (action.equals("respuestas")){
 		   List<Coffeebean> respuestas = (List<Coffeebean>) session.getAttribute("respuestas");
 	   }
+   } else if (type.equals("estudiante")){
+   		Estudiante cosa = (Estudiante) session.getAttribute("cosa");
    } else if (type.equals("instructor")){ 
 	   Instructor cosa = (Instructor) session.getAttribute("cosa");
+   } else if (type.equals("admin")){
+	   Admin cosa = (Admin) session.getAttribute("cosa");
    } else if (type.equals("aula")){ 
 	   Aula cosa = (Aula) session.getAttribute("cosa");
    } else if (type.equals("empresa")){ 
 	   Empresa cosa = (Empresa) session.getAttribute("cosa");
    }
-   System.out.println(type);
 
    %>
    
   <meta charset = "utf-8">
   <%if(type.equals("curso")){ %>
-  <title> Informaci&oacute de curso ${session.codigo } </title>
+  <title> Informaci&oacute de curso ${codigo } </title>
+  <%}else if (type.equals("estudiante")){ %>
+   <title> Informaci&oacute de estudiante ${codigo } </title>
   <%}else if (type.equals("instructor")){ %>
-   <title> Informaci&oacute de instructor ${session.codigo } </title>
+   <title> Informaci&oacute de instructor ${codigo } </title>
+   <%}else if (type.equals("admin")){ %>
+   <title> Informaci&oacute de admin ${codigo }</title>
   <%}else if (type.equals("aula")){ %>
-   <title> Informaci&oacute de aula ${session.codigo } </title>
+   <title> Informaci&oacute de aula ${codigo } </title>
   <%}else if (type.equals("empresa")){ %>
-  <title> Informaci&oacute de empresa ${session.codigo } </title>
+  <title> Informaci&oacute de empresa ${codigo } </title>
   <%} %>
 </head>
 
 <h1>
 
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
-<br><br>  <%if(type.equals("curso")){ %>
-   Informaci&oacute de curso ${session.codigo } 
+<br><br>  
+  <%if(type.equals("curso")){ %>
+   Informaci&oacute de curso ${codigo } 
+  <%}else if (type.equals("estudiante")){ %>
+    Informaci&oacute de estudiante ${codigo } 
   <%}else if (type.equals("instructor")){ %>
-    Informaci&oacute de instructor ${session.codigo } 
+    Informaci&oacute de instructor ${codigo } 
+   <%}else if (type.equals("admin")){ %>
+    Informaci&oacute de admin ${codigo }
   <%}else if (type.equals("aula")){ %>
-    Informaci&oacute de aula ${session.codigo } 
+   Informaci&oacute de aula ${codigo } 
   <%}else if (type.equals("empresa")){ %>
-    Informaci&oacute de empresa ${session.codigo } 
+   Informaci&oacute de empresa ${codigo } 
   <%} %>
 
 </h1>
@@ -174,7 +189,7 @@ ${cosa.endTime}<br>
 ${cosa.instructor}<br>
 
 </div>
-<%}else if(type.equals("instructor")){ %>
+<%}else if(type.equals("estudiante")){ %>
 <div class= "column left" style="text-align:right">
 
 Username: <br>
@@ -197,6 +212,29 @@ ${cosa.correo}<br>
 ${cosa.telefono}<br>
 ${cosa.empresa}<br>
 ${cosa.cargo}<br> 
+
+</div>
+<%}else if(type.equals("instructor") || type.equals("admin")){ %>
+<div class= "column left" style="text-align:right">
+
+Username: <br>
+Nombre: <br>
+Apellido: <br>
+DNI: <br>
+Correo: <br>
+Tel&eacutefono: <br>
+
+
+</div>
+<div class="column right"style="text-align:left">
+
+${cosa.userName}<br>  
+${cosa.nombre}<br>
+${cosa.apellido}<br>
+${cosa.DNI}<br>
+${cosa.correo}<br>
+${cosa.telefono}<br>
+
 
 </div>
 <%}else if(type.equals("aula")){ %>
@@ -222,7 +260,7 @@ ${cosa.ubicacion}<br>
 ${cosa.correo}<br>
 ${cosa.telefono}<br>
 </div>
-<%} %>
+<%}%>
 <form action="/encuestas/adminDash.html" >
 <button class="button"><span>OK </span></button>
 </form>

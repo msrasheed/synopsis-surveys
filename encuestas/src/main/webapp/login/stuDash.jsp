@@ -155,8 +155,14 @@ font-size:24px;
 </div>
 
 <div id="Info" class="tabcontent">
- <form action="/encuestas/DisplayInfo.jsp">
+ <form action="/encuestas/AdminDisplay.jsp">
  &nbsp&nbsp<button type="submit" class="button"> <span>Ver su informaci&oacuten</span></button>
+<%
+session.setAttribute("type","estudiante");
+session.setAttribute("action", "ver");
+session.setAttribute("codigo", session.getAttribute("userName"));
+%>
+ 
  </form>
  <br>
  <form action="/encuestas/CursosE.jsp">
@@ -194,7 +200,7 @@ font-size:24px;
 </div>
 
 <script>
-
+document.write("God in Heaven ABOVE");
    if(window.location.href.substr(-2) !== "?r") {
       window.location = window.location.href + "?r";
     }

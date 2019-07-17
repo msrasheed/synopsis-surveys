@@ -96,4 +96,13 @@
     <servlet-name>AdminRespuestas</servlet-name>
     <url-pattern>/AdminRespuestas.jsp</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <servlet-name>stuDash</servlet-name>
+    <jsp-file>/login/stuDash.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stuDash</servlet-name>
+    <url-pattern>/stuDash.jsp</url-pattern>
+  </servlet-mapping>
 </web-app>

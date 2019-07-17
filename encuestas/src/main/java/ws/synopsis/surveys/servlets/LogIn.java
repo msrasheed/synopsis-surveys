@@ -57,23 +57,23 @@ public class LogIn extends HttpServlet {
 		if (UserAuthentication.authenticateUser(username, password, userType)) {
 				session.setMaxInactiveInterval(30 * 60); //the lines below still need adjustments
 				System.out.println(username);
-				
+				System.out.println(userType);
 				if(userType.equals("estudiante")) 
 				{
 					Estudiante estudiante = EstudianteDB.getEstudianteByUsername(username);
-					session.setAttribute("estudiante",estudiante);
-					response.sendRedirect("/encuestas/login/stuDash.html");
+					session.setAttribute("cosa",estudiante);
+					response.sendRedirect("/encuestas/login/stuDash.jsp");
 				}
 				else if (userType.equals("instructor")) 
 				{
 					Instructor instructor = InstructorDB.getInstructorByUsername(username);
-					session.setAttribute("instructor", instructor);
+					session.setAttribute("cosa", instructor);
 		            response.sendRedirect("/encuestas/insDash.html");
 				}
 				else if (userType.equals("admin")) 
 				{
 					Admin admin = AdminDB.getAdminByUsername(username);
-					session.setAttribute("admin",admin);
+					session.setAttribute("cosa",admin);
 					response.sendRedirect("/encuestas/adminDash.html");
 				}
 				  

@@ -78,8 +78,12 @@ form{
    
    if(type.equals("curso")){ 
 	   Curso cosa = (Curso) session.getAttribute("cosa");
+   } else if (type.equals("estudiante")){
+	   Estudiante cosa = (Estudiante) session.getAttribute("cosa");
    } else if (type.equals("instructor")){ 
 	   Instructor cosa = (Instructor) session.getAttribute("cosa");
+   } else if (type.equals("admin")){
+	   Admin cosa = (Admin) session.getAttribute("cosa");
    } else if (type.equals("aula")){ 
 	   Aula cosa = (Aula) session.getAttribute("cosa");
    } else if (type.equals("empresa")){ 
@@ -106,8 +110,12 @@ form{
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br><br>  <%if(type.equals("curso")){ %>
    Corregir el curso 
+   <%} else if (type.equals("estudiante")){ %>
+   Corregir el estudiante
   <%}else if (type.equals("instructor")){ %>
     Corregir el instructor 
+    <%}else if (type.equals("admin")){ %>
+    Corregir el admin
   <%}else if (type.equals("aula")){ %>
    Corregir la aula 
   <%}else if (type.equals("empresa")){ %>
@@ -145,10 +153,37 @@ if (type.equals("curso")){
   <br><br><br>
      <button class="button" style="vertical-align:middle"><span>Corregir el curso</span></button>
 <% 
-/* AdminDB.mergeCurso(cosa); */
-
-} else if(type.equals("instructor")) { %>
-<br>
+} else if (type.equals("estudiante")){ %>
+	  Nombre:&nbsp&nbsp&nbsp&nbsp
+	  <input type="text" name="nombre" value=${cosa.nombre}>
+	  <br>
+	  Apellido:&nbsp&nbsp
+	  <input type="text" name="apellido" value="${cosa.apellido}">
+	  <br>
+	  DNI: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	  <input type="int" name="DNI" value=${cosa.DNI}>
+	  <br>
+	  Correo:&nbsp&nbsp&nbsp&nbsp
+	  <input type="email" name="correo" value=${cosa.correo}>
+	  <br>
+	  Teléfono:&nbsp&nbsp
+	  <input type="text" name="telefono" value=${cosa.telefono}>
+	  <br>
+	  El nombre de usuario:
+	  <input type="text" name="userName"  value=${cosa.userName} required>
+	  <br>
+	  Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	  <input type="password" name="contrasena" value=${cosa.contrasena} required>
+	  <br>
+	  	<br>Empresa:&nbsp&nbsp&nbsp 
+  <input type="text" name="empresa" value="${cosa.empresa}">
+  <br>
+  Cargo: &nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="cargo" value="${cosa.cargo}">
+  <br>
+ <button class="button" style="vertical-align:middle"><span>Corregir el estudiante</span></button>
+<%} else if(type.equals("instructor")||type.equals("admin")) { %>
+	<br>
   Nombre:&nbsp&nbsp&nbsp&nbsp
   <input type="text" name="nombre" value=${cosa.nombre}>
   <br>
@@ -171,7 +206,11 @@ if (type.equals("curso")){
   <input type="password" name="contrasena" value=${cosa.contrasena} required>
   <br>
     <br><br><br>
+    <%if(type.equals("instructor")){ %>
      <button class="button" style="vertical-align:middle"><span>Corregir el instructor</span></button>
+     <%}else if (type.equals("admin")){ %>
+      <button class="button" style="vertical-align:middle"><span>Corregir el admin</span></button>
+      <%} %>
 <% }else if(type.equals("aula")) { %>
 <br> 
 	Nombre:
@@ -198,7 +237,7 @@ if (type.equals("curso")){
   <br>
      <br><br><br>
      <button class="button" style="vertical-align:middle"><span>Corregir la empresa</span></button>
-     <%} %>
+     <%}%>
 </form>
 </body>
 </html>

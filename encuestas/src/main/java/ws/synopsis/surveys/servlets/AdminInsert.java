@@ -13,7 +13,7 @@ import ws.synopsis.surveys.utils.*;
 This is the servlet that either creates a new object or edits an object that already exists depending on the value
 of the "action" parameter. It first makes a new object given the parameters of the previous page, and depending on "action"
 either adds it to the appropriate database table or merges the information with already existing information. 
-Then we are redirected back to the adminDash.html 
+Then we are redirected back to the appropriate dash
 
 */
 public class AdminInsert extends HttpServlet {
