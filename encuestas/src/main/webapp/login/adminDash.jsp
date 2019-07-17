@@ -109,7 +109,7 @@ font-size:24px;
 }
 .Assign
 {
-	text-align:center; 
+	text-align:center;
 }
 </style>
 
@@ -130,6 +130,10 @@ font-size:24px;
 <div id="Cursos" class="tabcontent" style="padding:20px;">
 
 <span class="gracias">&iquestQu&eacute quiere hacer?</span>
+<!--
+the reason for the "&iquest" and other strange characters is that in some browsers
+special characters do not show up. So "&iquest" is the specific character for "�" and similar for other strange characters.
+-->
 <br>
   <p>
   <br>
@@ -245,12 +249,12 @@ font-size:24px;
   </form>
   <br>
   </p>
-  
+
 </div>
 
 <div id="Assign" class="tabcontent" style="padding:20px;">
 
-  <br> 
+  <br>
 <form action="/encuestas/Assign">
 Registrar un estudiante con un clase nuevo <br>
 Nombre: <input type="text" name="nombre"><br>
@@ -259,7 +263,7 @@ Curso C&oacutedigo: <input type="text" name="coursecode"><br>
 Curso nombre: <input type="text" name="coursename"><br>
 Aula: <input type="text" name="aula"><br>
 Instructor: <input type="text" name="instructor"><br>
-Start date: <input type="date" name="startdate"> 
+Start date: <input type="date" name="startdate">
  End date: <input type="date" name="endate"><br>
 <input hidden type="int" name="hora" value=0><br>
 
@@ -287,7 +291,7 @@ function openPage(pageName,elmnt,color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
-   
+
 
 </body>
 </html>
