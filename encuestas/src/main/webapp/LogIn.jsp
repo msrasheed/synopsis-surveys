@@ -89,7 +89,7 @@ body {margin:1em;padding:1em;
 <form class ="monospace" action="/encuestas/LogIn" method="post">
 <br><br><br><br><br><br>
   User Name:&nbsp
-  <input type="text" name="userName">
+  <input type="text" name="username">
   <br><br>
   Contraseña:
   <input type="password" name="contrasena">
@@ -99,7 +99,7 @@ body {margin:1em;padding:1em;
   </form>
     
 <%if(userType.equals("admin")){ %> <!-- if you want to allow students and instructors to make their own accounts, delete this line and line 107 -->
-  <form class ="monospace" action="/encuestas/CosaNueva.jsp" method="post">  
+  <form class ="monospace" action="/encuestas/login/CosaNueva.jsp" method="post">  
   &iquestNo tienes una cuenta?&nbsp&nbsp&nbsp
   <input hidden type="text" name="type" value=${userType}>
   <input hidden type="text" name="action" value="anadir">

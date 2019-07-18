@@ -173,7 +173,7 @@ if (type.equals("curso")){
 	  <input type="text" name="userName"  value=${cosa.userName} required>
 	  <br>
 	  Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-	  <input type="password" name="contrasena" value=${cosa.contrasena} required>
+	  <input type="password" name="contrasena" >
 	  <br>
 	  	<br>Empresa:&nbsp&nbsp&nbsp 
   <input type="text" name="empresa" value="${cosa.empresa}">
@@ -185,7 +185,7 @@ if (type.equals("curso")){
 <%} else if(type.equals("instructor")||type.equals("admin")) { %>
 	<br>
   Nombre:&nbsp&nbsp&nbsp&nbsp
-  <input type="text" name="nombre" value=${cosa.nombre}>
+  <input type="text" name="nombre" value="${cosa.nombre}">
   <br>
   Apellido:&nbsp&nbsp
   <input type="text" name="apellido" value="${cosa.apellido}">
@@ -200,10 +200,10 @@ if (type.equals("curso")){
   <input type="text" name="telefono" value=${cosa.telefono}>
   <br>
   El nombre de usuario:
-  <input type="text" name="userName"  value=${cosa.userName}required>
+  <input type="text" name="userName"  value=${cosa.username} required>
   <br>
   Contrase&ntildea:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="password" name="contrasena" value=${cosa.contrasena} required>
+  <input type="password" name="contrasena" >
   <br>
     <br><br><br>
     <%if(type.equals("instructor")){ %>

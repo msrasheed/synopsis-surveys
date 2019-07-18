@@ -48,9 +48,9 @@ public class LogIn extends HttpServlet {
 		
 		String userType = (String) session.getAttribute("userType");
 		
-		String username = request.getParameter("userName");
+		String username = request.getParameter("username");
 		String password = request.getParameter("contrasena");
-		session.setAttribute("userName", username);
+		session.setAttribute("username", username);
 		session.setAttribute("password", password);
 		
 
@@ -68,13 +68,13 @@ public class LogIn extends HttpServlet {
 				{
 					Instructor instructor = InstructorDB.getInstructorByUsername(username);
 					session.setAttribute("cosa", instructor);
-		            response.sendRedirect("/encuestas/insDash.html");
+		            response.sendRedirect("/encuestas/login/insDash.jsp");
 				}
 				else if (userType.equals("admin")) 
 				{
 					Admin admin = AdminDB.getAdminByUsername(username);
 					session.setAttribute("cosa",admin);
-					response.sendRedirect("/encuestas/adminDash.html");
+					response.sendRedirect("/encuestas/login/adminDash.jsp");
 				}
 				  
 				  

@@ -4,6 +4,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dash</title>
 <style>
 * {box-sizing: border-box}
 
@@ -27,7 +28,7 @@ background-color:rgba(255,69,0,0.7);
   cursor: pointer;
   padding: 14px ;
   font-size: 20px;
-  width: 16.66%;
+  width: 14.28%;
 }
 
 .tablink:hover {
@@ -114,13 +115,18 @@ font-size:24px;
 </style>
 
 </head>
-<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">&iexclHola! &iquestC&oacutemo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
+ <form action="/encuestas/Logout">
+ &nbsp&nbsp<button type="submit" style="float:right;" name="logout" value="logout"><span>Log out</span></button>
+</form>
+</div>
+<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">&iexclHola! &iquestC&oacutemo est&aacute?&nbsp&nbsp&nbsp&nbsp </h1>
 <body>
 
 <div class="tab" style="overflow:auto;">
-  <button class="tablink" onclick="openPage('Cursos',this,'rgba(242, 38, 19, 1)')" color>Cursos</button>
   <button class="tablink" onclick="openPage('Estudiantes',this,'rgba(242, 38, 19, 1)')" color>Estudiantes</button>
   <button class="tablink" onclick="openPage('Instructors',this,'rgba(242, 38, 19, 1)')" color>Instructors</button>
+  <button class="tablink" onclick="openPage('Admin',this,'rgba(242, 38, 19, 1)')" color>Administrators</button>
+  <button class="tablink" onclick="openPage('Cursos',this,'rgba(242, 38, 19, 1)')" color>Cursos</button>
   <button class="tablink" onclick="openPage('Aulas',this,'rgba(242, 38, 19, 1)')" color>Aulas</button>
   <button class="tablink" onclick="openPage('Empresas',this,'rgba(242, 38, 19, 1)')" color>Empresas</button>
   <button class="tablink" onclick="openPage('Assign',this,'rgba(242, 38, ,19, 1)')" color>Assign</button>
@@ -137,7 +143,7 @@ special characters do not show up. So "&iquest" is the specific character for "ï
 <br>
   <p>
   <br>
-  <form action="/encuestas/CosaNueva.jsp">
+  <form action="/encuestas/login/CosaNueva.jsp">
   <button class = "button" type="submit" ><span>A&ntildeadir un curso nuevo</span></button>
    <input hidden type="text" name="type" value="curso">
    <input hidden type="text" name="action" value="anadir">
@@ -151,6 +157,7 @@ special characters do not show up. So "&iquest" is the specific character for "ï
    <input hidden type="text" name="action" value="ver">
   </form>
   <form action="/encuestas/AdminView">
+  C&oacutedigo de un curso:
   <input type="text" name="codigo">
     <button type="submit" class="button" ><span>Ver encuesta respuestas</span></button>
    <input hidden type="text" name="type" value="curso">
@@ -165,14 +172,14 @@ special characters do not show up. So "&iquest" is the specific character for "ï
 <br>
   <p>
   <br>
-  <form action="/encuestas/CosaNueva.jsp">
+  <form action="/encuestas/login/CosaNueva.jsp">
   <button class = "button" type="submit" ><span>A&ntildeadir un estudiante nuevo</span></button>
   <input hidden type="text" name="type" value="estudiante">
   <input hidden type="text" name="action" value="anadir">
   </form><br>
   </p><p>
   <form action="/encuestas/AdminView">
-  Nombre de un instructor
+  Nombre de un estudiante
   <input type="text" name="codigo">
   <button type="submit" class="button" ><span>Ver/Corregir un estudiante</span></button>
    <input hidden type="text" name="type" value="estudiante">
@@ -188,7 +195,7 @@ special characters do not show up. So "&iquest" is the specific character for "ï
 <br>
   <p>
   <br>
-  <form action="/encuestas/CosaNueva.jsp">
+  <form action="/encuestas/login/CosaNueva.jsp">
   <button class = "button" type="submit" ><span>A&ntildeadir un instructor nuevo</span></button>
   <input hidden type="text" name="type" value="instructor">
   <input hidden type="text" name="action" value="anadir">
@@ -206,12 +213,43 @@ special characters do not show up. So "&iquest" is the specific character for "ï
   </p>
 </div>
 
+<div id="Admin" class="tabcontent" style="padding:20px;">
+<span class="gracias">&iquestQu&eacute quiere hacer?</span>
+<br>
+  <p>
+  <br>
+  <form action="/encuestas/login/CosaNueva.jsp">
+  <button class = "button" type="submit" ><span>A&ntildeadir un admin nuevo</span></button>
+  <input hidden type="text" name="type" value="admin">
+  <input hidden type="text" name="action" value="anadir">
+  </form><br>
+  </p><p>
+  <form action="/encuestas/AdminView">
+  Nombre de un admin
+  <input type="text" name="codigo">
+  <button type="submit" class="button" ><span>Ver/Corregir un admin</span></button>
+   <input hidden type="text" name="type" value="admin">
+   <input hidden type="text" name="action" value="ver">
+  </form>
+   <form action="/encuestas/login/AdminDisplay.jsp">
+ &nbsp&nbsp<button type="submit" class="button"> <span>Ver su informaci&oacuten</span></button>
+<%
+session.setAttribute("type","admin");
+session.setAttribute("action", "ver");
+session.setAttribute("codigo", session.getAttribute("username"));
+%>
+ 
+ </form>
+  <br>
+
+  </p>
+</div>
 <div id="Aulas" class="tabcontent" style="padding:20px;">
 <span class="gracias">&iquestQu&eacute quiere hacer?</span>
 <br>
   <p>
   <br>
-  <form action="/encuestas/CosaNueva.jsp">
+  <form action="/encuestas/login/CosaNueva.jsp">
   <button class = "button" type="submit" ><span>A&ntildeadir una aula nueva</span></button>
   <input hidden type="text" name="type" value="aula">
   <input hidden type="text" name="action" value="anadir">
@@ -234,7 +272,7 @@ special characters do not show up. So "&iquest" is the specific character for "ï
 <br>
   <p>
   <br>
-  <form action="/encuestas/CosaNueva.jsp">
+  <form action="/encuestas/login/CosaNueva.jsp">
   <button class = "button" type="submit" ><span>A&ntildeadir una empresa nueva</span></button>
   <input hidden type="text" name="type" value="empresa">
   <input hidden type="text" name="action" value="anadir">

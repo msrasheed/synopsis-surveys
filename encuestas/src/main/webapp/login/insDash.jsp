@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Instructor Dash</title>
 <style>
 body, html {
   height: 100%;
@@ -35,7 +36,46 @@ background-color:rgba(255,69,0,0.7);
   display: none;
   height: 100%;
 }
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  width: 400px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:10px;
 
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 h1 {
 margin:0;
 font-size:2em;
@@ -60,16 +100,31 @@ background-color:beige;
 #hoja {background-color: rgba(128,128,128,0.2);}
 </style>
 </head>
-<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">Hola! ¿Cómo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
+ <form action="/encuestas/Logout">
+ &nbsp&nbsp<button type="submit" style="float:right;" name="logout" value="logout"><span>Log out</span></button>
+</form>
+<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">&iexclHola! &iquestC&oacutemo est&aacute?&nbsp&nbsp&nbsp&nbsp </h1>
 <body>
 <div class="tab" style="overflow:auto;">
-  <button class="tablink" onclick="openPage('Mi Curso',this,'rgba(242, 38, 19, 1)')" color>Mi Curso</button>
+  <button class="tablink" onclick="openPage('Info',this,'rgba(242, 38, 19, 1)')" color>Info</button>
   <button class="tablink" onclick="openPage('hoja de asistencia',this,'rgba(242, 38, 19, 1)')" color>Asistencia</button>
 </div>
 
-<div id="Mi Curso" class="tabcontent">
-view data from DB with current classes <br>
-with conditon of end date >= current date
+<div id="Info" class="tabcontent">
+ <form action="/encuestas/login/AdminDisplay.jsp">
+ &nbsp&nbsp<button type="submit" class="button"> <span>Ver su informaci&oacuten</span></button>
+<%
+session.setAttribute("type","instructor");
+session.setAttribute("action", "ver");
+session.setAttribute("codigo", session.getAttribute("username"));
+%>
+ 
+ </form>
+ <br>
+ <form action="/encuestas/login/CursosE.jsp"> <%--a different page named CursosI.jsp needs to be made --%>
+ &nbsp&nbsp<button type="submit" class="button"> <span>Ver sus cursos</span></button>
+ </form>
+ <br>
 </div>
 
 <div id="hoja de asistencia" class="tabcontent">

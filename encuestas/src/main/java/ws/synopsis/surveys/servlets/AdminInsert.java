@@ -97,13 +97,14 @@ public class AdminInsert extends HttpServlet {
 			estudiante.setNombre(request.getParameter("nombre"));
 			estudiante.setApellido(request.getParameter("apellido"));
 			estudiante.setUserName(request.getParameter("userName"));
-			estudiante.setContrasena(HashingUtil.shaw256((request.getParameter("contrasena"))));
+			
 			estudiante.setCorreo(request.getParameter("correo"));
 			estudiante.setTelefono(request.getParameter("telefono"));
 			estudiante.setEmpresa(request.getParameter("empresa"));
 			estudiante.setCargo(request.getParameter("cargo"));
 			
 			if(action.equals("anadir")) {
+				estudiante.setContrasena(HashingUtil.shaw256((request.getParameter("contrasena"))));
 				EstudianteDB.insertEstudiante(estudiante);
 			}else if(action.equals("corregir")) {
 				EstudianteDB.mergeEstudiante(estudiante);
@@ -137,11 +138,11 @@ public class AdminInsert extends HttpServlet {
 			
 		}
 		if (userType.equals("estudiante")) {
-			response.sendRedirect("/encuestas/stuDash.html");
+			response.sendRedirect("/encuestas/login/stuDash.jsp");
 		}else if (userType.equals("instructor")) {
-			response.sendRedirect("/encuestas/insDash.html");
+			response.sendRedirect("/encuestas/login/insDash.jsp");
 		}else if (userType.equals("admin")) {
-			response.sendRedirect("/encuestas/adminDash.html"); 
+			response.sendRedirect("/encuestas/login/adminDash.jsp"); 
 		}
 		
 		

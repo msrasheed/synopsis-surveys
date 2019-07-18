@@ -4,6 +4,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudiante Dash</title>
 <style>
 * {box-sizing: border-box}
 
@@ -145,7 +146,10 @@ font-size:24px;
 </style>
 
 </head>
-<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">&iexclHola! &iquestC&oacutemo Esta?&nbsp&nbsp&nbsp&nbsp </h1>
+ <form action="/encuestas/Logout">
+ &nbsp&nbsp<button type="submit" style="float:right;" name="logout" value="logout"><span>Log out</span></button>
+</form>
+<h1><img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style = "float:left;">&iexclHola! &iquestC&oacutemo est&aacute?&nbsp&nbsp&nbsp&nbsp </h1>
 <body>
 
 <div class="tab" style="overflow:auto;">
@@ -155,7 +159,7 @@ font-size:24px;
 </div>
 
 <div id="Info" class="tabcontent">
- <form action="/encuestas/AdminDisplay.jsp">
+ <form action="/encuestas/login/AdminDisplay.jsp">
  &nbsp&nbsp<button type="submit" class="button"> <span>Ver su informaci&oacuten</span></button>
 <%
 session.setAttribute("type","estudiante");
@@ -165,14 +169,9 @@ session.setAttribute("codigo", session.getAttribute("userName"));
  
  </form>
  <br>
- <form action="/encuestas/CursosE.jsp">
+ <form action="/encuestas/login/CursosE.jsp">
  &nbsp&nbsp<button type="submit" class="button"> <span>Ver sus cursos</span></button>
  </form>
- <br>
- <br>
- <form action="/encuestas/Logout">
- &nbsp&nbsp<button type="submit" class="logout" name="logout" value="logout"><span>logout</span></button>
-</form>
 </div>
 
 <div id="Encuestas" class="tabcontent" style="padding:20px;">

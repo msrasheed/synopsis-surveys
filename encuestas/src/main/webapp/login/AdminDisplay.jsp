@@ -105,6 +105,7 @@ div {
    String type = (String) session.getAttribute("type");
    String action = (String) session.getAttribute("action");
    String codigo = (String) session.getAttribute("codigo");
+   String userType = (String) session.getAttribute("userType");
 
    System.out.println(type);
    System.out.println(action);
@@ -122,6 +123,7 @@ div {
    } else if (type.equals("instructor")){ 
 	   Instructor cosa = (Instructor) session.getAttribute("cosa");
    } else if (type.equals("admin")){
+	   System.out.println("i'm an admin");
 	   Admin cosa = (Admin) session.getAttribute("cosa");
    } else if (type.equals("aula")){ 
 	   Aula cosa = (Aula) session.getAttribute("cosa");
@@ -133,17 +135,17 @@ div {
    
   <meta charset = "utf-8">
   <%if(type.equals("curso")){ %>
-  <title> Informaci&oacute de curso ${codigo } </title>
+  <title> Informaci&oacuten de curso ${codigo } </title>
   <%}else if (type.equals("estudiante")){ %>
-   <title> Informaci&oacute de estudiante ${codigo } </title>
+   <title> Informaci&oacuten de estudiante ${codigo } </title>
   <%}else if (type.equals("instructor")){ %>
-   <title> Informaci&oacute de instructor ${codigo } </title>
+   <title> Informaci&oacuten de instructor ${codigo } </title>
    <%}else if (type.equals("admin")){ %>
-   <title> Informaci&oacute de admin ${codigo }</title>
+   <title> Informaci&oacuten de admin ${codigo }</title>
   <%}else if (type.equals("aula")){ %>
-   <title> Informaci&oacute de aula ${codigo } </title>
+   <title> Informaci&oacuten de aula ${codigo } </title>
   <%}else if (type.equals("empresa")){ %>
-  <title> Informaci&oacute de empresa ${codigo } </title>
+  <title> Informaci&oacuten de empresa ${codigo } </title>
   <%} %>
 </head>
 
@@ -152,17 +154,17 @@ div {
 <img src = "http://www.synopsis.ws/images/logo-synopsis.png" alt = "synopsis" style= "float:left">
 <br><br>  
   <%if(type.equals("curso")){ %>
-   Informaci&oacute de curso ${codigo } 
+   Informaci&oacuten de curso ${codigo } 
   <%}else if (type.equals("estudiante")){ %>
-    Informaci&oacute de estudiante ${codigo } 
+    Informaci&oacuten de estudiante ${codigo } 
   <%}else if (type.equals("instructor")){ %>
-    Informaci&oacute de instructor ${codigo } 
+    Informaci&oacuten de instructor ${codigo } 
    <%}else if (type.equals("admin")){ %>
-    Informaci&oacute de admin ${codigo }
+    Informaci&oacuten de admin ${codigo }
   <%}else if (type.equals("aula")){ %>
-   Informaci&oacute de aula ${codigo } 
+   Informaci&oacuten de aula ${codigo } 
   <%}else if (type.equals("empresa")){ %>
-   Informaci&oacute de empresa ${codigo } 
+   Informaci&oacuten de empresa ${codigo } 
   <%} %>
 
 </h1>
@@ -228,7 +230,7 @@ Tel&eacutefono: <br>
 </div>
 <div class="column right"style="text-align:left">
 
-${cosa.userName}<br>  
+${cosa.username}<br>  
 ${cosa.nombre}<br>
 ${cosa.apellido}<br>
 ${cosa.DNI}<br>
@@ -261,13 +263,28 @@ ${cosa.correo}<br>
 ${cosa.telefono}<br>
 </div>
 <%}%>
-<form action="/encuestas/adminDash.html" >
+<%if(userType.equals("estudiante")){ %>
+<form action="/encuestas/login/stuDash.jsp" >
 <button class="button"><span>OK </span></button>
 </form>
-<form action="/encuestas/AdminEdit.jsp" method="post">
+<form action="/encuestas/login/AdminEdit.jsp" method="post">
 <button class="button"><span>Corregir </span></button>
 </form>
-
+<%}else if(userType.equals("instructor")){ %>
+<form action="/encuestas/login/insDash.jsp" >
+<button class="button"><span>OK </span></button>
+</form>
+<form action="/encuestas/login/AdminEdit.jsp" method="post">
+<button class="button"><span>Corregir </span></button>
+</form>
+<%} else if(userType.equals("admin")){ %>
+<form action="/encuestas/login/adminDash.jsp" >
+<button class="button"><span>OK </span></button>
+</form>
+<form action="/encuestas/login/AdminEdit.jsp" method="post">
+<button class="button"><span>Corregir </span></button>
+</form>
+<%} %>
 
 </body>
 </html>
